@@ -1,0 +1,1 @@
+a:1:{s:23:"EditableMemberListField";a:3:{s:13:"singular_name";a:2:{s:6:"access";i:344;s:5:"value";s:17:"Member List Field";}s:11:"plural_name";a:2:{s:6:"access";i:344;s:5:"value";s:18:"Member List Fields";}s:7:"has_one";a:2:{s:6:"access";i:344;s:5:"value";a:1:{s:5:"Group";s:5:"Group";}}}}

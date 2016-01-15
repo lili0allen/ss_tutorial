@@ -1,0 +1,23 @@
+[11-Jan-2016 08:38:54] Error at framework/core/Object.php line 763: Uncaught Exception: Object->__call(): the method 'redireceback' does not exist on 'ArticlePage_Controller' (http://ss.dev/travel-guides/london/CommentForm)
+[11-Jan-2016 08:39:56] Error at framework/core/Object.php line 763: Uncaught Exception: Object->__call(): the method 'redireceback' does not exist on 'ArticlePage_Controller' (http://ss.dev/travel-guides/london/CommentForm)
+[11-Jan-2016 08:40:57] Error at framework/core/Object.php line 763: Uncaught Exception: Object->__call(): the method 'redireceback' does not exist on 'ArticlePage_Controller' (http://ss.dev/travel-guides/london/CommentForm)
+[12-Jan-2016 07:41:08] Error at framework/core/Object.php line 763: Uncaught Exception: Object->__call(): the method 'addextraclass' does not exist on 'FieldList' (http://ss.dev/travel-guides/london?flushtoken=5037b01dbe734dc8246484e2de3fc25e&flush=)
+[12-Jan-2016 07:41:24] Error at framework/core/Object.php line 763: Uncaught Exception: Object->__call(): the method 'addextraclass' does not exist on 'FieldList' (http://ss.dev/travel-guides/london?flush=&flushtoken=dc384e6ef74f4d07729756e0fb1be820)
+[12-Jan-2016 07:41:29] Error at framework/core/Object.php line 763: Uncaught Exception: Object->__call(): the method 'addextraclass' does not exist on 'FieldList' (http://ss.dev/travel-guides/london)
+[12-Jan-2016 07:48:19] Error at framework/core/Object.php line 763: Uncaught Exception: Object->__call(): the method 'redireceback' does not exist on 'ArticlePage_Controller' (http://ss.dev/travel-guides/london/CommentForm)
+[14-Jan-2016 08:16:59] Error at framework/model/MySQLDatabase.php line 598: Couldn't run query: 
+SELECT DISTINCT "SiteTree_Live"."ClassName", "SiteTree_Live"."Created", "SiteTree_Live"."LastEdited", "SiteTree_Live"."URLSegment", "SiteTree_Live"."Title", "SiteTree_Live"."MenuTitle", "SiteTree_Live"."Content", "SiteTree_Live"."MetaDescription", "SiteTree_Live"."ExtraMeta", "SiteTree_Live"."ShowInMenus", "SiteTree_Live"."ShowInSearch", "SiteTree_Live"."Sort", "SiteTree_Live"."HasBrokenFile", "SiteTree_Live"."HasBrokenLink", "SiteTree_Live"."ReportClass", "SiteTree_Live"."CanViewType", "SiteTree_Live"."CanEditType", "SiteTree_Live"."InheritBlockSets", "SiteTree_Live"."Version", "SiteTree_Live"."ParentID", "SiteTree_Live"."ID", CASE WHEN "SiteTree_Live"."ClassName" IS NOT NULL THEN "SiteTree_Live"."ClassName" ELSE 'SiteTree' END AS "RecordClassName"
+FROM "SiteTree_Live"
+WHERE ("SiteTree_Live"."URLSegment" = 'home' AND "SiteTree_Live"."ParentID" = 0)
+ORDER BY "SiteTree_Live"."Sort" ASC
+LIMIT 1 
+
+Unknown column 'SiteTree_Live.InheritBlockSets' in 'field list' (http://ss.dev/)
+[14-Jan-2016 08:17:04] Error at framework/model/MySQLDatabase.php line 598: Couldn't run query: 
+SELECT DISTINCT "SiteTree_Live"."ClassName", "SiteTree_Live"."Created", "SiteTree_Live"."LastEdited", "SiteTree_Live"."URLSegment", "SiteTree_Live"."Title", "SiteTree_Live"."MenuTitle", "SiteTree_Live"."Content", "SiteTree_Live"."MetaDescription", "SiteTree_Live"."ExtraMeta", "SiteTree_Live"."ShowInMenus", "SiteTree_Live"."ShowInSearch", "SiteTree_Live"."Sort", "SiteTree_Live"."HasBrokenFile", "SiteTree_Live"."HasBrokenLink", "SiteTree_Live"."ReportClass", "SiteTree_Live"."CanViewType", "SiteTree_Live"."CanEditType", "SiteTree_Live"."InheritBlockSets", "SiteTree_Live"."Version", "SiteTree_Live"."ParentID", "SiteTree_Live"."ID", CASE WHEN "SiteTree_Live"."ClassName" IS NOT NULL THEN "SiteTree_Live"."ClassName" ELSE 'SiteTree' END AS "RecordClassName"
+FROM "SiteTree_Live"
+WHERE ("SiteTree_Live"."URLSegment" = 'home' AND "SiteTree_Live"."ParentID" = 0)
+ORDER BY "SiteTree_Live"."Sort" ASC
+LIMIT 1 
+
+Unknown column 'SiteTree_Live.InheritBlockSets' in 'field list' (http://ss.dev/)

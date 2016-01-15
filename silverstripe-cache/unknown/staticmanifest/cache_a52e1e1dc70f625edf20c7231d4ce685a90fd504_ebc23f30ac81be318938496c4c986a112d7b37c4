@@ -1,0 +1,1 @@
+a:1:{s:25:"GridFieldAddNewMultiClass";a:2:{s:15:"allowed_actions";a:2:{s:6:"access";i:344;s:5:"value";a:1:{i:0;s:9:"handleAdd";}}s:15:"showEmptyString";a:2:{s:6:"access";i:344;s:5:"value";b:1;}}}

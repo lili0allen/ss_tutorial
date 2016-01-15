@@ -1,0 +1,964 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ec957f3a-a4b1-489c-94f2-8b8e065ff292" name="Default" comment="" />
+    <ignored path="ss-tutorial.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="ss-tutorial" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="ArticleHolder.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mysite/code/pages/ArticleHolder.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="22" column="11" selection-start="577" selection-end="577" vertical-scroll-proportion="-11.333333" vertical-offset="0" max-vertical-offset="558">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ArticleCategory.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mysite/code/dataobjects/ArticleCategory.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="28" column="2" selection-start="508" selection-end="508" vertical-scroll-proportion="-15.333333" vertical-offset="0" max-vertical-offset="522">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RegionsPage_show.ss" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/themes/one-ring/templates/Layout/RegionsPage_show.ss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="5" column="25" selection-start="78" selection-end="78" vertical-scroll-proportion="-3.3333333" vertical-offset="0" max-vertical-offset="666">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Page.ss" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/themes/one-ring/templates/Layout/Page.ss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="26" column="14" selection-start="798" selection-end="798" vertical-scroll-proportion="-17.333334" vertical-offset="0" max-vertical-offset="684">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainNav.ss" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/themes/one-ring/templates/Includes/MainNav.ss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="22" column="6" selection-start="795" selection-end="795" vertical-scroll-proportion="-14.666667" vertical-offset="0" max-vertical-offset="504">
+              <folding>
+                <marker date="1449443693601" expanded="true" signature="21:794" placeholder="..." />
+                <marker date="1449443693601" expanded="true" signature="49:787" placeholder="..." />
+                <marker date="1449443693601" expanded="true" signature="75:776" placeholder="..." />
+                <marker date="1449443693601" expanded="true" signature="111:761" placeholder="..." />
+                <marker date="1449443693601" expanded="true" signature="317:702" placeholder="..." />
+                <marker date="1449443693601" expanded="true" signature="450:678" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Banner.ss" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/themes/one-ring/templates/Includes/Banner.ss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="6" selection-start="335" selection-end="335" vertical-scroll-proportion="-8.0" vertical-offset="0" max-vertical-offset="324">
+              <folding>
+                <marker date="1449444471376" expanded="true" signature="43:334" placeholder="..." />
+                <marker date="1449444471376" expanded="true" signature="71:327" placeholder="..." />
+                <marker date="1449444471376" expanded="true" signature="97:316" placeholder="..." />
+                <marker date="1449444471376" expanded="true" signature="133:301" placeholder="..." />
+                <marker date="1449444471376" expanded="true" signature="226:282" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Page.ss" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/themes/one-ring/templates/Page.ss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="30" column="32" selection-start="902" selection-end="902" vertical-scroll-proportion="-20.0" vertical-offset="0" max-vertical-offset="738">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SiteTree.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cms/code/model/SiteTree.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="633" column="33" selection-start="20010" selection-end="20019" vertical-scroll-proportion="-2.4107144" vertical-offset="11259" max-vertical-offset="52938">
+              <folding>
+                <marker date="1431568341000" expanded="true" signature="50834:50867" placeholder="SELECT COUNT..SiteTree..." />
+                <marker date="1431568341000" expanded="true" signature="52480:52553" placeholder="SELECT MAX(\..SiteTree..." />
+                <marker date="1431568341000" expanded="true" signature="60357:60407" placeholder="SELECT * FRO.._table..." />
+                <marker date="1431568341000" expanded="true" signature="85398:85454" placeholder="SELECT \&quot;ID\..SiteTree..." />
+                <marker date="1431568341000" expanded="true" signature="86584:86640" placeholder="SELECT \&quot;ID\..SiteTree..." />
+                <marker date="1431568341000" expanded="true" signature="86798:86850" placeholder="INSERT INTO ..." />
+                <marker date="1431568341000" expanded="true" signature="88244:88305" placeholder="SELECT \&quot;ID\..SiteTree_Live..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Director.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/framework/control/Director.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="25" column="33" selection-start="705" selection-end="705" vertical-scroll-proportion="0.6414254" vertical-offset="162" max-vertical-offset="19602">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RegionsPage.ss" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/themes/one-ring/templates/Layout/RegionsPage.ss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="25" column="27" selection-start="898" selection-end="898" vertical-scroll-proportion="-12.62963" vertical-offset="109" max-vertical-offset="1692">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="false" />
+    </FindUsagesManager>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="changedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/install.php" />
+        <option value="$PROJECT_DIR$/install-frameworkmissing.html" />
+        <option value="$PROJECT_DIR$/.htaccess" />
+        <option value="$PROJECT_DIR$/.bowerrc" />
+        <option value="$PROJECT_DIR$/bower.json" />
+        <option value="$PROJECT_DIR$/composer.json" />
+        <option value="$PROJECT_DIR$/composer.lock" />
+        <option value="$PROJECT_DIR$/userforms/code/extensions/SecureEditableFileField.php" />
+        <option value="$PROJECT_DIR$/mysite/code/Page.php" />
+        <option value="$PROJECT_DIR$/themes/one-ring/templates/Includes/TopBar.ss" />
+        <option value="$PROJECT_DIR$/themes/one-ring/templates/Includes/MainNav.ss" />
+        <option value="$PROJECT_DIR$/themes/one-ring/templates/Includes/Banner.ss" />
+        <option value="$PROJECT_DIR$/silverstripe-blocks/code/BlockManager.php" />
+        <option value="$PROJECT_DIR$/silverstripe-blocks/README.md" />
+        <option value="$PROJECT_DIR$/silverstripe-blocks/code/extensions/BlocksSiteTreeExtension.php" />
+        <option value="$PROJECT_DIR$/silverstripe-errors-warnings.log" />
+        <option value="$PROJECT_DIR$/silverstripe-blocks/code/dataobjects/Block.php" />
+        <option value="$PROJECT_DIR$/mysite/code/blocks/TileBlock.php" />
+        <option value="$PROJECT_DIR$/themes/one-ring/templates/Layout/Page.ss" />
+        <option value="$PROJECT_DIR$/themes/one-ring/templates/Includes/TileBlock.ss" />
+        <option value="$PROJECT_DIR$/mysite/code/HomePage.php" />
+        <option value="$PROJECT_DIR$/mysite/code/RegionsPage.php" />
+        <option value="$PROJECT_DIR$/mysite/code/ArticleHolder.php" />
+        <option value="$PROJECT_DIR$/mysite/code/dataobjects/ArticleCategory.php" />
+        <option value="$PROJECT_DIR$/themes/one-ring/templates/Layout/ArticleHolder.ss" />
+        <option value="$PROJECT_DIR$/mysite/code/dataobjects/ArticleComment.php" />
+        <option value="$PROJECT_DIR$/themes/one-ring/templates/Layout/ArticlePage.ss" />
+        <option value="$PROJECT_DIR$/mysite/code/ArticlePage.php" />
+        <option value="$PROJECT_DIR$/mysite/code/extensions/SiteConfigExtension.php" />
+        <option value="$PROJECT_DIR$/themes/one-ring/templates/Includes/Footer.ss" />
+        <option value="$PROJECT_DIR$/mysite/code/pages/ArticlePage.php" />
+        <option value="$PROJECT_DIR$/mysite/code/admin/PropertyAdmin.php" />
+        <option value="$PROJECT_DIR$/mysite/code/dataobjects/Property.php" />
+        <option value="$PROJECT_DIR$/mysite/code/pages/HomePage.php" />
+        <option value="$PROJECT_DIR$/themes/one-ring/templates/Layout/HomePage.ss" />
+        <option value="$PROJECT_DIR$/mysite/_config.php" />
+        <option value="$PROJECT_DIR$/mysite/_config/config.yml" />
+        <option value="$PROJECT_DIR$/_ss_environment.php" />
+        <option value="$PROJECT_DIR$/themes/one-ring/templates/Layout/RegionsPage.ss" />
+        <option value="$PROJECT_DIR$/mysite/code/pages/RegionsPage.php" />
+        <option value="$PROJECT_DIR$/themes/one-ring/templates/Page.ss" />
+        <option value="$PROJECT_DIR$/themes/one-ring/templates/Layout/RegionsPage_show.ss" />
+        <option value="$PROJECT_DIR$/mysite/code/dataobjects/Region.php" />
+      </list>
+    </option>
+  </component>
+  <component name="PhpServers">
+    <option name="servers">
+      <server host="ss.dev" name="ss.dev" />
+    </option>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds">
+    <option name="y" value="25" />
+    <option name="width" value="1920" />
+    <option name="height" value="1030" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ss-tutorial" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ss-tutorial" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ss-tutorial" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ss-tutorial" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ss-tutorial" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="themes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ss-tutorial" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ss-tutorial" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="themes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="one-ring" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ss-tutorial" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ss-tutorial" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="themes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="one-ring" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Layout" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ss-tutorial" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ss-tutorial" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="themes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="one-ring" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Includes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ss-tutorial" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ss-tutorial" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="themes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="one-ring" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ss-tutorial" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ss-tutorial" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="themes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="one-ring" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ss-tutorial" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ss-tutorial" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mysite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ss-tutorial" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ss-tutorial" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mysite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="icons" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ss-tutorial" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ss-tutorial" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mysite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ss-tutorial" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ss-tutorial" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mysite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ss-tutorial" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ss-tutorial" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mysite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dataobjects" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ss-tutorial" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ss-tutorial" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mysite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="_config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="DefaultHtmlFileTemplate" value="Html5" />
+    <property name="SearchEverywhereHistory" value="" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/themes/one-ring/templates/Layout" />
+      <recent name="$PROJECT_DIR$/mysite/icons" />
+      <recent name="$PROJECT_DIR$/mysite/code/blocks" />
+      <recent name="$PROJECT_DIR$/themes/one-ring/images" />
+      <recent name="$PROJECT_DIR$/themes/one-ring" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/mysite/code/pages" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+      <method />
+    </configuration>
+    <list size="0" />
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ec957f3a-a4b1-489c-94f2-8b8e065ff292" name="Default" comment="" />
+      <created>1441946340233</created>
+      <updated>1441946340233</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="25" width="1920" height="1030" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.41675854" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2764141" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.45482865" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="myTodoPanelSettings">
+      <TodoPanelSettings />
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/framework/security/MemberAuthenticator.php</url>
+          <line>30</line>
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/framework/security/Security.php</url>
+          <line>834</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/framework/security/LoginAttempt.php</url>
+          <line>46</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="4" />
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/mysite/code/dataobjects/Region.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="44" selection-start="899" selection-end="899" vertical-scroll-proportion="0.0" vertical-offset="648" max-vertical-offset="918">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/one-ring/static/js/common/classie.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1404" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/userforms/code/forms/UserForm.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="119" column="29" selection-start="2822" selection-end="2822" vertical-scroll-proportion="-15.333333" vertical-offset="1728" max-vertical-offset="3186">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/one-ring/javascript/common/classie.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1404" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/one-ring/static/default.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="234" column="0" selection-start="0" selection-end="10167" vertical-scroll-proportion="-16.222221" vertical-offset="3774" max-vertical-offset="4590" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/one-ring/css/bootstrap.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="8" selection-start="381" selection-end="381" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="104238" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/one-ring/static/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="542" column="36" selection-start="3333" selection-end="18220" vertical-scroll-proportion="-23.555555" vertical-offset="9120" max-vertical-offset="11862" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/one-ring/static/article-holder.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="34" selection-start="0" selection-end="9596" vertical-scroll-proportion="-9.333333" vertical-offset="0" max-vertical-offset="5202" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/one-ring/static/article-page.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="13130" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="5382" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/one-ring/templates/Includes/TopBar.ss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="14" selection-start="986" selection-end="986" vertical-scroll-proportion="-14.0" vertical-offset="0" max-vertical-offset="522" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/one-ring/templates/Includes/TileBlock.ss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="6" selection-start="129" selection-end="129" vertical-scroll-proportion="-2.0" vertical-offset="0" max-vertical-offset="162" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/framework/docs/en/01_Tutorials/02_Extending_A_Basic_Site.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="114" column="9" selection-start="6361" selection-end="6361" vertical-scroll-proportion="-11.571428" vertical-offset="1728" max-vertical-offset="10098" />
+      </provider>
+      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/framework/model/fieldtypes/HTMLText.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="29" selection-start="315" selection-end="315" vertical-scroll-proportion="-8.0" vertical-offset="0" max-vertical-offset="4878">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/framework/forms/TextareaField.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="38" selection-start="331" selection-end="331" vertical-scroll-proportion="-8.666667" vertical-offset="0" max-vertical-offset="1404">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/framework/forms/DateField.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="113" column="0" selection-start="3992" selection-end="3992" vertical-scroll-proportion="0.0" vertical-offset="1888" max-vertical-offset="12366">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/framework/model/fieldtypes/Date.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="109" column="26" selection-start="2847" selection-end="2847" vertical-scroll-proportion="0.0" vertical-offset="1728" max-vertical-offset="7704">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysite/code/pages/Page.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="6" selection-start="756" selection-end="756" vertical-scroll-proportion="-13.037037" vertical-offset="152" max-vertical-offset="1008">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/one-ring/templates/Layout/ArticleHolder.ss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="18" selection-start="1149" selection-end="1149" vertical-scroll-proportion="0.0" vertical-offset="54" max-vertical-offset="3924" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysite/code/dataobjects/ArticleComment.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="2" selection-start="340" selection-end="340" vertical-scroll-proportion="0.0" vertical-offset="342" max-vertical-offset="450">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="5" selection-start="662" selection-end="662" vertical-scroll-proportion="0.0" vertical-offset="468" max-vertical-offset="612">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/one-ring/templates/Layout/ArticlePage.ss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="65" column="35" selection-start="2944" selection-end="2944" vertical-scroll-proportion="0.0" vertical-offset="828" max-vertical-offset="4356" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cms/code/model/SiteConfig.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="145" column="69" selection-start="5753" selection-end="5753" vertical-scroll-proportion="0.0" vertical-offset="2610" max-vertical-offset="6984">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/one-ring/templates/Includes/Footer.ss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="94" selection-start="226" selection-end="226" vertical-scroll-proportion="0.0" vertical-offset="72" max-vertical-offset="1962">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysite/code/pages/ArticlePage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="75" column="14" selection-start="2239" selection-end="2239" vertical-scroll-proportion="0.0" vertical-offset="1350" max-vertical-offset="2142">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysite/code/extensions/SiteConfigExtension.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="2" selection-start="822" selection-end="822" vertical-scroll-proportion="-14.666667" vertical-offset="0" max-vertical-offset="504">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysite/code/admin/PropertyAdmin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="2" selection-start="356" selection-end="356" vertical-scroll-proportion="-7.3333335" vertical-offset="0" max-vertical-offset="306">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysite/code/dataobjects/Property.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="73" column="2" selection-start="2452" selection-end="2452" vertical-scroll-proportion="-26.62963" vertical-offset="505" max-vertical-offset="1332">
+          <folding>
+            <marker date="1452719329417" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysite/code/pages/HomePage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="1" selection-start="574" selection-end="574" vertical-scroll-proportion="-15.333333" vertical-offset="0" max-vertical-offset="522">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/one-ring/templates/Layout/HomePage.ss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="136" column="0" selection-start="6003" selection-end="6003" vertical-scroll-proportion="-9.642858" vertical-offset="1908" max-vertical-offset="5670">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/one-ring/css/font.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="33" selection-start="592" selection-end="592" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4014">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bower.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="1" selection-start="80" selection-end="80" vertical-scroll-proportion="-3.3333333" vertical-offset="0" max-vertical-offset="198">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web.config">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="0" selection-start="557" selection-end="557" vertical-scroll-proportion="-12.214286" vertical-offset="0" max-vertical-offset="450">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysite/_config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="26" selection-start="804" selection-end="804" vertical-scroll-proportion="-20.0" vertical-offset="0" max-vertical-offset="648">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="53" column="48" selection-start="2035" selection-end="2035" vertical-scroll-proportion="-18.666666" vertical-offset="324" max-vertical-offset="1170">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/silverstripe-errors.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="0" selection-start="3770" selection-end="3770" vertical-scroll-proportion="0.0" vertical-offset="414" max-vertical-offset="522">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/silverstripe-errors-warnings.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="98" selection-start="7651" selection-end="7651" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1080">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysite/_config/config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="25" selection-start="333" selection-end="333" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="378">
+          <folding>
+            <marker date="1452805946844" expanded="true" signature="-1:-1" placeholder="---" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_ss_environment.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="0" selection-start="0" selection-end="130" vertical-scroll-proportion="-2.0" vertical-offset="0" max-vertical-offset="162">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysite/code/dataobjects/TileBlock.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="0" selection-start="197" selection-end="197" vertical-scroll-proportion="-8.0" vertical-offset="0" max-vertical-offset="324">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysite/code/dataobjects/ArticleCategory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="2" selection-start="508" selection-end="508" vertical-scroll-proportion="-15.333333" vertical-offset="0" max-vertical-offset="522">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysite/code/pages/ArticleHolder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="11" selection-start="577" selection-end="577" vertical-scroll-proportion="-11.333333" vertical-offset="0" max-vertical-offset="558">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/one-ring/templates/Layout/RegionsPage.ss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="27" selection-start="898" selection-end="898" vertical-scroll-proportion="-12.62963" vertical-offset="109" max-vertical-offset="1692">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/one-ring/templates/Layout/Page.ss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="14" selection-start="798" selection-end="798" vertical-scroll-proportion="-17.333334" vertical-offset="0" max-vertical-offset="684">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/one-ring/templates/Includes/MainNav.ss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="6" selection-start="795" selection-end="795" vertical-scroll-proportion="-14.666667" vertical-offset="0" max-vertical-offset="504">
+          <folding>
+            <marker date="1449443693601" expanded="true" signature="21:794" placeholder="..." />
+            <marker date="1449443693601" expanded="true" signature="49:787" placeholder="..." />
+            <marker date="1449443693601" expanded="true" signature="75:776" placeholder="..." />
+            <marker date="1449443693601" expanded="true" signature="111:761" placeholder="..." />
+            <marker date="1449443693601" expanded="true" signature="317:702" placeholder="..." />
+            <marker date="1449443693601" expanded="true" signature="450:678" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/one-ring/templates/Includes/Banner.ss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="6" selection-start="335" selection-end="335" vertical-scroll-proportion="-8.0" vertical-offset="0" max-vertical-offset="324">
+          <folding>
+            <marker date="1449444471376" expanded="true" signature="43:334" placeholder="..." />
+            <marker date="1449444471376" expanded="true" signature="71:327" placeholder="..." />
+            <marker date="1449444471376" expanded="true" signature="97:316" placeholder="..." />
+            <marker date="1449444471376" expanded="true" signature="133:301" placeholder="..." />
+            <marker date="1449444471376" expanded="true" signature="226:282" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/one-ring/templates/Page.ss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="32" selection-start="902" selection-end="902" vertical-scroll-proportion="-20.0" vertical-offset="0" max-vertical-offset="738">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/one-ring/templates/Layout/RegionsPage_show.ss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="25" selection-start="78" selection-end="78" vertical-scroll-proportion="-3.3333333" vertical-offset="0" max-vertical-offset="666">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysite/code/pages/RegionsPage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="0" selection-start="528" selection-end="528" vertical-scroll-proportion="0.53333336" vertical-offset="0" max-vertical-offset="810">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysite/code/dataobjects/Region.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="0" selection-start="913" selection-end="913" vertical-scroll-proportion="1.0" vertical-offset="145" max-vertical-offset="972">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cms/code/model/SiteTree.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="633" column="33" selection-start="20010" selection-end="20019" vertical-scroll-proportion="-2.4107144" vertical-offset="11259" max-vertical-offset="52938">
+          <folding>
+            <marker date="1431568341000" expanded="true" signature="50834:50867" placeholder="SELECT COUNT..SiteTree..." />
+            <marker date="1431568341000" expanded="true" signature="52480:52553" placeholder="SELECT MAX(\..SiteTree..." />
+            <marker date="1431568341000" expanded="true" signature="60357:60407" placeholder="SELECT * FRO.._table..." />
+            <marker date="1431568341000" expanded="true" signature="85398:85454" placeholder="SELECT \&quot;ID\..SiteTree..." />
+            <marker date="1431568341000" expanded="true" signature="86584:86640" placeholder="SELECT \&quot;ID\..SiteTree..." />
+            <marker date="1431568341000" expanded="true" signature="86798:86850" placeholder="INSERT INTO ..." />
+            <marker date="1431568341000" expanded="true" signature="88244:88305" placeholder="SELECT \&quot;ID\..SiteTree_Live..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/framework/control/Director.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="33" selection-start="705" selection-end="705" vertical-scroll-proportion="0.6414254" vertical-offset="162" max-vertical-offset="19602">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
+

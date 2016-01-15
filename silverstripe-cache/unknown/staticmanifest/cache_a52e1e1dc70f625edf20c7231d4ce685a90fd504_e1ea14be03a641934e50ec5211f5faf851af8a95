@@ -1,0 +1,1 @@
+a:1:{s:19:"SiteConfigExtension";a:1:{s:2:"db";a:2:{s:6:"access";i:344;s:5:"value";a:5:{s:12:"FacebookLink";s:7:"Varchar";s:11:"TwitterLink";s:7:"Varchar";s:10:"GoogleLink";s:7:"Varchar";s:11:"YouTubeLink";s:7:"Varchar";s:13:"FooterContent";s:4:"Text";}}}}

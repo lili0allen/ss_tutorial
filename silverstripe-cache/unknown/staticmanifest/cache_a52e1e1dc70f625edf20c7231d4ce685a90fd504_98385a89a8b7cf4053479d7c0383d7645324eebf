@@ -1,0 +1,1 @@
+a:1:{s:16:"EditableCheckbox";a:3:{s:13:"singular_name";a:2:{s:6:"access";i:344;s:5:"value";s:14:"Checkbox Field";}s:11:"plural_name";a:2:{s:6:"access";i:344;s:5:"value";s:10:"Checkboxes";}s:2:"db";a:2:{s:6:"access";i:344;s:5:"value";a:1:{s:14:"CheckedDefault";s:7:"Boolean";}}}}

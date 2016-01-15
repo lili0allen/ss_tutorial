@@ -1,0 +1,1 @@
+a:1:{s:14:"ArticleComment";a:2:{s:2:"db";a:2:{s:6:"access";i:344;s:5:"value";a:3:{s:4:"Name";s:7:"Varchar";s:5:"Email";s:7:"Varchar";s:7:"Comment";s:4:"Text";}}s:7:"has_one";a:2:{s:6:"access";i:344;s:5:"value";a:1:{s:11:"ArticlePage";s:11:"ArticlePage";}}}}

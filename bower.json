@@ -1,0 +1,6 @@
+{
+    "name": "one-ring",
+    "dependencies": {
+        "bootstrap": "*"
+    }
+}

@@ -1,0 +1,1 @@
+a:1:{s:13:"PropertyAdmin";a:4:{s:10:"menu_title";a:2:{s:6:"access";i:344;s:5:"value";s:10:"Properties";}s:11:"url_segment";a:2:{s:6:"access";i:344;s:5:"value";s:10:"properties";}s:14:"managed_models";a:2:{s:6:"access";i:344;s:5:"value";a:1:{i:0;s:8:"Property";}}s:9:"menu_icon";a:2:{s:6:"access";i:344;s:5:"value";s:25:"mysite/icons/property.png";}}}
