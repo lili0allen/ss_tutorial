@@ -6,7 +6,7 @@ $project = 'mysite';
 global $databaseConfig;
 $databaseConfig = array(
 	"type" => 'MySQLDatabase',
-	"server" => 'localhost',
+	"server" => '127.0.0.1',
 	"username" => 'root',
 	"password" => 'password',
 	"database" => 'ss_official',
@@ -29,3 +29,4 @@ if(!Director::isDev()) {
 }
 
 session_save_path('/tmp');
+Security::setDefaultAdmin('admin', 'admin');

@@ -1,1 +1,0 @@
-a:1:{s:13:"SubmittedForm";a:3:{s:7:"has_one";a:2:{s:6:"access";i:344;s:5:"value";a:2:{s:11:"SubmittedBy";s:6:"Member";s:6:"Parent";s:15:"UserDefinedForm";}}s:8:"has_many";a:2:{s:6:"access";i:344;s:5:"value";a:1:{s:6:"Values";s:18:"SubmittedFormField";}}s:14:"summary_fields";a:2:{s:6:"access";i:344;s:5:"value";a:2:{i:0;s:2:"ID";i:1;s:7:"Created";}}}}

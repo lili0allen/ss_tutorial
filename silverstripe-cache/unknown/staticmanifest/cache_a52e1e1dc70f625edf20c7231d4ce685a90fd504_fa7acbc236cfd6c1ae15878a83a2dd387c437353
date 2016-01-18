@@ -1,1 +1,0 @@
-a:1:{s:20:"EditableNumericField";a:3:{s:13:"singular_name";a:2:{s:6:"access";i:344;s:5:"value";s:13:"Numeric Field";}s:11:"plural_name";a:2:{s:6:"access";i:344;s:5:"value";s:14:"Numeric Fields";}s:2:"db";a:2:{s:6:"access";i:344;s:5:"value";a:2:{s:8:"MinValue";s:3:"Int";s:8:"MaxValue";s:3:"Int";}}}}

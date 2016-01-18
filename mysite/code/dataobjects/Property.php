@@ -13,7 +13,9 @@ class Property extends DataObject {
         'PricePerNight' => 'Currency',
         'Bedrooms' => 'Int',
         'Bathrooms' => 'Int',
-        'FeaturedOnHomepage' => 'Boolean'
+        'FeaturedOnHomepage' => 'Boolean',
+        'AvailableStart' => 'Date',
+        'AvailableEnd' => 'Date'
     );
 
     private static $has_one = array(
