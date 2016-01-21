@@ -76,8 +76,9 @@
             <div class="col-sm-12">
                 <h3>Leave a Reply</h3>
                 <p>Your email address will no be published. Required fields are marked*</p>
+                $CommentForm
             </div>
-            $CommentForm
+
 
         </div>
     </div>

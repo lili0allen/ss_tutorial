@@ -1,2 +1,4 @@
 silverstripe-cache/
 mysite/_config.php
+assets/
+node_modules/

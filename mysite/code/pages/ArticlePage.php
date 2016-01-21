@@ -83,7 +83,8 @@ class ArticlePage_Controller extends Page_Controller {
         )->addExtraClass('form-style');
 
         foreach($form->Fields() as $field){
-            $field->setAttribute('placeholder', $field->getName().'*');
+            $field->addExtraClass('form-control')
+                ->setAttribute('placeholder', $field->getName().'*');
         }
 
         $data = Session::get("FormData.{$form->getName()}.data");
