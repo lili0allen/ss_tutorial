@@ -5,6 +5,23 @@ class PropertySearchPage extends Page{
 }
 
 class PropertySearchPage_Controller extends Page_Controller{
+
+    public function index(SS_HTTPRequest $request){
+        $properties = Property::get()->limit(20);
+
+        if($search = $request->getVar('Keywords')){
+            $properties = $properties->filter(
+                array(
+                    'Title:PartialMatch' => $search
+                )
+            );
+        }
+
+        return array(
+            'Results' => $properties
+        );
+    }
+
     public function PropertySearchForm(){
         $nights = array();
         foreach(range(1,14) as $i){
@@ -46,6 +63,10 @@ class PropertySearchPage_Controller extends Page_Controller{
                     ->addExtraClass('btn-lg btn-fullcolor')
             )
         );
+
+        $form->setFormMethod('GET')
+             ->setFormAction($this->Link())
+             ->disableSecurityToken();
 
         return $form;
     }
