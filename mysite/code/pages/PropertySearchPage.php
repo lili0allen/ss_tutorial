@@ -55,9 +55,21 @@ class PropertySearchPage_Controller extends Page_Controller{
             ));
         }
 
-        return array(
-            'Results' => $properties
+        $paginatedProperties = PaginatedList::create(
+            $properties,
+            $request
+        )->setPageLength(15)
+         ->setPaginationGetVar('s');
+
+        $data = array(
+            'Results' => $paginatedProperties
         );
+
+        if($request->isAjax()){
+            return $this->customise($data)->renderWith('PropertySearchResults');
+        }
+
+        return $data;
     }
 
     public function PropertySearchForm(){
