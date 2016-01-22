@@ -17,18 +17,17 @@ class PropertySearchPage_Controller extends Page_Controller{
             );
         }
 
-        if($arrival = $request->getVar('ArrivalDate')){
+        if($arrival = $request->getVar('ArrivalDate')) {
             $arrivalStamp = strtotime($arrival);
             $nightAdder = '+'.$request->getVar('Nights').' days';
             $startDate = date('Y-m-d', $arrivalStamp);
-            $endDate = date('Y-md', strtotime($nightAdder, $arrivalStamp));
+            $endDate = date('Y-m-d', strtotime($nightAdder, $arrivalStamp));
 
-            $properties = $properties->filter(
-                array(
-                    'AvailableStart:GreaterThanOrEqual' => $startDate,
-                    'AvailableEnd:LessThanOrEqual' => $endDate
-                )
-            );
+            $properties = $properties->filter(array(
+                'AvailableStart:LessThanOrEqual' => $startDate,
+                'AvailableEnd:GreaterThanOrEqual' => $endDate
+            ));
+
         }
 
         if($bedrooms = $request->getVar('Bedrooms')) {
