@@ -7,7 +7,7 @@ class PropertySearchPage extends Page{
 class PropertySearchPage_Controller extends Page_Controller{
 
     public function index(SS_HTTPRequest $request){
-        $properties = Property::get()->limit(20);
+        $properties = Property::get();
 
         if($search = $request->getVar('Keywords')){
             $properties = $properties->filter(
@@ -15,6 +15,44 @@ class PropertySearchPage_Controller extends Page_Controller{
                     'Title:PartialMatch' => $search
                 )
             );
+        }
+
+        if($arrival = $request->getVar('ArrivalDate')){
+            $arrivalStamp = strtotime($arrival);
+            $nightAdder = '+'.$request->getVar('Nights').' days';
+            $startDate = date('Y-m-d', $arrivalStamp);
+            $endDate = date('Y-md', strtotime($nightAdder, $arrivalStamp));
+
+            $properties = $properties->filter(
+                array(
+                    'AvailableStart:GreaterThanOrEqual' => $startDate,
+                    'AvailableEnd:LessThanOrEqual' => $endDate
+                )
+            );
+        }
+
+        if($bedrooms = $request->getVar('Bedrooms')) {
+            $properties = $properties->filter(array(
+                'Bedrooms:GreaterThanOrEqual' => $bedrooms
+            ));
+        }
+
+        if($bathrooms = $request->getVar('Bathrooms')) {
+            $properties = $properties->filter(array(
+                'Bathrooms:GreaterThanOrEqual' => $bathrooms
+            ));
+        }
+
+        if($minPrice = $request->getVar('MinPrice')) {
+            $properties = $properties->filter(array(
+                'PricePerNight:GreaterThanOrEqual' => $minPrice
+            ));
+        }
+
+        if($maxPrice = $request->getVar('MaxPrice')) {
+            $properties = $properties->filter(array(
+                'PricePerNight:LessThanOrEqual' => $maxPrice
+            ));
         }
 
         return array(
@@ -66,7 +104,8 @@ class PropertySearchPage_Controller extends Page_Controller{
 
         $form->setFormMethod('GET')
              ->setFormAction($this->Link())
-             ->disableSecurityToken();
+             ->disableSecurityToken()
+             ->loadDataFrom($this->request->getVars());
 
         return $form;
     }

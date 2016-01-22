@@ -35,75 +35,32 @@
                 <!-- BEGIN PROPERTY LISTING -->
                 <div id="property-listing" class="list-style clearfix"> <!-- Inject "grid-style1" for grid view-->
                     <div class="row">
+                        <% loop $Results %>
                         <div class="item col-md-4"><!-- Set width to 4 columns for grid view mode only -->
                             <div class="image">
-                                <a href="properties-detail.html">
+                                <a href="$Link">
                                     <span class="btn btn-default"><i class="fa fa-file-o"></i> Details</span>
                                 </a>
-                                <img src="http://placehold.it/760x670" alt="" />
+                                $PrimaryPhoto.CroppedImage(760,670)
                             </div>
                             <div class="price">
-                                <span>$250</span><p>per night<p>
+                                <span>$PricePerNight.Nice</span><p>per night<p>
+                                <small>Available $AvailableStart.Nice - $AvailableEnd.Nice</small>
                             </div>
                             <div class="info">
                                 <h3>
-                                    <a href="#">Luxury Apartment with great views</a>
-                                    <small>Upper East Side, New York</small>
+                                    <a href="$Link">$Title</a>
+                                    <small>$Region.Title</small>
                                 </h3>
-                                <p>Sed rutrum urna id tellus euismod gravida. Praesent placerat, mauris ac pellentesque fringilla, tortor libero condimen.</p>
+                                <p>$Description.LimitSentences(3)</p>
 
                                 <ul class="amenities">
-                                    <li><i class="icon-bedrooms"></i> 4</li>
-                                    <li><i class="icon-bathrooms"></i> 3</li>
+                                    <li><i class="icon-bedrooms"></i> $Bedrooms</li>
+                                    <li><i class="icon-bathrooms"></i> Bathrooms</li>
                                 </ul>
                             </div>
                         </div>
-                        <div class="item col-md-4"><!-- Set width to 4 columns for grid view mode only -->
-                            <div class="image">
-                                <a href="properties-detail.html">
-                                    <span class="btn btn-default"><i class="fa fa-file-o"></i> Details</span>
-                                </a>
-                                <img src="http://placehold.it/760x670" alt="" />
-                            </div>
-                            <div class="price">
-                                <span>$250</span><p>per night<p>
-                            </div>
-                            <div class="info">
-                                <h3>
-                                    <a href="#">Luxury Apartment with great views</a>
-                                    <small>Upper East Side, New York</small>
-                                </h3>
-                                <p>Sed rutrum urna id tellus euismod gravida. Praesent placerat, mauris ac pellentesque fringilla, tortor libero condimen.</p>
-
-                                <ul class="amenities">
-                                    <li><i class="icon-bedrooms"></i> 4</li>
-                                    <li><i class="icon-bathrooms"></i> 3</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="item col-md-4"><!-- Set width to 4 columns for grid view mode only -->
-                            <div class="image">
-                                <a href="properties-detail.html">
-                                    <span class="btn btn-default"><i class="fa fa-file-o"></i> Details</span>
-                                </a>
-                                <img src="http://placehold.it/760x670" alt="" />
-                            </div>
-                            <div class="price">
-                                <span>$250</span><p>per night<p>
-                            </div>
-                            <div class="info">
-                                <h3>
-                                    <a href="#">Luxury Apartment with great views</a>
-                                    <small>Upper East Side, New York</small>
-                                </h3>
-                                <p>Sed rutrum urna id tellus euismod gravida. Praesent placerat, mauris ac pellentesque fringilla, tortor libero condimen.</p>
-
-                                <ul class="amenities">
-                                    <li><i class="icon-bedrooms"></i> 4</li>
-                                    <li><i class="icon-bathrooms"></i> 3</li>
-                                </ul>
-                            </div>
-                        </div>
+                        <% end_loop %>
 
                     </div>
                 </div>
