@@ -2,3 +2,5 @@ silverstripe-cache/
 mysite/_config.php
 node_modules/
 assets/
+.idea/
+themes/one-ring/bower_components/
