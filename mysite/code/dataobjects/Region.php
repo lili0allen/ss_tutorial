@@ -18,6 +18,10 @@ class Region extends DataObject {
         'RegionsPage' => 'RegionsPage'
     );
 
+    private static $has_many = array(
+        'Articles' => 'ArticlePage'
+    );
+
     public function getCMSFields() {
         $fields = FieldList::create(
             TextField::create('Title'),

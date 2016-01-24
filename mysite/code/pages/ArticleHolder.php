@@ -24,6 +24,13 @@ class ArticleHolder extends Page {
         return $fields;
     }
 
+    public function Regions(){
+        $page = RegionsPage::get()->first();
+        if($page){
+            return $page->Regions();
+        }
+    }
+
 }
 
 class ArticleHolder_Controller extends Page_Controller {

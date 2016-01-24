@@ -8,8 +8,13 @@ class PropertySearchPage_Controller extends Page_Controller{
 
     public function index(SS_HTTPRequest $request){
         $properties = Property::get();
+        $filters = ArrayList::create();
 
         if($search = $request->getVar('Keywords')){
+            $filters->push(ArrayData::create(array(
+                'Label' => "Keywords: ‘$search'",
+                'RemoveLink' => HTTP::setGetVar('Keywords', null)
+            )));
             $properties = $properties->filter(
                 array(
                     'Title:PartialMatch' => $search
@@ -31,24 +36,40 @@ class PropertySearchPage_Controller extends Page_Controller{
         }
 
         if($bedrooms = $request->getVar('Bedrooms')) {
+            $filters->push(ArrayData::create(array(
+                'Label' => "$bedrooms bedrooms",
+                'RemoveLink' => HTTP::setGetVar('Bedrooms', null)
+            )));
             $properties = $properties->filter(array(
                 'Bedrooms:GreaterThanOrEqual' => $bedrooms
             ));
         }
 
         if($bathrooms = $request->getVar('Bathrooms')) {
+            $filters->push(ArrayData::create(array(
+                'Label' => "$bathrooms bathrooms",
+                'RemoveLink' => HTTP::setGetVar('Bathrooms', null)
+            )));
             $properties = $properties->filter(array(
                 'Bathrooms:GreaterThanOrEqual' => $bathrooms
             ));
         }
 
         if($minPrice = $request->getVar('MinPrice')) {
+            $filters->push(ArrayData::create(array(
+                'Label' => "Min. \$$minPrice",
+                'RemoveLink' => HTTP::setGetVar('MinPrice', null)
+            )));
             $properties = $properties->filter(array(
                 'PricePerNight:GreaterThanOrEqual' => $minPrice
             ));
         }
 
         if($maxPrice = $request->getVar('MaxPrice')) {
+            $filters->push(ArrayData::create(array(
+                'Label' => "Max. \$$maxPrice",
+                'RemoveLink' => HTTP::setGetVar('MaxPrice', null)
+            )));
             $properties = $properties->filter(array(
                 'PricePerNight:LessThanOrEqual' => $maxPrice
             ));
@@ -61,7 +82,8 @@ class PropertySearchPage_Controller extends Page_Controller{
          ->setPaginationGetVar('s');
 
         $data = array(
-            'Results' => $paginatedProperties
+            'Results' => $paginatedProperties,
+            'ActiveFilters' => $filters
         );
 
         if($request->isAjax()){
