@@ -12,7 +12,7 @@
 
     <div id="blog-listing" class="list-style clearfix">
         <div class="row">
-            <% loop $Children %>
+            <% loop $PaginatedArticles %>
             <div class="item col-md-6">
                 <div class="image">
                     <a href="$Link">
@@ -69,13 +69,9 @@
 
     <h2 class="section-title">Categories</h2>
     <ul class="categories">
-        <li><a href="#">Business <span>(2)</span></a></li>
-        <li><a href="#">Commercial <span>(1)</span></a></li>
-        <li><a href="#">Land <span>(3)</span></a></li>
-        <li><a href="#">Loans <span>(2)</span></a></li>
-        <li><a href="#">News and Updates <span>(6)</span></a></li>
-        <li><a href="#">Properties for Sale <span>(1)</span></a></li>
-        <li><a href="#">Real Estate <span>(1)</span></a></li>
+        <% loop $Categories %>
+            <li><a href="$Link">$Title <span>($Articles.count)</span></a></li>
+        <% end_loop %>
     </ul>
 
     <!-- BEGIN ARCHIVES ACCORDION -->

@@ -55,4 +55,11 @@ class Region extends DataObject {
     public function LinkingMode(){
         return Controller::curr()->getRequest()->param('ID') == $this->ID ? 'current' : 'link';
     }
+
+    public function ArticlesLink(){
+        $page = ArticleHolder::get()->first();
+        if($page){
+            return $page->Link('region/'.$this->ID);
+        }
+    }
 } 

@@ -26,4 +26,10 @@ class ArticleCategory extends DataObject {
         );
     }
 
+    public function Link(){
+        return $this->ArticleHolder()->Link(
+            'category/'.$this->ID
+        );
+    }
+
 } 

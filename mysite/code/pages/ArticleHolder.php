@@ -35,4 +35,25 @@ class ArticleHolder extends Page {
 
 class ArticleHolder_Controller extends Page_Controller {
 
+    private static $allowed_actions = array(
+        'category',
+        'region',
+        'date'
+    );
+
+    protected $articleList;
+
+    public function init(){
+        parent::init();
+        $this->articleList = ArticlePage::get()->filter(array(
+            'ParentID' => $this->ID
+        ))->sort('Date DESC');
+    }
+
+    public function PaginatedArticles($num = 10){
+        return paginatedList::create(
+            $this->articleList,
+            $this->getRequest()
+        )->setPageLength($num);
+    }
 }
