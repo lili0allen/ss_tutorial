@@ -31,35 +31,31 @@ class ArticleHolder extends Page {
         }
     }
 
-    public function ArchiveDates(){
+    public function ArchiveDates() {
         $list = ArrayList::create();
         $stage = Versioned::current_stage();
-
-        $query = new SQLQuery(array());
+        $query = new SQLQuery(array ());
         $query->selectField("DATE_FORMAT(`Date`,'%Y_%M_%m')","DateString")
             ->setFrom("ArticlePage_{$stage}")
-            ->setOrderBy("Date", "ASC")
+            ->setOrderBy("DateString", "ASC")
             ->setDistinct(true);
-
         $result = $query->execute();
 
         if($result) {
             while($record = $result->nextRecord()) {
                 list($year, $monthName, $monthNumber) = explode('_', $record['DateString']);
-
                 $list->push(ArrayData::create(array(
                     'Year' => $year,
                     'MonthName' => $monthName,
                     'MonthNumber' => $monthNumber,
                     'Link' => $this->Link("date/$year/$monthNumber"),
                     'ArticleCount' => ArticlePage::get()->where("
-                            DATE_FORMAT(`Date`,'%Y_%m') = '{$year}{$monthNumber}'
-                            AND ParentID = {$this->ID}
-                        ")->count()
+							DATE_FORMAT(`Date`,'%Y%m') = '{$year}{$monthNumber}'
+							AND ParentID = {$this->ID}
+						")->count()
                 )));
             }
         }
-
         return $list;
     }
 
@@ -115,5 +111,18 @@ class ArticleHolder_Controller extends Page_Controller {
         ));
 
         return array('SelectedRegion' => $region);
+    }
+
+    public function date(SS_HTTPRequest $r){
+        $year = $r->param('ID');
+        $month = $r->param('OtherID');
+
+        if(!$year) return $this->httpError(404);
+
+        $startDate = $month ? "{$year}-{$month}-01" : "{$year}-01-01";
+
+        if(strtotime($startDate) === false){
+            return $this->httpError(404, 'Invalid date');
+        }
     }
 }
