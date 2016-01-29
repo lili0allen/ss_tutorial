@@ -124,5 +124,20 @@ class ArticleHolder_Controller extends Page_Controller {
         if(strtotime($startDate) === false){
             return $this->httpError(404, 'Invalid date');
         }
+
+        $adder = $month ? '+1 month' : '+1 year';
+        $endDate = date('Y-m-d', strtotime(
+                        $adder,
+                        strtotime($startDate)
+                    ));
+        $this->articleList = $this->articleList->filter(array(
+            'Date:GreaterThanOrEqual' => $startDate,
+            'Date:LessThan' =>$endDate
+        ));
+
+        return array(
+            'StartDate' => DBField::create_field('SS_DateTime', $startDate),
+            'EndDate' => DBField::create_field('SS_DateTime', $endDate)
+        );
     }
 }

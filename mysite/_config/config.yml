@@ -14,3 +14,10 @@ SiteConfig:
     - SiteConfigExtension
 Director:
   environment_type: 'dev'
+
+---
+Only:
+  environment: dev
+---
+Email:
+  send_all_emails_to: 'allen@easymode.com.au'

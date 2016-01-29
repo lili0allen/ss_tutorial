@@ -16,6 +16,8 @@
                 <h3>Region: $SelectedRegion.Title</h3>
             <% else_if $SelectedCategory %>
                 <h3>Category: $SelectedCategory.Title</h3>
+            <% else_if $StartDate %>
+                <h3>Showing $StartDate.Full to $EndDate.Full</h3>
             <% end_if %>
             <% loop $PaginatedArticles %>
             <div class="item col-md-6">
