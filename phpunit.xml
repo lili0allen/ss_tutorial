@@ -1,0 +1,7 @@
+<phpunit bootstrap="framework/tests/bootstrap.php">
+    <testsuites>
+        <testsuite name="money">
+            <file>tests/mysite/code/dataobjects/ArticleCommentTest.php</file>
+        </testsuite>
+    </testsuites>
+</phpunit>
