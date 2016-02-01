@@ -9,4 +9,4 @@ env:
   - DB=MYSQL CORE_RELEASE=3.0
 
 script: 
-  - phpunit mysite/tests/
+  - phpunit tests/
