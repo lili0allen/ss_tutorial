@@ -1,7 +1,7 @@
 <phpunit bootstrap="framework/tests/bootstrap.php">
     <testsuites>
         <testsuite name="articlecomment">
-            <file>tests/mysite/code/dataobjects/ArticleCommentTest.php</file>
+            <file>mysite/tests/dataobjects/ArticleCommentTest.php</file>
         </testsuite>
     </testsuites>
 </phpunit>
