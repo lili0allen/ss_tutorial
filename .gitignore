@@ -3,6 +3,8 @@ mysite/_config.php
 node_modules/
 assets/
 .idea/
+vendor/
 themes/one-ring/bower_components/
 silverstripe-errors.log
 silverstripe-errors-warnings.log
+blog-featured-posts/
