@@ -13,13 +13,5 @@
 	"config": {
 		"process-timeout": 600
 	},
-	"minimum-stability": "dev",
-    "scripts": {
-        "post-install-cmd": [
-            "bower install"
-        ],
-        "post-update-cmd": [
-            "bower install"
-        ]
-    }
+	"minimum-stability": "dev"
 }
