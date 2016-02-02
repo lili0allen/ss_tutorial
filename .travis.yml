@@ -1,9 +1,10 @@
 language: php
 php:
   - 5.3
-services:
-  - mysql
+env:
+  - DB=mysql
 before_script:
+  - if [[ "$DB" == "mysql" ]]; then mysql -e "create database IF NOT EXISTS ss_official;" -uroot; fi
   - composer update
   - cd tests
 script: phpunit -v
