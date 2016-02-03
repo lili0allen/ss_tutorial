@@ -49,6 +49,7 @@
             <div class="col-sm-12">
                 <form>
                     <div class="form-group">
+                        $PropertySearchForm
                         <div class="form-control-small">
                             <div class='input-group date chzn-container' data-datepicker>
                                 <input placeholder="Arrive on..." type='text' class="form-control" data-date-format="DD/MM/YYYY"/>
