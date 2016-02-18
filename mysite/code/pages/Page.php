@@ -52,16 +52,19 @@ class Page_Controller extends ContentController {
 
         define('FACEBOOK_APP_ID', '573892112706802');
         define('FACEBOOK_APP_SECRET','2bc5663fa9c0f4dc6d0bf6ee23a41844');
-        define('FACEBOOK_TOKEN','CAAIJ86uEbPIBAEPqD4gwzj0zoLVCkDkBUh9cgoY5jrXBjpIE9t0Ypyto1Sr7bYUbp31N2yZAhqGssj7T6dJlDNuABn0DGZCEk0AizqJVtcWBe6Tkj4XAfkLZAuUObRpHtIHsEagbBNJOVFdZC0J2hMY1HzWk3b95he1OZA4eCcbkul6oEoU7hFzNF8vsChKZAHtHRVGCiZBKuZCGuiEeXST4');
+        define('FACEBOOK_TOKEN','CAAIJ86uEbPIBAE4ZBEFJe2bZCqLlZCAE3KlBpefZCadBmpFnKyjIIcjJxEeqX0ilToo3RXEDoOBXaPJOLqoKQ1VWO3dR6chYleU9WHKTgkckV5gVG6YMGTtaSWGMgtZCbJZAmHLUaP5s7PTCJiDsuRBXTqowFzp6fXQKL3lnPxCNPeGRhL3dAGE4j9TYuZAOR3qxgtJC39VCwZDZD');
         $fb = new Facebook(array(
-            'appId' => '573892112706802',
-            'secret' => '2bc5663fa9c0f4dc6d0bf6ee23a41844',
+            'appId' => FACEBOOK_APP_ID,
+            'secret' => FACEBOOK_APP_SECRET,
             ));
-        $fb->setAccessToken('CAAIJ86uEbPIBAE4ZBEFJe2bZCqLlZCAE3KlBpefZCadBmpFnKyjIIcjJxEeqX0ilToo3RXEDoOBXaPJOLqoKQ1VWO3dR6chYleU9WHKTgkckV5gVG6YMGTtaSWGMgtZCbJZAmHLUaP5s7PTCJiDsuRBXTqowFzp6fXQKL3lnPxCNPeGRhL3dAGE4j9TYuZAOR3qxgtJC39VCwZDZD');
 
         try {
-            // Returns a `Facebook\FacebookResponse` object
-            $response = $fb->api('/me'); return $response;
+            $response = $fb->api(
+                '/me/feed?limit=6&fields=full_picture,message,message_tags,link,status_type,type,created_time',
+                array('method'=>'GET',
+                    'access_token'=>FACEBOOK_TOKEN)
+
+            ); var_dump($response);
         } catch(FacebookApiException $e) {
             //echo 'Graph returned an error: ' . $e->getMessage();
             return false;

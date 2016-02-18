@@ -64,11 +64,14 @@
                                 <div class="form-control-small">
                                     $FieldByName('Keywords')
                                 </div>
-
-                                $FieldByName('doPropertySearch')
-
                             <% end_with %>
-
+                            <% if $Actions %>
+                                <% loop $Actions %>
+                                <div class="form-control-small">
+                                $Field.removeExtraClass('btn-lg')
+                                </div>
+                                <% end_loop %>
+                            <% end_if %>
                             </form>
                         <% end_with %>
 
