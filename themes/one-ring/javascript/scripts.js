@@ -23,6 +23,17 @@ $(function () {
         });
     }
 
+    $.ajax({
+        url: $(location).attr('href')+"getsocialfeeds",
+        dataType: "json",
+        success: function(data) {
+            console.log('success');
+        },
+        error: function(x,e){
+            console.log('error');
+            console.log(x);
+        }
+    });
 
 
     var $tis = this,
