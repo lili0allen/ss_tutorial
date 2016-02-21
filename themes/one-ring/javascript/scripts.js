@@ -23,17 +23,66 @@ $(function () {
         });
     }
 
-    $.ajax({
-        url: $(location).attr('href')+"getsocialfeeds",
-        dataType: "json",
-        success: function(data) {
-            console.log('success');
-        },
-        error: function(x,e){
-            console.log('error');
-            console.log(x);
-        }
-    });
+    //$.ajax({
+    //    url: $(location).attr('href')+"getsocialfeeds",
+    //    dataType: "json",
+    //    success: function(data) {
+    //        console.log('success');
+    //    },
+    //    error: function(x,e){
+    //        console.log('error');
+    //        console.log(x);
+    //    }
+    //});
+
+    if($('#hotTopics').length > 0){
+        $('#hotTopics .loading').show();
+        $.ajax({
+            url: $(location).attr('href')+"get_feed",
+            dataType: "json",
+            success: function(data) {alert(data.length);
+                for(var i = 0; i < data.length; i++){
+                    var type = data[i].type;
+                    var type_char = (type == "Twitter")? "@":"/";
+                    var picture = data[i].picture;
+                    var message = data[i].title;
+                    var link = data[i].link;
+                    var social_top = '<div class="social-type"><i class="fa fa-'+type.toLowerCase()+'"></i> '+type_char+' Thermann</div>';
+                    var social_bottom = '';
+                    var background = '';
+                    var image = '';
+                    var social_button = '';
+                    if(type == "Facebook"){
+                        social_bottom = social_top;
+                        social_top = '';
+                        background = 'style="background-image: url('+picture+')"';
+                        social_button = '<span class="btn">View post</span>';
+                    }else{
+                        image = '<img src="'+picture+'" alt="Thermann"/>';
+                    }
+                    $('.social-feed').append(
+                        '<div class="item '+type.toLowerCase()+'">'
+                        +'<a href="'+link+'" target="_blank">'
+                        + social_top
+                        +'<div class="image" '+background+'>'+image+'</div>'
+                        +'<div class="text-wrap">'
+                        + social_bottom
+                        +'<div class="text">'+message+'</div>'
+                        +social_button
+                        +'</div></div></a>'
+                    );
+                    if(i == 5){
+                        break;
+                    }
+                }
+                $('#hotTopics .loading').slideUp(500,function(){ $(this).remove();});
+            },
+            error: function(x,e){
+                console.log('error');
+                console.log(x);
+            }
+        });
+    }
 
 
     var $tis = this,

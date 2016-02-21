@@ -8,7 +8,8 @@
 		"silverstripe-themes/simple": "*"
 	},
 	"require-dev": {
-		"phpunit/PHPUnit": "~3.7@stable"
+		"phpunit/PHPUnit": "~3.7@stable",
+	  	"abraham/twitteroauth": "0.2.1"
 	},
 	"config": {
 		"process-timeout": 600

@@ -26,7 +26,7 @@ class Page_Controller extends ContentController {
 	 * @var array
 	 */
 	private static $allowed_actions = array (
-        'getsocialfeeds'
+        'get_feed'
 	);
 
 	public function init() {
@@ -48,7 +48,7 @@ class Page_Controller extends ContentController {
         Requirements::javascript($this->ThemeDir()."/javascript/scripts.js");
 	}
 
-    public function getsocialfeeds(){
+    public function get_facebook_feed($results = array()){
 
         define('FACEBOOK_APP_ID', '573892112706802');
         define('FACEBOOK_APP_SECRET','2bc5663fa9c0f4dc6d0bf6ee23a41844');
@@ -64,7 +64,7 @@ class Page_Controller extends ContentController {
                 array('method'=>'GET',
                     'access_token'=>FACEBOOK_TOKEN)
 
-            ); var_dump($response);
+            );// var_dump($response);
         } catch(FacebookApiException $e) {
             //echo 'Graph returned an error: ' . $e->getMessage();
             return false;
@@ -72,7 +72,7 @@ class Page_Controller extends ContentController {
         }
 
 
-        $data = json_decode($response->getBody());
+        $data = json_decode(json_encode($response));
         $n=0;
         foreach($data->data as $key => $post):
             if(isset($post->created_time) && isset($post->full_picture)){
@@ -96,5 +96,128 @@ class Page_Controller extends ContentController {
         endforeach;
         return $results;
     }
+
+    // Function to authenticate app with Twitter.
+    function getConnectionWithAccessToken($cons_key, $cons_secret, $oauth_token, $oauth_token_secret) {
+        $connection = new \Abraham\TwitterOAuth\TwitterOAuth($cons_key, $cons_secret, $oauth_token, $oauth_token_secret);
+        return $connection;
+    }
+
+    // Function to display the latest tweets.
+    function display_latest_tweets(
+
+        // Function parameters.
+        $results = array(),
+        $twitter_user_id,
+        $cache_file          = '../tweets.txt',  // Change this to the path of your cache file. (Default : ./tweets.txt)
+        $tweets_to_display   = 5,               // Number of tweets you would like to display. (Default : 5)
+        $ignore_replies      = false,           // Ignore replies from the timeline. (Default : false)
+        $include_rts         = false,           // Include retweets. (Default : false)
+        $twitter_wrap_open   = '<ul class="home-tweets-ul">',
+        $twitter_wrap_close  = '</ul>',
+        $tweet_wrap_open     = '<li><p class="home-tweet-tweet">',
+        $meta_wrap_open      = '<br/><span class="home-tweet-date">',
+        $meta_wrap_close     = '</span>',
+        $tweet_wrap_close    = '</p></li>',
+        $date_format         = 'g:i A M jS',    // Date formatting. (http://php.net/manual/en/function.date.php)
+        $twitter_style_dates = true){           // Twitter style days. [about an hour ago] (Default : true)
+
+        define('TWITTER_CONSUMER_KEY','UGXijS8viaZUlOttIDD2S8HYS');
+        define('TWITTER_CONSUMER_SECRET','LJylRbqPXep1RYKPX5oB9GLxocVfHLG1QZB6rKRT9yHg38xOB2');
+        define('TWITTER_ACCESS_TOKEN','46998444-0C51rj4HPJQIygVaitL19nBIqYXYwd2WbMujh8QRw');
+        define('TWITTER_ACCESS_TOKEN_SECRET','PR2Xil5T94tDOfHmQb0MbosvAXK5yBYKbDQ1LoISpNKjS');
+
+        // Twitter keys (You'll need to visit https://dev.twitter.com and register to get these.
+        $consumerkey         = TWITTER_CONSUMER_KEY;
+        $consumersecret      = TWITTER_CONSUMER_SECRET;
+        $accesstoken         = TWITTER_ACCESS_TOKEN;
+        $accesstokensecret   = TWITTER_ACCESS_TOKEN_SECRET;
+
+
+        // Cache file not found, or old. Authenticae app.
+        $connection = $this->getConnectionWithAccessToken($consumerkey, $consumersecret, $accesstoken, $accesstokensecret);
+
+        if($connection){
+            // Get the latest tweets from Twitter
+            $get_tweets = $connection->get("https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=".$twitter_user_id."&count=".$tweets_to_display."&include_rts=".$include_rts."&exclude_replies=".$ignore_replies);
+var_dump($get_tweets);
+            // Error check: Make sure there is at least one item.
+            if (count($get_tweets)) {
+
+                //echo $json;
+                $data = $get_tweets;
+                foreach($data as $key => $post):
+                    $date = strtotime($post->created_at);
+                    $hashtags = array();
+                    $mentions = array();
+                    $text = $post->text;
+                    if(isset($post->entities->hashtags)){
+                        foreach($post->entities->hashtags as $hashtag){
+                            $hashtags[] = $hashtag->text;
+                            $text = str_replace('#'.$hashtag->text, "<span class=\"hashtag\">#".$hashtag->text."</span>", $text);
+                        }
+                    }
+                    if(isset($post->entities->user_mentions)){
+                        foreach($post->entities->user_mentions as $user){
+                            $mentions[] = $user->screen_name;
+                            $text = str_replace('@'.$user->screen_name, "<span class=\"mention\">@".$user->screen_name."</span>", $text);
+                        }
+                    }
+
+
+                    $results[$date][] = array(
+                        'type' => "Twitter",
+                        'title' => $text,
+                        'tags' => $hashtags,
+                        'mentions' => $mentions,
+                        'picture' => str_replace("normal.","400x400.",$post->user->profile_image_url),
+                        'link' => 'http://twitter.com/'.$post->user->screen_name
+                    );
+                endforeach; var_dump($results);
+                return $results;
+            }
+
+        }
+
+    }
+
+    public function get_feed(){
+        // Seconds to cache feed (Default : 3 minutes).
+        $cache_file='../tweets.txt';
+        $cachetime           = 60*3;
+        // Time that the cache was last updtaed.
+        $cache_file_created  = ((file_exists($cache_file))) ? filemtime($cache_file) : 0;
+        //$cache_file_created  = false;
+
+        // A flag so we know if the feed was successfully parsed.
+        $tweet_found         = false;
+
+        // Show cached version of tweets, if it's less than $cachetime.
+        if (time() - $cachetime < $cache_file_created) {
+            $tweet_found = true;
+            // Display tweets from the cache.
+            $file = file_get_contents($cache_file);
+            echo $file;
+        }else{
+            $results = array();
+            $results = $this->get_facebook_feed();
+            $results = $this->display_latest_tweets($results, 'thermann_hwu');
+            krsort($results);
+            $final_results = array();
+            foreach($results as $result){
+                foreach($result as $data){
+                    $final_results[] = $data;
+                }
+            }
+            $results = json_encode($final_results);
+            // Generate a new cache file.
+//            $file = fopen('../tweets.txt', 'w');
+//            // Save the contents of output buffer to the file, and flush the buffer.
+//            fwrite($file, $results);
+//            fclose($file);
+            echo $results;
+        }
+    }
+
 
 }
