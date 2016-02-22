@@ -46,6 +46,7 @@ class Page_Controller extends ContentController {
         Requirements::javascript($this->ThemeDir()."/javascript/common/nice-scroll.js");
         Requirements::javascript($this->ThemeDir()."/javascript/common/jquery-browser.js");
         Requirements::javascript($this->ThemeDir()."/javascript/scripts.js");
+        Requirements::javascript("http://reece.trout.com.au/thermann/thermann.com.au/js/socialfeed.min.js");
 	}
 
     public function get_facebook_feed($results = array()){
@@ -139,8 +140,10 @@ class Page_Controller extends ContentController {
 
         if($connection){
             // Get the latest tweets from Twitter
-            $get_tweets = $connection->get("https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=".$twitter_user_id."&count=".$tweets_to_display."&include_rts=".$include_rts."&exclude_replies=".$ignore_replies);
-var_dump($get_tweets);
+            //get_tweets = $connection->get("https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=".$twitter_user_id."&count=".$tweets_to_display."&include_rts=".$include_rts."&exclude_replies=".$ignore_replies);
+            $get_tweets = $connection->get("statuses/user_timeline",array("screen_name"=>$twitter_user_id,
+                "count"=>$tweets_to_display,"include_rts"=>$include_rts,"exclude_replies"=>$ignore_replies));
+
             // Error check: Make sure there is at least one item.
             if (count($get_tweets)) {
 
@@ -173,7 +176,7 @@ var_dump($get_tweets);
                         'picture' => str_replace("normal.","400x400.",$post->user->profile_image_url),
                         'link' => 'http://twitter.com/'.$post->user->screen_name
                     );
-                endforeach; var_dump($results);
+                endforeach;
                 return $results;
             }
 
@@ -211,10 +214,10 @@ var_dump($get_tweets);
             }
             $results = json_encode($final_results);
             // Generate a new cache file.
-//            $file = fopen('../tweets.txt', 'w');
-//            // Save the contents of output buffer to the file, and flush the buffer.
-//            fwrite($file, $results);
-//            fclose($file);
+            $file = fopen($cache_file, 'w');
+            // Save the contents of output buffer to the file, and flush the buffer.
+            fwrite($file, $results);
+            fclose($file);
             echo $results;
         }
     }
