@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "27bbcdb17f931c76da6b3c264b44b6b7",
-    "content-hash": "c07a765d610e8a8bb8cceee9584767ba",
+    "hash": "ad53fcd285ab4fd23e1a66285f89013a",
+    "content-hash": "461656e826c3e7d0b344b98e01d73087",
     "packages": [
         {
             "name": "composer/installers",
@@ -111,12 +111,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/silverstripe-themes/silverstripe-simple.git",
-                "reference": "98c08b5905ce3987ca0d9add479d0c8bcb44801d"
+                "reference": "c8f07c500f2fd55ad00d9b743b53ace392eab3bf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/silverstripe-themes/silverstripe-simple/zipball/98c08b5905ce3987ca0d9add479d0c8bcb44801d",
-                "reference": "98c08b5905ce3987ca0d9add479d0c8bcb44801d",
+                "url": "https://api.github.com/repos/silverstripe-themes/silverstripe-simple/zipball/c8f07c500f2fd55ad00d9b743b53ace392eab3bf",
+                "reference": "c8f07c500f2fd55ad00d9b743b53ace392eab3bf",
                 "shasum": ""
             },
             "require": {
@@ -139,7 +139,7 @@
                 "silverstripe",
                 "theme"
             ],
-            "time": "2015-12-17 00:28:44"
+            "time": "2016-02-16 22:42:40"
         },
         {
             "name": "silverstripe/cms",
@@ -239,6 +239,54 @@
         }
     ],
     "packages-dev": [
+        {
+            "name": "abraham/twitteroauth",
+            "version": "0.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/abraham/twitteroauth.git",
+                "reference": "adf6a8ee92b0bac69cae7dded9743d5a7de0057e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/abraham/twitteroauth/zipball/adf6a8ee92b0bac69cae7dded9743d5a7de0057e",
+                "reference": "adf6a8ee92b0bac69cae7dded9743d5a7de0057e",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.2.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Abraham\\TwitterOAuth\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Abraham Williams",
+                    "email": "abraham@abrah.am",
+                    "homepage": "https://abrah.am",
+                    "role": "Developer"
+                }
+            ],
+            "description": "The first PHP Library to support OAuth 1.0A for Twitter's REST API.",
+            "homepage": "https://github.com/abraham/twitteroauth",
+            "keywords": [
+                "api",
+                "oauth",
+                "twitter"
+            ],
+            "time": "2014-11-18 00:05:59"
+        },
         {
             "name": "phpunit/php-code-coverage",
             "version": "1.2.x-dev",
@@ -615,12 +663,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "33fd1b2cfdde601704665fad343014bba04b0753"
+                "reference": "a254665f949aafe04239c80b147cb3de75b5c5c2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/33fd1b2cfdde601704665fad343014bba04b0753",
-                "reference": "33fd1b2cfdde601704665fad343014bba04b0753",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/a254665f949aafe04239c80b147cb3de75b5c5c2",
+                "reference": "a254665f949aafe04239c80b147cb3de75b5c5c2",
                 "shasum": ""
             },
             "require": {
@@ -656,7 +704,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2016-02-02 09:49:18"
+            "time": "2016-02-18 08:58:48"
         }
     ],
     "aliases": [],
