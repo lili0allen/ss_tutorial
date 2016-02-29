@@ -2,8 +2,8 @@ language: php
 php:
   - 5.3
 env:
-  - DB=mysql
   global:
+    - DB=mysql
     - "FTP_USER=ss@easymode.com.au"
     - "FTP_PASSWORD=871210"
 after_success:
