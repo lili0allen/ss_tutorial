@@ -2,6 +2,8 @@ silverstripe-cache/
 assets/
 cms/
 framework/
+reports/
+siteconfig/
 node_modules/
 .idea/
 vendor/
