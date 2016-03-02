@@ -1,4 +1,5 @@
 #!/bin/bash
+echo "deploy works"
 gitLastCommit=$(git show --summary --grep="Merge pull request")
 if [[ -z "$gitLastCommit" ]]
 then
