@@ -7,6 +7,7 @@ env:
     - "FTP_USER=ss@ss.easymode.com.au"
     - "FTP_PASS=871210"
 after_success:
+    - cd ~
     - chmod +x deploy.sh
     - sh deploy.sh
 before_script:
