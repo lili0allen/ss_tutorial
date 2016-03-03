@@ -1,4 +1,5 @@
 <!-- BEGIN HOME SLIDER SECTION -->
+<% if $Slides %>
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
     <!-- Indicators
     <ol class="carousel-indicators">
@@ -8,20 +9,15 @@
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
-        <div class="item active"id="slide1" style="background: url(http://placehold.it/1920x605) no-repeat left center; background-size: cover;"> <!-- Ready for JS Injection -->
+        <% loop $Slides %>
+        <div class="item <% if $First %>active<% end_if %>" id="slide{$Pos}" style="background: url('{$Image.AbsoluteURL}') no-repeat left center; background-size: cover;"> <!-- Ready for JS Injection -->
             <div class="carousel-caption">
-                <div class="caption sfr slider-title">Breathtaking views</div>
-                <div class="caption sfl slider-subtitle">Relaxation in the Bay of Belfalas</div>
-                <a href="#" class="caption sfb btn btn-default btn-lg">Learn More</a>
+                <div class="caption sfr slider-title">$Title</div>
+                <div class="caption sfl slider-subtitle">$SubTitle</div>
+                <a href="#" class="caption sfb btn btn-default btn-lg">$ButtonContent</a>
             </div>
         </div>
-        <div class="item" id="slide2" style="background: url(http://placehold.it/1920x605) no-repeat left center; background-size: cover;">
-            <div class="carousel-caption">
-                <div class="caption sfr slider-title">The simple life</div>
-                <div class="caption sfl slider-subtitle">Lush gardens in Mordor</div>
-                <a href="#" class="caption sfb btn btn-default btn-lg">Learn More</a>
-            </div>
-        </div>
+        <% end_loop %>
     </div>
     <!-- Blue Filter -->
     <div id="home-search-section"></div>
@@ -36,9 +32,8 @@
         <span class="sr-only">Next</span>
     </a>
 
-
-
 </div>
+<% end_if %>
 <!-- END HOME SLIDER SECTION -->
 
 <!-- BEGIN HOME ADVANCED SEARCH -->
@@ -47,10 +42,9 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
-                <form>
                     <div class="form-group">
                         <% with $PropertySearchForm %>
-                            <form $AttributeHTML >
+                            <form action="/find-a-rental" method="get" >
                             <% with $Fields %>
                                 <div class="form-control-small">
                                     $FieldByName('ArrivalDate').setAttribute('placeholder', 'Arrive on...')
@@ -68,17 +62,13 @@
                             <% if $Actions %>
                                 <% loop $Actions %>
                                 <div class="form-control-small">
-                                $Field.removeExtraClass('btn-lg')
+                                $Field
                                 </div>
                                 <% end_loop %>
                             <% end_if %>
                             </form>
                         <% end_with %>
-
-                        <button type="submit" class="btn btn-fullcolor">Search</button>
                     </div>
-                </form>
-
             </div>
         </div>
     </div>
