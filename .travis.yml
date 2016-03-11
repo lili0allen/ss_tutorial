@@ -5,6 +5,16 @@ php:
 env:
   - DB=MYSQL CORE_RELEASE=3.1
 
+matrix:
+  include:
+    - php: 5.3
+      env: DB=MYSQL CORE_RELEASE=3.1
+      branch: master
+
+branches:
+  only:
+    - master
+
 before_script:
  - phpenv rehash
  - git clone git://github.com/silverstripe-labs/silverstripe-travis-support.git ~/travis-support
