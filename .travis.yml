@@ -3,17 +3,7 @@ php:
   - 5.3
 
 env:
-  - DB=MYSQL CORE_RELEASE=3.1
-
-matrix:
-  include:
-    - php: 5.3
-      env: DB=MYSQL CORE_RELEASE=3.1
-      branch: master
-
-branches:
-  only:
-    - master
+  - DB=MYSQL
 
 before_script:
  - phpenv rehash
