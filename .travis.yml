@@ -13,4 +13,4 @@ before_script:
   - cd ~/builds/ss
 
 script:
-  - phpunit mysite/tests/
+  - phpunit mysite/tests
