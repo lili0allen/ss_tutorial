@@ -13,5 +13,4 @@ before_script:
   - cd ~/builds/ss
 
 script:
-  - ln -s vendor/phpunit/phpunit/composer/bin/phpunit phpunit
-  - phpunit mysite/tests
+  - phpunit mysite/tests/
