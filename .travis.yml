@@ -12,5 +12,4 @@ before_script:
   - cd ~/builds/ss
 
 script:
-  - pwd
   - phpunit -v
