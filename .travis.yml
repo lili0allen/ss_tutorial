@@ -11,5 +11,4 @@ before_script:
   - php ~/travis-support/travis_setup.php --source `pwd` --target ~/builds/ss
   - cd ~/builds/ss
 
-script:
-  - phpunit -v
+script: phpunit --configuration mysite/tests/phpunit.xml
