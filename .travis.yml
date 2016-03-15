@@ -12,5 +12,4 @@ before_script:
   - cd ~/builds/ss
 
 script:
-  - phpunit --configuration phpunit.xml.dist
-  - phpunit mysite/tests
+  - phpunit --configuration phpunit.xml.dist mysite/tests
