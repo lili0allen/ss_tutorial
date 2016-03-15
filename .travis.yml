@@ -12,4 +12,4 @@ before_script:
   - cd ~/builds/ss
 
 script:
-  - phpunit --configuration phpunit.xml.dist mysite/tests
+  - phpunit --configuration phpunit.xml.dist mysite/tests/ArticleCommentTest.php
