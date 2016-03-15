@@ -15,7 +15,7 @@
 <phpunit bootstrap="../framework/tests/bootstrap.php" colors="true">
 
     <testsuite name="Default">
-        <directory>.</directory>
+        <directory>./</directory>
     </testsuite>
 
     <listeners>
