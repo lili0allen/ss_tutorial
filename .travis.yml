@@ -13,4 +13,4 @@ before_script:
 
 script:
   - pwd
-  - phpunit --configuration phpunit.xml.dist mysite/tests/ArticleCommentTest.php
+  - phpunit -v
