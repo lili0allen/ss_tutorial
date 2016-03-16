@@ -11,4 +11,4 @@ before_script:
   - composer update
   - cd mysite/tests
 
-script: phpunit -v
+script: phpunit mysite/tests
