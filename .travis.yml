@@ -3,12 +3,12 @@ php:
   - 5.3
 
 env:
-  - DB=MYSQL CORE_RELEASE=3.3
+  - DB=MYSQL
 
 before_script:
-  - phpenv rehash
-  - git clone git://github.com/silverstripe-labs/silverstripe-travis-support.git ~/travis-support
-  - php ~/travis-support/travis_setup.php --source `pwd` --target ~/builds/ss
-  - cd ~/builds/ss
+  - echo "USE mysql;\nUPDATE user SET password=PASSWORD('password') WHERE user='root';\nFLUSH PRIVILEGES;\n" | mysql -u root
+  - if [[ "$DB" == "mysql" ]]; then mysql -e "create database IF NOT EXISTS ss_official;" -uroot -ppassword; fi
+  - composer update
+  - cd mysite/tests
 
-script: phpunit --configuration mysite/tests/phpunit.xml
+script: phpunit -v
