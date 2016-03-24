@@ -13,9 +13,18 @@
 	- http://doc.silverstripe.org/framework/en/topics/testing/#configuration
 -->
 <phpunit bootstrap="framework/tests/bootstrap.php" colors="true">
+    <testsuites>
+        <testsuite name="Default">
+            <directory>mysite/tests</directory>
+        </testsuite>
+    </testsuites>
 
-    <testsuite name="Default">
-        <directory>mysite/tests</directory>
-    </testsuite>
+    <filter>
+        <blacklist>
+            <directory suffix=".php">framework/dev/</directory>
+            <directory suffix=".php">framework/thirdparty/</directory>
+            <directory suffix=".php">cms/thirdparty/</directory>
+        </blacklist>
+    </filter>
 
 </phpunit>
