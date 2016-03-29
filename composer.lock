@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "df56b11dd312bde1a15c42cfe5a92233",
+    "hash": "21e77361fbe61cfff5039e2fba084eee",
     "packages": [
         {
             "name": "composer/installers",
@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "b3d1f3125a77af66d2bfd934c775150e4c9aecc3"
+                "reference": "6aac6a0a931ad06780fa7c574f27178d48109ec7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/b3d1f3125a77af66d2bfd934c775150e4c9aecc3",
-                "reference": "b3d1f3125a77af66d2bfd934c775150e4c9aecc3",
+                "url": "https://api.github.com/repos/composer/installers/zipball/6aac6a0a931ad06780fa7c574f27178d48109ec7",
+                "reference": "6aac6a0a931ad06780fa7c574f27178d48109ec7",
                 "shasum": ""
             },
             "require": {
@@ -55,12 +55,13 @@
                 }
             ],
             "description": "A multi-framework Composer library installer",
-            "homepage": "http://composer.github.com/installers/",
+            "homepage": "https://composer.github.io/installers/",
             "keywords": [
                 "Craft",
                 "Dolibarr",
                 "Hurad",
                 "MODX Evo",
+                "Mautic",
                 "OXID",
                 "SMF",
                 "Thelia",
@@ -102,7 +103,7 @@
                 "zend",
                 "zikula"
             ],
-            "time": "2016-02-27 14:38:36"
+            "time": "2016-03-23 16:25:33"
         },
         {
             "name": "silverstripe/cms",
@@ -110,12 +111,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/silverstripe/silverstripe-cms.git",
-                "reference": "2734f1a18e87dde25d0c3e1d9ac5d0fea280e704"
+                "reference": "19cc7037c9290586adba1b423ecf1f3b812f9451"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/silverstripe/silverstripe-cms/zipball/2734f1a18e87dde25d0c3e1d9ac5d0fea280e704",
-                "reference": "2734f1a18e87dde25d0c3e1d9ac5d0fea280e704",
+                "url": "https://api.github.com/repos/silverstripe/silverstripe-cms/zipball/19cc7037c9290586adba1b423ecf1f3b812f9451",
+                "reference": "19cc7037c9290586adba1b423ecf1f3b812f9451",
                 "shasum": ""
             },
             "require": {
@@ -156,7 +157,7 @@
                 "cms",
                 "silverstripe"
             ],
-            "time": "2016-02-24 04:35:46"
+            "time": "2016-03-20 07:48:25"
         },
         {
             "name": "silverstripe/framework",
@@ -164,12 +165,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/silverstripe/silverstripe-framework.git",
-                "reference": "7312692a09ad32c7aa349a43d9aad00b0a353d21"
+                "reference": "7ba4b5b6ef2311fe3d74c3f8043744c41ff182da"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/silverstripe/silverstripe-framework/zipball/7312692a09ad32c7aa349a43d9aad00b0a353d21",
-                "reference": "7312692a09ad32c7aa349a43d9aad00b0a353d21",
+                "url": "https://api.github.com/repos/silverstripe/silverstripe-framework/zipball/7ba4b5b6ef2311fe3d74c3f8043744c41ff182da",
+                "reference": "7ba4b5b6ef2311fe3d74c3f8043744c41ff182da",
                 "shasum": ""
             },
             "require": {
@@ -210,7 +211,48 @@
                 "framework",
                 "silverstripe"
             ],
-            "time": "2016-02-29 04:30:20"
+            "time": "2016-03-29 03:15:27"
+        },
+        {
+            "name": "silverstripe/multivaluefield",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/silverstripe-australia/silverstripe-multivaluefield.git",
+                "reference": "571d953cf65c105f6f977f658312fa94cab71ee8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/silverstripe-australia/silverstripe-multivaluefield/zipball/571d953cf65c105f6f977f658312fa94cab71ee8",
+                "reference": "571d953cf65c105f6f977f658312fa94cab71ee8",
+                "shasum": ""
+            },
+            "require": {
+                "silverstripe/framework": "~3.1"
+            },
+            "type": "silverstripe-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.2.x-dev"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Marcus Nyeholt",
+                    "email": "marcus@silverstripe.com.au"
+                }
+            ],
+            "description": "A DB field + form fields for storing multiple values in a single property (serialized).",
+            "keywords": [
+                "dbfield",
+                "formfield",
+                "silverstripe"
+            ],
+            "time": "2016-03-15 01:40:39"
         },
         {
             "name": "silverstripe/reports",
@@ -303,6 +345,44 @@
                 "siteconfig"
             ],
             "time": "2016-02-24 04:42:47"
+        },
+        {
+            "name": "silverstripe/solr",
+            "version": "3.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nyeholt/silverstripe-solr.git",
+                "reference": "4630601b090ced935b609e48d7749f99789f0eec"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nyeholt/silverstripe-solr/zipball/4630601b090ced935b609e48d7749f99789f0eec",
+                "reference": "4630601b090ced935b609e48d7749f99789f0eec",
+                "shasum": ""
+            },
+            "require": {
+                "silverstripe/cms": "~3.1",
+                "silverstripe/framework": "~3.1",
+                "silverstripe/multivaluefield": "dev-master"
+            },
+            "type": "silverstripe-module",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Marcus Nyeholt",
+                    "email": "marcus@silverstirpe.com.au"
+                }
+            ],
+            "description": "Solr integration for SilverStripe. Note that this is NOT related to the silverstripe/fulltext package.",
+            "keywords": [
+                "search",
+                "silverstripe",
+                "solr"
+            ],
+            "time": "2014-05-30 05:36:05"
         }
     ],
     "packages-dev": [

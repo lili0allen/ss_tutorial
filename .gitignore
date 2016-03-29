@@ -4,6 +4,8 @@
 /reports/
 /siteconfig/
 /node_modules/
+/solr/
+/multivaluefield/
 /.idea/
 /vendor/
 /themes/one-ring/bower_components/
