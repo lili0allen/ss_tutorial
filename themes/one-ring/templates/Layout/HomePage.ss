@@ -83,110 +83,77 @@
 
 <!-- BEGIN MAIN CONTENT -->
 <div class="main col-sm-8">
-<h1 class="section-title">Featured Properties</h1>
-
-<div class="grid-style1 clearfix">
-    <% loop $FeaturedProperties %>
-    <div class="item col-md-4">
-        <div class="image">
-            <a href="$Link">
-                <h3>$Title</h3>
-                <span class="location">$Region.Title</span>
-            </a>
-            $PrimaryPhoto.CroppedImage(220,194)
+    <% if $FeaturedProperties %>
+        <h1 class="section-title">Featured Properties</h1>
+        <div class="grid-style1 clearfix">
+            <% loop $FeaturedProperties %>
+            <div class="item col-md-4">
+                <div class="image">
+                    <a href="$Link">
+                        <h3>$Title</h3>
+                        <span class="location">$Region.Title</span>
+                    </a>
+                    $PrimaryPhoto.CroppedImage(220,194)
+                </div>
+                <div class="price">
+                    <span>$PricePerNight.Nice</span><p>per night<p>
+                </div>
+                <ul class="amenities">
+                    <li><i class="icon-bedrooms"></i> $Bedrooms</li>
+                    <li><i class="icon-bathrooms"></i> $Bathrooms</li>
+                </ul>
+            </div>
+            <% end_loop %>
         </div>
-        <div class="price">
-            <span>$PricePerNight.Nice</span><p>per night<p>
-        </div>
-        <ul class="amenities">
-            <li><i class="icon-bedrooms"></i> $Bedrooms</li>
-            <li><i class="icon-bathrooms"></i> $Bathrooms</li>
-        </ul>
-    </div>
-    <% end_loop %>
-</div>
+    <% end_if %>
 
-
-
-<div class="row">
-    <div class="col-sm-12">
-        <h1 class="section-title">Popular Regions</h1>
-        <div id="regions">
-            <div class="item">
-                <a href="#">
-                    <img src="http://placehold.it/194x194" alt=""  />
-                    <h3>Rhovanion</h3>
-                </a>
-            </div>
-            <div class="item">
-                <a href="#">
-                    <img src="http://placehold.it/194x194" alt="" />
-                    <h3>Eriador</h3>
-                </a>
-            </div>
-            <div class="item">
-                <a href="#">
-                    <img src="http://placehold.it/194x194" alt=""  />
-                    <h3>Bay of Belfalas</h3>
-                </a>
-            </div>
-            <div class="item">
-                <a href="#">
-                    <img src="http://placehold.it/194x194" alt="" />
-                    <h3>Mordor</h3>
-                </a>
-            </div>
-
-            <div class="item">
-                <a href="#">
-                    <img src="http://placehold.it/194x194" alt=""  />
-                    <h3>The Southwest</h3>
-                </a>
-            </div>
-            <div class="item">
-                <a href="#">
-                    <img src="http://placehold.it/194x194" alt="" />
-                    <h3>Arnor</h3>
-                </a>
+    <% if $PopularRegions %>
+        <div class="row">
+            <div class="col-sm-12">
+                <h1 class="section-title">Popular Regions</h1>
+                <div id="regions">
+                    <% loop $PopularRegions %>
+                    <div class="item">
+                        <a href="$Link">
+                            $Photo.CroppedImage(194,194)
+                            <h3>$Title</h3>
+                        </a>
+                    </div>
+                    <% end_loop %>
+                </div>
             </div>
         </div>
+    <% end_if %>
 
-
-    </div>
-</div>
-
-
-
-
-
-<h1 class="section-title">Recent Articles</h1>
-<div class="grid-style1">
-    <% loop $LatestArticles %>
-    <div class="item col-md-4">
-        <div class="image">
-            <a href="$Link">
-                <span class="btn btn-default"><i class="fa fa-file-o"></i> Read More</span>
-            </a>
-            $Photo.CroppedImage(220,148)
+    <% if $LatestArticles %>
+        <h1 class="section-title">Recent Articles</h1>
+        <div class="grid-style1">
+            <% loop $LatestArticles %>
+            <div class="item col-md-4">
+                <div class="image">
+                    <a href="$Link">
+                        <span class="btn btn-default"><i class="fa fa-file-o"></i> Read More</span>
+                    </a>
+                    $Photo.CroppedImage(220,148)
+                </div>
+                <div class="tag"><i class="fa fa-file-text"></i></div>
+                <div class="info-blog">
+                    <ul class="top-info">
+                        <li><i class="fa fa-calendar"></i> $Date.Format('j F, Y')</li>
+                        <li><i class="fa fa-comments-o"></i> 2</li>
+                        <li><i class="fa fa-tags"></i> $CategoriesList</li>
+                    </ul>
+                    <h3>
+                        <a href="$Link">$Title</a>
+                    </h3>
+                    <p><% if $Teaser%>$Teaser<% else %>$Content.FirstSentence<% end_if %></p>
+                </div>
+            </div>
+            <% end_loop %>
         </div>
-        <div class="tag"><i class="fa fa-file-text"></i></div>
-        <div class="info-blog">
-            <ul class="top-info">
-                <li><i class="fa fa-calendar"></i> $Date.Format('j F, Y')</li>
-                <li><i class="fa fa-comments-o"></i> 2</li>
-                <li><i class="fa fa-tags"></i> $CategoriesList</li>
-            </ul>
-            <h3>
-                <a href="$Link">$Title</a>
-            </h3>
-            <p><% if $Teaser%>$Teaser<% else %>$Content.FirstSentence<% end_if %></p>
-        </div>
-    </div>
-    <% end_loop %>
+        <div class="center"><a href="#" class="btn btn-default-color">View All News</a></div>
+    <% end_if %>
 
-</div>
-
-<div class="center"><a href="#" class="btn btn-default-color">View All News</a></div>
 </div>
 <!-- END MAIN CONTENT -->
 
