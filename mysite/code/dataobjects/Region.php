@@ -11,6 +11,7 @@ class Region extends DataObject {
     private static $db = array (
         'Title' => 'Varchar',
         'Description' => 'HTMLText',
+        'PopularOnHomepage' => 'Boolean',
     );
 
     private static $has_one = array(
@@ -25,6 +26,7 @@ class Region extends DataObject {
     public function getCMSFields() {
         $fields = FieldList::create(
             TextField::create('Title'),
+            CheckboxField::create('PopularOnHomepage', 'Popular on homepage'),
             HtmlEditorField::create('Description'),
             $uploader = UploadField::create('Photo')
         );
@@ -38,7 +40,8 @@ class Region extends DataObject {
     private static $summary_fields = array(
         'Photo.Filename' => '',
         'Title' => 'Title of region',
-        'Description' => 'Short description'
+        'Description' => 'Short description',
+        'PopularOnHomepage.Nice' => 'Popular on homepage'
     );
 
     public function getGridThumbnail() {

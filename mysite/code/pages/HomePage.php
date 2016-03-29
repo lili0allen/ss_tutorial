@@ -38,7 +38,16 @@ class HomePage_Controller extends Page_Controller {
                         ))
                     ->limit(6);
     }
+
     public function PropertySearchForm(){
         return PropertySearchPage_Controller::create()->PropertySearchForm();
+    }
+
+    public function PopularRegions(){
+        return Region::get()
+                    ->filter(array(
+                        'PopularOnHomepage' => true
+                        ))
+                    ->limit(6);
     }
 }

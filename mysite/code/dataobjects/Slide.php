@@ -120,11 +120,11 @@ class Slide extends DataObject {
     }
 
     public function getCMSFields() {
-        Requirements::javascript(CMS_DIR . '/javascript/RedirectorPage.js');
+        Requirements::javascript('mysite/javascript/RedirectorItem.js');
         $fields = parent::getCMSFields();
         $fields->addFieldsToTab('Root.Main',
             array(
-                new HeaderField('RedirectorDescHeader',_t('RedirectorPage.HEADER', "This page will redirect users to another page")),
+                new HeaderField('RedirectorDescHeader',_t('RedirectorPage.HEADER', "This page will redirect users to another page"),'Content'),
                 new OptionsetField(
                     "RedirectionType",
                     _t('RedirectorPage.REDIRECTTO', "Redirect to"),
