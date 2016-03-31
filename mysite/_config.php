@@ -28,3 +28,7 @@ if(Director::isLive()) {
 
 session_save_path('/tmp');
 Security::setDefaultAdmin('admin', 'admin');
+
+DataObject::add_extension('SiteTree', 'SolrIndexable');
+DataObject::add_extension('Property', 'SolrIndexable');
+Object::add_extension('Page_Controller', 'SolrSearchExtension');
