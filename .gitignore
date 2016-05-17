@@ -3,6 +3,8 @@
 /framework/
 /reports/
 /siteconfig/
+/sortablefile/
+/dynamiclists/
 /node_modules/
 /.idea/
 /vendor/

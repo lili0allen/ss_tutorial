@@ -13,8 +13,11 @@ SiteConfig:
   extensions:
     - SiteConfigExtension
 Director:
-  environment_type: 'live'
+  environment_type: 'dev'
 
+ServiceEntry:
+  extensions:
+    - ImageGalleryExtension
 ---
 Only:
   environment: dev
