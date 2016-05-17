@@ -9,7 +9,7 @@ $databaseConfig = array(
 	"server" => '127.0.0.1',
 	"username" => 'root',
 	"password" => 'password',
-	"database" => 'ss_official',
+	"database" => 'handy_service',
 	"path" => '',
 );
 

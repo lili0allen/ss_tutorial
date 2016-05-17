@@ -13,7 +13,7 @@ SiteConfig:
   extensions:
     - SiteConfigExtension
 Director:
-  environment_type: 'dev'
+  environment_type: 'live'
 
 ---
 Only:

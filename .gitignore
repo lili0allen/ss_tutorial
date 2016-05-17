@@ -7,5 +7,6 @@
 /.idea/
 /vendor/
 /themes/one-ring/bower_components/
+/themes/one-ring/combined/
 /silverstripe-errors.log
 /silverstripe-errors-warnings.log

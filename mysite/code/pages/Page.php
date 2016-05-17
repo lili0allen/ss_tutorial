@@ -31,20 +31,29 @@ class Page_Controller extends ContentController {
 		// You can include any CSS or JS required by your project here.
 		// See: http://doc.silverstripe.org/framework/en/reference/requirements
 
-        Requirements::css("http://fonts.googleapis.com/css?family=Raleway:300,500,900%7COpen+Sans:400,700,400italic");
-        Requirements::css($this->ThemeDir()."/css/bootstrap.min.css");
-        Requirements::css($this->ThemeDir()."/css/style.css");
-        Requirements::javascript($this->ThemeDir()."/javascript/common/modernizr.js");
-        Requirements::javascript($this->ThemeDir()."/javascript/common/jquery-1.11.1.min.js");
-        Requirements::javascript($this->ThemeDir()."/javascript/common/bootstrap.min.js");
-        Requirements::javascript($this->ThemeDir()."/javascript/common/bootstrap-datepicker.js");
-        Requirements::javascript($this->ThemeDir()."/javascript/common/chosen.min.js");
-        Requirements::javascript($this->ThemeDir()."/javascript/common/bootstrap-checkbox.js");
-        Requirements::javascript($this->ThemeDir()."/javascript/common/nice-scroll.js");
-        Requirements::javascript($this->ThemeDir()."/javascript/common/jquery-browser.js");
-        Requirements::javascript($this->ThemeDir()."/javascript/scripts.js");
-        Requirements::javascript("http://reece.trout.com.au/thermann/thermann.com.au/js/socialfeed.min.js");
-	}
+        //Requirements::css("http://fonts.googleapis.com/css?family=Raleway:300,500,900%7COpen+Sans:400,700,400italic");
 
+        Requirements::set_combined_files_folder('themes/one-ring/combined');
+        Requirements::combine_files('site_style.css',
+                    array(
+                        $this->ThemeDir()."/css/bootstrap.min.css",
+                        $this->ThemeDir()."/css/bootstrap-datepicker.min.css",
+                        $this->ThemeDir()."/css/font-awesome.min.css",
+                        $this->ThemeDir()."/css/style.css"
+                    )
+        );
+        Requirements::combine_files('site_script.js',
+                    array(
+                        $this->ThemeDir()."/javascript/Modernizr.js",
+                        $this->ThemeDir()."/javascript/jquery.min.js",
+                        $this->ThemeDir()."/javascript/bootstrap.min.js",
+                        $this->ThemeDir()."/javascript/bootstrap3-typeahead.min.js",
+                        //$this->ThemeDir()."/javascript/bootstrap-datepicker.min.js",
+                        $this->ThemeDir()."/javascript/jquery.form.js",
+                        $this->ThemeDir()."/javascript/jquery.validate.min.js",
+                        $this->ThemeDir()."/javascript/script.js",
+                    )
+        );
+	}
 
 }
