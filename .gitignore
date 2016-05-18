@@ -10,5 +10,6 @@
 /vendor/
 /themes/one-ring/bower_components/
 /themes/one-ring/combined/
+/silverstripe-cache/
 /silverstripe-errors.log
 /silverstripe-errors-warnings.log

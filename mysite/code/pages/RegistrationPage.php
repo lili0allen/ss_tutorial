@@ -30,17 +30,17 @@ class RegistrationPage_Controller extends Page_Controller {
     }
 
     public function doRegister($data, $form){
-        if($member = DataObject::get_one("Member","`Email` = '". Convert::raw2sql($data['Email']) ."'")){
+        if($member = DataObject::get_one("Member","Email = '". Convert::raw2sql($data['Email']) ."'")){
             $form->addErrorMessage('Email', "Sorry, that email address already exists. Please choose another one.", 'bad');
             Session::set("FormInfo.Form_RegistrationForm.data", $data);
-            return Director::redirectBack();
+            return $this->redirectBack();
         }
         $Member = new Member();
         $form->saveInto($Member);
         $Member->write();
         $Member->logIn();
 
-        if(!$userGroup = DataObject::get_one('Group', "Code = 'serviceowner")){
+        if(!$userGroup = DataObject::get_one('Group', "Code = 'serviceowner'")){
             $userGroup = new Group();
             $userGroup->Code = "serviceowner";
             $userGroup->Title = "ServiceOwner";
@@ -50,7 +50,7 @@ class RegistrationPage_Controller extends Page_Controller {
         $userGroup->Members()->add($Member);
 
         if($ProfilePage = DataObject::get_one('EditProfilePage')){
-            return Director::redirect($ProfilePage->Link('?success=1'));
+            return $this->redirect($ProfilePage->Link('?success=1'));
         }
     }
 }

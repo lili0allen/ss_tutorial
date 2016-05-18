@@ -18,6 +18,9 @@ Director:
 ServiceEntry:
   extensions:
     - ImageGalleryExtension
+Member:
+  extensions:
+    - MemberExtension
 ---
 Only:
   environment: dev

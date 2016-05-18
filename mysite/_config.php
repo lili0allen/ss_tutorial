@@ -26,5 +26,7 @@ if(Director::isLive()) {
 
 }
 
+SS_Cache::set_cache_lifetime('any', -1, 100);
+
 session_save_path('/tmp');
 Security::setDefaultAdmin('admin', 'admin');

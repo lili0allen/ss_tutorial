@@ -27,9 +27,35 @@ class EditProfilePage_Controller extends Page_Controller {
         );
         $validator = new RequiredFields('Name', 'Email');
         $Form = new Form($this, 'EditProfileForm', $fields, $actions, $validator);
-        $Member = Member::currentUser();
-        $Form->loadDataFrom($Member->data());
+        if($Member = Member::currentUser()){
+            $Form->loadDataFrom($Member->data());
+        }
 
         return $Form;
     }
+
+    public function SaveProfile($data, $form){
+        if($CurrentMember = Member::currentUser()){
+            if($member = DataObject::get_one('Member', "Email = '". Convert::raw2sql($data['Email']). "' AND ID != ".$CurrentMember->ID)){
+                $form->addErrorMessage("Email", "Sorry, that email already exists.", "bad");
+                Session::set('FormInfo.Form_EditProfileForm.data', $data);
+                return $this->redirectBack();
+            }else{
+                $form->saveInto($CurrentMember);
+                $CurrentMember->write();
+                return $this->redirect($this->Link('?saved=1'));
+            }
+        }else{
+            return Security::PermissionFailure($this->controller, 'You must <a href="register">registered</a> and logged in to edit your profile');
+        }
+    }
+
+    public function Saved(){
+        return $this->request->getVar('saved');
+    }
+
+    public function Success(){
+        return $this->request->getVar('success');
+    }
+
 }
