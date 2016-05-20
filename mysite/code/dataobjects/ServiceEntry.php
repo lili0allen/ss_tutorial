@@ -20,7 +20,7 @@ class ServiceEntry extends DataObject {
         'Wechat'    =>  'Varchar(100)',
         'QQ'        =>  'Varchar(100)',
         'Website'   =>  'Varchar(100)',
-        'Content'   =>  'HtmlText'
+        'Content'   =>  'HTMLText'
     );
     private static $has_one = array(
         'Logo'  =>  'Image'

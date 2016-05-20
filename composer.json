@@ -5,7 +5,9 @@
 		"php": ">=5.3.2",
 		"silverstripe/cms": "^3.3",
 		"silverstripe/framework": "^3.3",
-        "bummzack/sortablefile": "1.2.3"
+        "bummzack/sortablefile": "1.2.3",
+        "sheadawson/silverstripe-dynamiclists": "1.0.0",
+        "silverstripe-australia/gridfieldextensions": "1.4.0"
 	},
 	"require-dev": {
 		"phpunit/PHPUnit": "~3.7@stable"

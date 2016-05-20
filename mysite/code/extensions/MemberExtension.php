@@ -16,4 +16,5 @@ class MemberExtension extends DataExtension{
             return $ProfilePage->Link();
         }
     }
+
 }

@@ -5,9 +5,11 @@
 /siteconfig/
 /sortablefile/
 /dynamiclists/
+/gridfieldextensions/
 /node_modules/
 /.idea/
 /vendor/
+/composer.lock
 /themes/one-ring/bower_components/
 /themes/one-ring/combined/
 /silverstripe-cache/
