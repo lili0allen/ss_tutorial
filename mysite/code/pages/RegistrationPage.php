@@ -37,9 +37,9 @@ class RegistrationPage_Controller extends Page_Controller {
         }
         $Member = new Member();
         $form->saveInto($Member);
-        $service = new ServiceEntry();
-        $serviceID = $service->write();
-        $Member->ServiceEntryID = $serviceID;
+//        $service = new ServiceEntry();
+//        $serviceID = $service->write();
+//        $Member->ServiceEntryID = $serviceID;
         $Member->write();
         $Member->logIn();
 

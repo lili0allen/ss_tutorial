@@ -21,8 +21,8 @@
     <% end_if %>
     <% if $CurrentMember %>
         $EditProfileForm
+        <a href="edit-service-page">$EditServiceLinkText</a>
 
-        $EditServiceForm
     <% else %>
         You must <a href="registration">registered</a> and logged in to edit your profile
     <% end_if %>

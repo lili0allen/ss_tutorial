@@ -20,9 +20,66 @@ class ServiceEntry extends DataObject {
         'Wechat'    =>  'Varchar(100)',
         'QQ'        =>  'Varchar(100)',
         'Website'   =>  'Varchar(100)',
-        'Content'   =>  'HTMLText'
+        'Content'   =>  'HTMLText',
+        'IPAddress' =>  'Varchar(100)',
+        'Terms' => 'Boolean',
     );
     private static $has_one = array(
         'Logo'  =>  'Image'
     );
+
+    protected function assetFolder($append = '') {
+        $path = 'services/' . FileNameFilter::create()->filter($this->Title) . '/' . FileNameFilter::create()->filter($append);
+        return Folder::find_or_make(ltrim($path, '/'));
+    }
+
+    protected function getStateCode(){
+
+        switch($this->State) {
+
+            case 'Victoria':
+                $state = 'VIC';
+                break;
+
+            case 'New South Wales':
+                $state = 'NSW';
+                break;
+
+            case 'Tasmania':
+                $state = 'TAS';
+                break;
+
+            case 'Australian Capital Territory':
+                $state = 'ACT';
+                break;
+
+            case 'Queensland':
+                $state = 'QLD';
+                break;
+
+            case 'Western Australia':
+                $state = 'WA';
+                break;
+
+            case 'Northern Territory':
+                $state = 'NT';
+                break;
+
+            case 'South Australia':
+                $state = 'SA';
+                break;
+
+            default:
+                $state = null;
+                break;
+        }
+
+        return $state;
+    }
+
+    public function RenderEntry($template){
+
+        return $this->RenderWith($template);
+    }
+
 } 

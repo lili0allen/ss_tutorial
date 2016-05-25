@@ -13,7 +13,7 @@ class EditProfilePage extends Page {
 class EditProfilePage_Controller extends Page_Controller {
 
     private static $allowed_actions =array(
-        'EditProfileForm', 'EditServiceForm'
+        'EditProfileForm'
     );
 
     public function EditProfileForm(){
@@ -50,43 +50,13 @@ class EditProfilePage_Controller extends Page_Controller {
         }
     }
 
-    public function EditServiceForm(){
-        $fields = new FieldList(
-            TextField::create('Title', 'Title'),
-            TextField::create('SubDomain', 'SubDomain'),
-            TextField::create('Street', 'Street'),
-            TextField::create('Suburb', 'Suburb'),
-            DropdownField::create("State", "State", singleton('ServiceEntry')->dbObject('State')->enumValues()),
-            CheckboxSetField::create('Service', 'Service', DynamicList::get_dynamic_list('ServiceType')->itemArray()),
-            TextareaField::create('Description', 'Description'),
-            EmailField::create('Email', 'Email'),
-            TextField::create('Phone', 'Phone'),
-            TextField::create('Wechat', 'Wechat'),
-            TextField::create('QQ', 'QQ'),
-            TextField::create('Website', 'Website'),
-            HtmlEditorField::create('Content', 'Content')
-        );
-        $actions = new FieldList(
-            new FormAction('SaveService', 'Save')
-        );
-        $validator = new RequiredFields('Title', 'SubDomain','State');
-        $Form = new Form($this, __FUNCTION__, $fields, $actions, $validator);
-        $service = DataObject::get_by_id('ServiceEntry',Member::currentUser()->ServiceEntryID);
-
-        $Form->loadDataFrom($service->data());
-
-        return $Form;
-    }
-
-    public function SaveService($data, $form){
-        if($CurrentMember = Member::currentUser()){
-                $service = $CurrentMember->ServiceEntry();
-                $form->saveInto($service);
-                $service->write();
-                return $this->redirect($this->Link('?saved=1'));
+    public function EditServiceLinkText(){
+        if(Member::currentUser()->ServiceEntryID){
+            $serviceLinkText = "Edit my Service";
         }else{
-            return Security::PermissionFailure($this->controller, 'You must <a href="register">registered</a> and logged in to edit your profile');
+            $serviceLinkText = "Create a Service";
         }
+        return $serviceLinkText;
     }
 
     public function Saved(){
