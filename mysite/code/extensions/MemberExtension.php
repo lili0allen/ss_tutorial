@@ -11,10 +11,10 @@ class MemberExtension extends DataExtension{
         'ServiceEntry' => 'ServiceEntry'
     );
 
-//    public function Link(){
-//        if($ProfilePage = DataObject::get_one('EditProfilePage')){
-//            return $ProfilePage->Link();
-//        }
-//    }
+    public function Link(){
+        if($ProfilePage = DataObject::get_one('EditProfilePage')){
+            return $ProfilePage->Link();
+        }
+    }
 
 }

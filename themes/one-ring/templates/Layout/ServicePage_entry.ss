@@ -1,0 +1,2 @@
+$ServiceEntry.Title
+$ServiceEntry.Logo

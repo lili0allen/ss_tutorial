@@ -28,11 +28,6 @@ class ServiceEntry extends DataObject {
         'Logo'  =>  'Image'
     );
 
-    protected function assetFolder($append = '') {
-        $path = 'services/' . FileNameFilter::create()->filter($this->Title) . '/' . FileNameFilter::create()->filter($append);
-        return Folder::find_or_make(ltrim($path, '/'));
-    }
-
     protected function getStateCode(){
 
         switch($this->State) {
