@@ -35,7 +35,7 @@ class ServicePage_Controller extends Page_Controller{
             DropdownField::create("State", "State", singleton('ServiceEntry')->dbObject('State')->enumValues())
                 ->addExtraClass('form-control required'),
             CheckboxSetField::create('Service', 'Service', DynamicList::get_dynamic_list('ServiceType')->itemArray())
-                ->addExtraClass('form-control required'),
+                ->addExtraClass('required'),
             TextareaField::create('Description', 'Description')
                 ->addExtraClass('form-control required'),
             EmailField::create('Email', 'Email')
