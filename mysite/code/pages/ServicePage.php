@@ -103,11 +103,18 @@ class ServicePage_Controller extends Page_Controller{
     }
 
     public function entry(){
-
-        return array(
-            'ServiceEntry'=>DataObject::get_by_id('ServiceEntry',$this->getRequest()->param('ID'))
-        );
-
+        $params = $this->getRequest();
+        if($subdomain = $params->param('ID')){
+            $entry = DataObject::get('ServiceEntry')->filter(array('SubDomain'=>$subdomain))->first();
+            if(!$entry && !Controller::redirectedTo()){
+                $errorPage = DataObject::get_one('ErrorPage');
+                Controller::redirect($errorPage->Link(),404);
+            } else{
+                return array(
+                    'ServiceEntry'=>$entry
+                );
+            }
+        }
     }
 
     public function edit(){
@@ -125,4 +132,5 @@ class ServicePage_Controller extends Page_Controller{
     public function Success(){
         return $this->request->getVar('success');
     }
+
 }

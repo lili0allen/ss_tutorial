@@ -44,7 +44,7 @@ class Page_Controller extends ContentController {
         );
         Requirements::combine_files('site_script.js',
                     array(
-                        $this->ThemeDir()."/javascript/Modernizr.js",
+                        $this->ThemeDir()."/javascript/modernizr.js",
                         $this->ThemeDir()."/javascript/jquery.min.js",
                         $this->ThemeDir()."/javascript/bootstrap.min.js",
                         $this->ThemeDir()."/javascript/bootstrap3-typeahead.min.js",

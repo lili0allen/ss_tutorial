@@ -1,2 +1,3 @@
 $ServiceEntry.Title
-$ServiceEntry.Logo
+$ServiceEntry.State
+$ServiceEntry.MapShortcode

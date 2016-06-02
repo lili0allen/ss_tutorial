@@ -30,7 +30,7 @@ module.exports = function(grunt)
 
                     {expand: true, cwd: 'themes/one-ring/bower_components/jquery-validation/dist/', src: 'jquery.validate.min.js', dest: 'themes/one-ring/javascript'},
 
-                    {expand: true, cwd: 'themes/one-ring/bower_components/modernizr/src/', src: 'Modernizr.js', dest: 'themes/one-ring/javascript'}
+                    {expand: true, cwd: 'themes/one-ring/bower_components/modernizr/', src: 'modernizr.js', dest: 'themes/one-ring/javascript'}
 
                 ]
             }
@@ -51,7 +51,7 @@ module.exports = function(grunt)
 //                separator: "\n\n"
 //            },
 //            dist: {
-//                src: ['themes/one-ring/bowser_componets/bootstrap/dist/js/bootstrap.min.js','themes/one-ring/javascript/bootstrap.min.js'],
+//                src: ['themes/one-ring/bower_components/bootstrap/dist/js/bootstrap.min.js','themes/one-ring/javascript/bootstrap.min.js'],
 //                dest: 'bin/<%= pkg.name %>.js'
 //            },
 //            styles: {
@@ -77,8 +77,17 @@ module.exports = function(grunt)
         //        }
         //    }
         //}
+//        modernizr_builder: {
+//            build: {
+//                options: {
+//                    config: 'themes/one-ring/bower_components/modernizr/lib/config-all.json',
+//                    dest: 'themes/one-ring/bower_components/modernizr/modernizr.js'
+//                }
+//            }
+//        }
     });
     grunt.loadNpmTasks('grunt-contrib-copy');
+    //grunt.loadNpmTasks("grunt-modernizr-builder");
     //grunt.loadNpmTasks('grunt-contrib-uglify');
     //grunt.loadNpmTasks('grunt-contrib-sass');
     //grunt.loadNpmTasks('grunt-contrib-less');

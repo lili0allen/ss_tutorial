@@ -77,4 +77,14 @@ class ServiceEntry extends DataObject {
         return $this->RenderWith($template);
     }
 
+    public function MapShortcode(){
+        $address = array(
+            $street = $this->Street,
+            $suburb = $this->Suburb,
+            $state  = $this->State,
+            $country = 'Australia'
+        );
+        $shortcode = '[googlemap,width=500,height=300]'.implode(',',$address).'[/googlemap]';
+        return ShortcodeParser::get_active()->parse($shortcode);
+    }
 } 
