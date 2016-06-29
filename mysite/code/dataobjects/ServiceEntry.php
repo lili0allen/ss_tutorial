@@ -13,7 +13,7 @@ class ServiceEntry extends DataObject {
         'Street'    => 'Varchar(100)',
         'Suburb'    => 'Varchar(100)',
         'State'     => 'Enum("Victoria,New South Wales,Tasmania,Australian Capital Territory,Queensland,Western Australia,Northern Territory,South Australia")',
-        'Service'   => 'Varchar(100)',
+        'Service'   => 'MultiValueField',
         'Description' => 'Text',
         'Email'     =>  'Varchar(100)',
         'Phone'     =>  'Varchar(100)',
@@ -28,6 +28,12 @@ class ServiceEntry extends DataObject {
         'Logo'  =>  'Image'
     );
 
+    public function getCMSFields(){
+        $fields = parent::getCMSFields();
+        $fields->addFieldToTab('Root.Main', MultiValueCheckboxField::create("Service", "Service", DynamicList::get_dynamic_list('ServiceType')->itemArray()),"Description");
+        return $fields;
+    }
+    
     protected function getStateCode(){
 
         switch($this->State) {

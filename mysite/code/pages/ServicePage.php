@@ -7,7 +7,7 @@
  */
 
 class ServicePage extends Page{
-
+    
 }
 
 class ServicePage_Controller extends Page_Controller{
@@ -34,7 +34,7 @@ class ServicePage_Controller extends Page_Controller{
                 ->addExtraClass('form-control required'),
             DropdownField::create("State", "State", singleton('ServiceEntry')->dbObject('State')->enumValues())
                 ->addExtraClass('form-control required'),
-            CheckboxSetField::create('Service', 'Service', DynamicList::get_dynamic_list('ServiceType')->itemArray())
+            MultiValueCheckboxFieldBS::create('Service', 'Service', DynamicList::get_dynamic_list('ServiceType')->itemArray())
                 ->addExtraClass('required'),
             TextareaField::create('Description', 'Description')
                 ->addExtraClass('form-control required'),
@@ -102,23 +102,33 @@ class ServicePage_Controller extends Page_Controller{
         return array();
     }
 
-    public function entry(){
+    public function entry()
+    {
         $params = $this->getRequest();
-        if($subdomain = $params->param('ID')){
-            $entry = DataObject::get('ServiceEntry')->filter(array('SubDomain'=>$subdomain))->first();
-            if(!$entry && !Controller::redirectedTo()){
+        if ($subdomain = $params->param('ID')) {
+            $entry = DataObject::get('ServiceEntry')->filter(array('SubDomain' => $subdomain))->first();
+            if (!$entry && !Controller::redirectedTo()) {
                 $errorPage = DataObject::get_one('ErrorPage');
-                Controller::redirect($errorPage->Link(),404);
-            } else{
+                Controller::redirect($errorPage->Link(), 404);
+            } else {
                 return array(
-                    'ServiceEntry'=>$entry
+                    'ServiceEntry' => $entry
                 );
             }
         }
     }
 
     public function edit(){
-        return array();
+        if(Member::currentUser()){
+            $link = $this->Link()."entry/".$this->ServiceForm()->getRecord()->SubDomain;
+            return array(
+                'Link'=>$link
+            );
+        }else{
+            $errorPage = DataObject::get_one('ErrorPage');
+            Controller::redirect($errorPage->Link(), 400);
+        }
+
     }
 
     public function entries(){
