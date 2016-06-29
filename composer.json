@@ -8,7 +8,8 @@
         "bummzack/sortablefile": "1.2.3",
         "sheadawson/silverstripe-dynamiclists": "1.0.0",
         "silverstripe-australia/gridfieldextensions": "1.4.0",
-        "unclecheese/dropzone": "1.2.2"
+        "unclecheese/dropzone": "1.2.2",
+		"silverstripe/multivaluefield": "2.2.4"
 	},
 	"require-dev": {
 		"phpunit/PHPUnit": "~3.7@stable"
