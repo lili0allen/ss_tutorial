@@ -1,1 +1,3 @@
-service page
+<% loop $ServiceEntries %>
+    $Title
+<% end_loop %>

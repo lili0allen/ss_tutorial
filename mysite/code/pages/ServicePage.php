@@ -7,7 +7,10 @@
  */
 
 class ServicePage extends Page{
-    
+    public function _getServiceEntries(){
+        $entries = ServiceEntry::get()->sort('Created','DESC');
+        return $entries;
+    }
 }
 
 class ServicePage_Controller extends Page_Controller{
@@ -129,10 +132,6 @@ class ServicePage_Controller extends Page_Controller{
             Controller::redirect($errorPage->Link(), 400);
         }
 
-    }
-
-    public function entries(){
-        return array();
     }
 
     public function Saved(){
