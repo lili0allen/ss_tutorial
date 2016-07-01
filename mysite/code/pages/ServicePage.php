@@ -15,13 +15,80 @@ class ServicePage extends Page{
 
 class ServicePage_Controller extends Page_Controller{
     private static $allowed_actions =array(
-        'ServiceForm','edit','submit','entry','entries'
+        'ServiceForm','search','edit','entry'
     );
 
     public function init() {
         parent::init();
         Requirements::javascript('//cdn.tinymce.com/4/tinymce.min.js');
+        Requirements::javascript('https://maps.googleapis.com/maps/api/js?key=AIzaSyCwlMt5FInggZeqhh1HQrUcyFDwGXDcsBo');
         Requirements::customScript("tinymce.init({selector: '#Content textarea'});");
+    }
+
+    public function index(SS_HTTPRequest $request){
+        $entries = ServiceEntry::get();
+        $filters = ArrayList::create();
+
+        if($search = $request->getVar('Keywords')){
+            $filters->push(ArrayData::create(array(
+                'Label' => "Service: ‘$search'",
+                'RemoveLink' => HTTP::setGetVar('Keywords', null)
+            )));
+            $entries = $entries->filterAny(
+                array(
+                    'Title:PartialMatch' => $search,
+                    'Description:PartialMatch' => $search
+                )
+            );
+        }
+
+        if($service = $request->getVar('Service')){
+            $filters->push(ArrayData::create(array(
+                'Label' => "Service: ‘$service'",
+                'RemoveLink' => HTTP::setGetVar('Service', null)
+            )));
+            $entries = $entries->filter(
+                array(
+                    'ServiceValue:PartialMatch' => '"'.$service.'"'
+                )
+            );
+        }
+
+        if($suburb = $request->getVar('Suburb')){
+            $filters->push(ArrayData::create(array(
+                'Label' => "Suburb: ‘$suburb'",
+                'RemoveLink' => HTTP::setGetVar('Suburb', null)
+            )));
+            $entries = $entries->filter(
+                array(
+                    'Suburb:PartialMatch' => $suburb
+                )
+            );
+        }
+
+        return array(
+            'ServiceEntries' => $entries
+        );
+    }
+    
+    public function SearchForm(){
+        $fields = new FieldList(
+            TextField::create('Keywords')
+                ->addExtraClass('form-control'),
+            DropdownField::create('Service', 'Service', DynamicList::get_dynamic_list('ServiceType')->itemArray())
+                ->addExtraClass('form-control'),
+            TextField::create('Suburb', 'Suburb')
+                ->addExtraClass('form-control')
+        );
+        $actions = new FieldList(
+            new FormAction('SearchEntries', 'Search')
+        );
+        $Form = new Form($this, __FUNCTION__, $fields, $actions);
+        $Form->setFormMethod('GET')
+            ->setFormAction($this->Link())//post to index()
+            ->disableSecurityToken()
+            ->loadDataFrom($this->request->getVars());
+        return $Form;
     }
 
     public function ServiceForm(){
@@ -101,10 +168,6 @@ class ServicePage_Controller extends Page_Controller{
         }
     }
 
-    public function submit(){
-        return array();
-    }
-
     public function entry()
     {
         $params = $this->getRequest();
@@ -114,6 +177,26 @@ class ServicePage_Controller extends Page_Controller{
                 $errorPage = DataObject::get_one('ErrorPage');
                 Controller::redirect($errorPage->Link(), 404);
             } else {
+                Requirements::customScript("
+                    function initialize() {
+                        var myLatLng = {lat: ".$entry->Lat.", lng: ".$entry->Lng."};
+                        var map = new google.maps.Map(document.getElementById('map_canvas'), {
+                          zoom: 15,
+                          center: myLatLng
+                        });
+                        var contentString = '<div id=\"content\"><div id=\"bodyContent\"><h4>".$entry->Title."</h4><p>".$entry->fullAddress()."</p></div></div>';
+                        var infowindow = new google.maps.InfoWindow({
+                          content: contentString
+                        });
+                        var marker = new google.maps.Marker({
+                          position: myLatLng,
+                          map: map,
+                        });
+                        infowindow.open(map, marker);
+                    }
+                    google.maps.event.addDomListener(window, \"load\", initialize);
+                ");
+                
                 return array(
                     'ServiceEntry' => $entry
                 );
@@ -128,8 +211,7 @@ class ServicePage_Controller extends Page_Controller{
                 'Link'=>$link
             );
         }else{
-            $errorPage = DataObject::get_one('ErrorPage');
-            Controller::redirect($errorPage->Link(), 400);
+            return Security::PermissionFailure($this->controller, 'You must <a href="register">registered</a> and logged in to edit your profile');
         }
 
     }

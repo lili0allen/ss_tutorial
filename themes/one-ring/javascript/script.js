@@ -1,7 +1,6 @@
 (function($) {
 $(function () {
-
-
+    
 // Pagination
     if ($('.pagination').length) {
         var paginate = function (url) {
@@ -43,6 +42,5 @@ $(function () {
             }
         };
     }
-	
 })
 })(jQuery);

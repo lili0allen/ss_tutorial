@@ -21,6 +21,8 @@ class ServiceEntry extends DataObject {
         'QQ'        =>  'Varchar(100)',
         'Website'   =>  'Varchar(100)',
         'Content'   =>  'HTMLText',
+        'Lat'       =>  'Varchar(20)',
+        'Lng'       =>  'Varchar(20)',
         'IPAddress' =>  'Varchar(100)',
         'Terms' => 'Boolean',
     );
@@ -34,6 +36,19 @@ class ServiceEntry extends DataObject {
         return $fields;
     }
     
+    public function onBeforeWrite()
+    {
+        parent::onBeforeWrite();
+        $fullAddress = $this->fullAddress();
+        $lat_lng = GoogleMap::getLatLng($fullAddress);
+        $this->Lat = $lat_lng['Lat'];
+        $this->Lng = $lat_lng['Lng'];
+    }
+    
+    public function fullAddress(){
+        return $this->Street." ".$this->Suburb." ".$this->State." Australia";
+    }
+
     protected function getStateCode(){
 
         switch($this->State) {
@@ -78,19 +93,15 @@ class ServiceEntry extends DataObject {
         return $state;
     }
 
-    public function RenderEntry($template){
+//    public function MapShortcode(){
+//        $address = array(
+//            $street = $this->Street,
+//            $suburb = $this->Suburb,
+//            $state  = $this->State,
+//            $country = 'Australia'
+//        );
+//        $shortcode = '[googlemap,width=500,height=300]'.implode(',',$address).'[/googlemap]';
+//        return ShortcodeParser::get_active()->parse($shortcode);
+//    }
 
-        return $this->RenderWith($template);
-    }
-
-    public function MapShortcode(){
-        $address = array(
-            $street = $this->Street,
-            $suburb = $this->Suburb,
-            $state  = $this->State,
-            $country = 'Australia'
-        );
-        $shortcode = '[googlemap,width=500,height=300]'.implode(',',$address).'[/googlemap]';
-        return ShortcodeParser::get_active()->parse($shortcode);
-    }
 } 

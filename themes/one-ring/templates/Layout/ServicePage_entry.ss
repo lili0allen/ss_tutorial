@@ -1,3 +1,4 @@
 $ServiceEntry.Title
 $ServiceEntry.State
-$ServiceEntry.MapShortcode
+
+<div id="map_canvas"></div>
