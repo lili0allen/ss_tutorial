@@ -30,7 +30,9 @@ module.exports = function(grunt)
 
                     {expand: true, cwd: 'themes/one-ring/bower_components/jquery-validation/dist/', src: 'jquery.validate.min.js', dest: 'themes/one-ring/javascript'},
 
-                    {expand: true, cwd: 'themes/one-ring/bower_components/modernizr/', src: 'modernizr.js', dest: 'themes/one-ring/javascript'}
+                    {expand: true, cwd: 'themes/one-ring/bower_components/modernizr/', src: 'modernizr.js', dest: 'themes/one-ring/javascript'},
+
+                    {expand: true, cwd: 'themes/one-ring/bower_components/geocomplete/', src: 'jquery.geocomplete.min.js', dest: 'themes/one-ring/javascript'}
 
                 ]
             }

@@ -10,9 +10,10 @@ class ServiceEntry extends DataObject {
     private static $db = array(
         'Title'     =>  'Varchar(100)',
         'SubDomain' => 'Varchar(100)',
-        'Street'    => 'Varchar(100)',
+        'Address'   => 'Varchar(100)',
         'Suburb'    => 'Varchar(100)',
-        'State'     => 'Enum("Victoria,New South Wales,Tasmania,Australian Capital Territory,Queensland,Western Australia,Northern Territory,South Australia")',
+        'State'     => 'Varchar(100)',
+        'Postcode'  => 'Varchar(20)',
         'Service'   => 'MultiValueField',
         'Description' => 'Text',
         'Email'     =>  'Varchar(100)',
@@ -35,73 +36,5 @@ class ServiceEntry extends DataObject {
         $fields->addFieldToTab('Root.Main', MultiValueCheckboxField::create("Service", "Service", DynamicList::get_dynamic_list('ServiceType')->itemArray()),"Description");
         return $fields;
     }
-    
-    public function onBeforeWrite()
-    {
-        parent::onBeforeWrite();
-        $fullAddress = $this->fullAddress();
-        $lat_lng = GoogleMap::getLatLng($fullAddress);
-        $this->Lat = $lat_lng['Lat'];
-        $this->Lng = $lat_lng['Lng'];
-    }
-    
-    public function fullAddress(){
-        return $this->Street." ".$this->Suburb." ".$this->State." Australia";
-    }
-
-    protected function getStateCode(){
-
-        switch($this->State) {
-
-            case 'Victoria':
-                $state = 'VIC';
-                break;
-
-            case 'New South Wales':
-                $state = 'NSW';
-                break;
-
-            case 'Tasmania':
-                $state = 'TAS';
-                break;
-
-            case 'Australian Capital Territory':
-                $state = 'ACT';
-                break;
-
-            case 'Queensland':
-                $state = 'QLD';
-                break;
-
-            case 'Western Australia':
-                $state = 'WA';
-                break;
-
-            case 'Northern Territory':
-                $state = 'NT';
-                break;
-
-            case 'South Australia':
-                $state = 'SA';
-                break;
-
-            default:
-                $state = null;
-                break;
-        }
-
-        return $state;
-    }
-
-//    public function MapShortcode(){
-//        $address = array(
-//            $street = $this->Street,
-//            $suburb = $this->Suburb,
-//            $state  = $this->State,
-//            $country = 'Australia'
-//        );
-//        $shortcode = '[googlemap,width=500,height=300]'.implode(',',$address).'[/googlemap]';
-//        return ShortcodeParser::get_active()->parse($shortcode);
-//    }
 
 } 

@@ -18,7 +18,8 @@
         "bootstrap3-typeahead": "4.0.0",
         "modernizr": "2.8.3",
         "jquery-form": "3.51",
-        "bootstrap-datepicker":"1.6.1"
+        "bootstrap-datepicker":"1.6.1",
+        "geocomplete":"1.6.0"
     },
     "devDependencies": {}
 }

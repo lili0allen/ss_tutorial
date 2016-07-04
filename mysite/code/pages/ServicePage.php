@@ -21,7 +21,7 @@ class ServicePage_Controller extends Page_Controller{
     public function init() {
         parent::init();
         Requirements::javascript('//cdn.tinymce.com/4/tinymce.min.js');
-        Requirements::javascript('https://maps.googleapis.com/maps/api/js?key=AIzaSyCwlMt5FInggZeqhh1HQrUcyFDwGXDcsBo');
+        Requirements::javascript('https://maps.googleapis.com/maps/api/js?key=AIzaSyCwlMt5FInggZeqhh1HQrUcyFDwGXDcsBo&libraries=places');
         Requirements::customScript("tinymce.init({selector: '#Content textarea'});");
     }
 
@@ -29,18 +29,21 @@ class ServicePage_Controller extends Page_Controller{
         $entries = ServiceEntry::get();
         $filters = ArrayList::create();
 
-        if($search = $request->getVar('Keywords')){
-            $filters->push(ArrayData::create(array(
-                'Label' => "Service: ‘$search'",
-                'RemoveLink' => HTTP::setGetVar('Keywords', null)
-            )));
-            $entries = $entries->filterAny(
-                array(
-                    'Title:PartialMatch' => $search,
-                    'Description:PartialMatch' => $search
-                )
-            );
-        }
+//        if($search = $request->getVar('Keywords')){
+//            $filters->push(ArrayData::create(array(
+//                'Label' => "Service: ‘$search'",
+//                'RemoveLink' => HTTP::setGetVar('Keywords', null)
+//            )));
+//            $entries = $entries->filterAny(
+//                array(
+//                    'Title:PartialMatch' => $search,
+//                    'SubDomain:PartialMatch' => $search,
+//                    'Address:PartialMatch' => $search,
+//                    'Description:PartialMatch' => $search,
+//                    'Content:PartialMatch' => $search
+//                )
+//            );
+//        }
 
         if($service = $request->getVar('Service')){
             $filters->push(ArrayData::create(array(
@@ -54,14 +57,14 @@ class ServicePage_Controller extends Page_Controller{
             );
         }
 
-        if($suburb = $request->getVar('Suburb')){
+        if($postcode = $request->getVar('Postcode')){
             $filters->push(ArrayData::create(array(
-                'Label' => "Suburb: ‘$suburb'",
-                'RemoveLink' => HTTP::setGetVar('Suburb', null)
+                'Label' => "Postcode: ‘$postcode'",
+                'RemoveLink' => HTTP::setGetVar('Postcode', null)
             )));
             $entries = $entries->filter(
                 array(
-                    'Suburb:PartialMatch' => $suburb
+                    'Postcode:ExactMatch' => $postcode
                 )
             );
         }
@@ -73,11 +76,12 @@ class ServicePage_Controller extends Page_Controller{
     
     public function SearchForm(){
         $fields = new FieldList(
-            TextField::create('Keywords')
-                ->addExtraClass('form-control'),
+//            TextField::create('Keywords')
+//                ->addExtraClass('form-control'),
             DropdownField::create('Service', 'Service', DynamicList::get_dynamic_list('ServiceType')->itemArray())
+                ->setEmptyString('Select one')
                 ->addExtraClass('form-control'),
-            TextField::create('Suburb', 'Suburb')
+            TextField::create('Postcode', 'Postcode')
                 ->addExtraClass('form-control')
         );
         $actions = new FieldList(
@@ -98,11 +102,7 @@ class ServicePage_Controller extends Page_Controller{
                 ->addExtraClass('form-control required'),
             TextField::create('SubDomain', 'SubDomain')
                 ->addExtraClass('form-control required'),
-            TextField::create('Street', 'Street')
-                ->addExtraClass('form-control required'),
-            TextField::create('Suburb', 'Suburb')
-                ->addExtraClass('form-control required'),
-            DropdownField::create("State", "State", singleton('ServiceEntry')->dbObject('State')->enumValues())
+            TextField::create('Address', 'Address')
                 ->addExtraClass('form-control required'),
             MultiValueCheckboxFieldBS::create('Service', 'Service', DynamicList::get_dynamic_list('ServiceType')->itemArray())
                 ->addExtraClass('required'),
@@ -123,6 +123,16 @@ class ServicePage_Controller extends Page_Controller{
             CheckboxField::create("Terms", "Terms & Conditions")
                 ->setAttribute("required", true)
                 ->addExtraClass('required'),
+            HiddenField::create('Suburb', 'Suburb')
+                ->setAttribute("data-geo","locality"),
+            HiddenField::create('State', 'State')
+                ->setAttribute("data-geo","administrative_area_level_1"),
+            HiddenField::create('Postcode', 'Postcode')
+                ->setAttribute("data-geo","postal_code"),
+            HiddenField::create('Lat', 'Lat')
+                ->setAttribute("data-geo","lat"),
+            HiddenField::create('Lng', 'Lng')
+                ->setAttribute("data-geo","lng"),
             HiddenField::create('IPAddress', 'IPAddress', $user_ip)
         );
         $fields->push($logo = FileAttachmentField::create("Logo", "Logo"));
@@ -184,7 +194,7 @@ class ServicePage_Controller extends Page_Controller{
                           zoom: 15,
                           center: myLatLng
                         });
-                        var contentString = '<div id=\"content\"><div id=\"bodyContent\"><h4>".$entry->Title."</h4><p>".$entry->fullAddress()."</p></div></div>';
+                        var contentString = '<div id=\"content\"><div id=\"bodyContent\"><h4>".$entry->Title."</h4><p>".$entry->Address."</p></div></div>';
                         var infowindow = new google.maps.InfoWindow({
                           content: contentString
                         });

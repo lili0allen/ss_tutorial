@@ -42,5 +42,13 @@ $(function () {
             }
         };
     }
+
+    $("#Form_ServiceForm_Address").geocomplete({
+        country: 'AUS',
+        details: "form",
+        detailsAttribute: "data-geo",
+        type: ["postal_code", "establishment"]
+    });
+
 })
 })(jQuery);
