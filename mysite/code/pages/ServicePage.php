@@ -7,10 +7,10 @@
  */
 
 class ServicePage extends Page{
-    public function _getServiceEntries(){
-        $entries = ServiceEntry::get()->sort('Created','DESC');
-        return $entries;
-    }
+//    public function _getServiceEntries(){
+//        $entries = ServiceEntry::get()->sort('Created','DESC');
+//        return $entries;
+//    }
 }
 
 class ServicePage_Controller extends Page_Controller{
@@ -18,76 +18,67 @@ class ServicePage_Controller extends Page_Controller{
         'ServiceForm','search','edit','entry'
     );
 
-    public function init() {
-        parent::init();
-        Requirements::javascript('//cdn.tinymce.com/4/tinymce.min.js');
-        Requirements::javascript('https://maps.googleapis.com/maps/api/js?key=AIzaSyCwlMt5FInggZeqhh1HQrUcyFDwGXDcsBo&libraries=places');
-        Requirements::customScript("tinymce.init({selector: '#Content textarea'});");
-    }
-
     public function index(SS_HTTPRequest $request){
-        $entries = ServiceEntry::get();
         $filters = ArrayList::create();
-
-//        if($search = $request->getVar('Keywords')){
-//            $filters->push(ArrayData::create(array(
-//                'Label' => "Service: ‘$search'",
-//                'RemoveLink' => HTTP::setGetVar('Keywords', null)
-//            )));
-//            $entries = $entries->filterAny(
-//                array(
-//                    'Title:PartialMatch' => $search,
-//                    'SubDomain:PartialMatch' => $search,
-//                    'Address:PartialMatch' => $search,
-//                    'Description:PartialMatch' => $search,
-//                    'Content:PartialMatch' => $search
-//                )
-//            );
-//        }
+        $entries = ArrayList::create();
 
         if($service = $request->getVar('Service')){
             $filters->push(ArrayData::create(array(
-                'Label' => "Service: ‘$service'",
+                'Label' => "Service: '$service'",
                 'RemoveLink' => HTTP::setGetVar('Service', null)
             )));
-            $entries = $entries->filter(
-                array(
-                    'ServiceValue:PartialMatch' => '"'.$service.'"'
-                )
-            );
+        }
+
+        if($distance = $request->getVar('Distance')){
+            $filters->push(ArrayData::create(array(
+                'Label' => "Distance: '$distance'",
+                'RemoveLink' => HTTP::setGetVar('Distance', null)
+            )));
+            $distance = pow($distance*0.621371,2);
         }
 
         if($postcode = $request->getVar('Postcode')){
             $filters->push(ArrayData::create(array(
-                'Label' => "Postcode: ‘$postcode'",
+                'Label' => "Postcode: '$postcode'",
                 'RemoveLink' => HTTP::setGetVar('Postcode', null)
             )));
-            $entries = $entries->filter(
-                array(
-                    'Postcode:ExactMatch' => $postcode
-                )
-            );
         }
 
-        return array(
-            'ServiceEntries' => $entries
-        );
+        if($postcode && $service && $distance) {
+            $result = DB::query("
+                SELECT *,
+                    POW(69.1 * (Lat - -37.850831), 2) +
+                    POW(69.1 * (145.100481 - Lng) * COS(Lat / 57.3), 2) AS distance
+                FROM ServiceEntry WHERE ServiceValue LIKE '%\"$service\"%' HAVING distance < $distance ORDER BY distance;
+            ");
+            while ($record = $result->record()) {
+                $entries->add(ArrayData::create($record));
+            }
+            //return $this->customise(array('ServiceEntries' => $entries))->renderWith('ServiceList');
+            return array(
+                'ServiceEntries' => $entries
+            );
+        }else{
+            return array();
+        }
+
     }
     
     public function SearchForm(){
         $fields = new FieldList(
-//            TextField::create('Keywords')
-//                ->addExtraClass('form-control'),
             DropdownField::create('Service', 'Service', DynamicList::get_dynamic_list('ServiceType')->itemArray())
                 ->setEmptyString('Select one')
                 ->addExtraClass('form-control'),
             TextField::create('Postcode', 'Postcode')
+                ->addExtraClass('form-control'),
+            NumericField::create('Distance', 'Distance', 20)
                 ->addExtraClass('form-control')
         );
         $actions = new FieldList(
             new FormAction('SearchEntries', 'Search')
         );
-        $Form = new Form($this, __FUNCTION__, $fields, $actions);
+        $validator = new RequiredFields('Service', 'Postcode','Distance');
+        $Form = new Form($this, __FUNCTION__, $fields, $actions, $validator);
         $Form->setFormMethod('GET')
             ->setFormAction($this->Link())//post to index()
             ->disableSecurityToken()
@@ -215,7 +206,11 @@ class ServicePage_Controller extends Page_Controller{
     }
 
     public function edit(){
+        
         if(Member::currentUser()){
+            Requirements::javascript('//cdn.tinymce.com/4/tinymce.min.js');
+            Requirements::customScript("tinymce.init({selector: '#Content textarea'});");
+            Requirements::javascript('https://maps.googleapis.com/maps/api/js?key=AIzaSyCwlMt5FInggZeqhh1HQrUcyFDwGXDcsBo&libraries=places');
             $link = $this->Link()."entry/".$this->ServiceForm()->getRecord()->SubDomain;
             return array(
                 'Link'=>$link
