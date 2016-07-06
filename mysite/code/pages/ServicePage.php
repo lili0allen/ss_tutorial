@@ -171,6 +171,7 @@ class ServicePage_Controller extends Page_Controller{
 
     public function entry()
     {
+        Requirements::javascript('https://maps.googleapis.com/maps/api/js?key=AIzaSyCwlMt5FInggZeqhh1HQrUcyFDwGXDcsBo&libraries=places');
         $params = $this->getRequest();
         if ($subdomain = $params->param('ID')) {
             $entry = DataObject::get('ServiceEntry')->filter(array('SubDomain' => $subdomain))->first();
@@ -206,7 +207,7 @@ class ServicePage_Controller extends Page_Controller{
     }
 
     public function edit(){
-        
+
         if(Member::currentUser()){
             Requirements::javascript('//cdn.tinymce.com/4/tinymce.min.js');
             Requirements::customScript("tinymce.init({selector: '#Content textarea'});");
