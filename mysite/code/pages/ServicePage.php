@@ -7,10 +7,7 @@
  */
 
 class ServicePage extends Page{
-//    public function _getServiceEntries(){
-//        $entries = ServiceEntry::get()->sort('Created','DESC');
-//        return $entries;
-//    }
+
 }
 
 class ServicePage_Controller extends Page_Controller{

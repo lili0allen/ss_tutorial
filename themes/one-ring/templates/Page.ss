@@ -6,7 +6,7 @@
     <head>
 
         $MetaTags(false)
-        <title>One Ring Rentals: $Title</title>
+        <title>Handy Service | $Title</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
         <% base_tag %>
@@ -18,19 +18,10 @@
 
     </head>
     <body>
-
+        <% include MainNav %>
         <div id="wrapper">
-
-            <header id="header">
-                <% include TopBar %>
-                <% include MainNav %>
-            </header>
-
             $Layout
-
-            <% include Footer %>
-
         </div>
-
+        <% include Footer %>
     </body>
 </html>

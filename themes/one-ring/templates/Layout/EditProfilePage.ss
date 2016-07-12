@@ -1,30 +1,43 @@
-<% if $Success %>
+<% include Banner %>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <% if $Success %>
+                <div class="alert alert-success" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                    <p>You have successfully registered!</p>
+                </div>
 
-    <p class="savedMessage">You have successfully registered!</p>
+                <p>Your details are as follows: </p>
+                <% with $CurrentMember %>
+                    <p>
+                        Name: $Name<br />
+                        Email: $Email<br />
+                    </p>
+                <% end_with %>
 
-    <p>Your details are as follows: </p>
-    <% with $CurrentMember %>
-        <p>
-            Name: $Name<br />
-            Email: $Email<br />
-        </p>
-    <% end_with %>
+                <a href="$Link">Edit details</a>
 
-    <a href="$Link">Edit details</a>
+            <% else %>
 
-<% else %>
+                <% if $Saved %>
+                    <div class="alert alert-success" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                        <p>Your profile has been saved!</p>
+                    </div>
+                <% end_if %>
+                <% if $CurrentMember %>
+                    $EditProfileForm
+                    <p>If you are a business owner, you can create/edit your business entry. $EditServiceLink</p>
 
-    <% if $Saved %>
+                <% else %>
+                    <div class="alert alert-danger" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                        <p>You must <a href="registration">registered</a> and logged in to edit your profile</p>
+                    </div>
+                <% end_if %>
 
-        <p class="savedMessage">Your profile has been saved!</p>
-
-    <% end_if %>
-    <% if $CurrentMember %>
-        $EditProfileForm
-        $EditServiceLink
-
-    <% else %>
-        You must <a href="registration">registered</a> and logged in to edit your profile
-    <% end_if %>
-
-<% end_if %>
+            <% end_if %>
+        </div>
+    </div>
+</div>

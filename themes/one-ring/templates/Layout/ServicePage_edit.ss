@@ -1,19 +1,27 @@
-<div id="main">
-    <div class="container">
-        <% if $CurrentMember %>
-            <% if $Success %>
-                <p class="savedMessage">You have successfully registered! <a href="{$Link}" target="_blank">View</a></p>
-            <% end_if %>
-            <% if $Saved %>
-                <p class="savedMessage">Your profile has been saved! <a href="{$Link}" target="_blank">View</a></p>
-            <% end_if %>
-            <div class="row">
-                <div class="col-md-12">
-                    $ServiceForm
+<% include Banner %>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <% if $CurrentMember %>
+                <% if $Success %>
+                    <div class="alert alert-success alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                        <p>You have successfully registered! <a href="{$Link}" target="_blank">View</a></p>
+                    </div>
+                <% end_if %>
+                <% if $Saved %>
+                    <div class="alert alert-success alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                        <p>Your profile has been saved! <a href="{$Link}" target="_blank">View</a></p>
+                    </div>
+                <% end_if %>
+                $ServiceForm
+            <% else %>
+                <div class="alert alert-danger" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                    <p>You must <a href="registration">registered</a> and logged in to edit your profile</p>
                 </div>
-            </div>
-        <% else %>
-            You must <a href="registration">registered</a> and logged in to edit your profile
-        <% end_if %>
+            <% end_if %>
+        </div>
     </div>
 </div>

@@ -18,9 +18,9 @@ class EditProfilePage_Controller extends Page_Controller {
 
     public function EditProfileForm(){
         $fields = new FieldList(
-            new TextField('Name', 'Name'),
-            new EmailField('Email', 'Email'),
-            new ConfirmedPasswordField('Password', 'New Password')
+            TextField::create('Name', 'Name')->addExtraClass('form-control'),
+            EmailField::create('Email', 'Email')->addExtraClass('form-control'),
+            ConfirmedPasswordField::create('Password', 'New Password')->addExtraClass('form-control')
         );
         $actions = new FieldList(
             new FormAction('SaveProfile', 'Save')
