@@ -23,7 +23,7 @@ class EditProfilePage_Controller extends Page_Controller {
             ConfirmedPasswordField::create('Password', 'New Password')->addExtraClass('form-control')
         );
         $actions = new FieldList(
-            new FormAction('SaveProfile', 'Save')
+            FormAction::create('SaveProfile', 'Save')->addExtraClass('btn btn-primary btn-block')
         );
         $validator = new RequiredFields('Name', 'Email');
         $Form = new Form($this, __FUNCTION__, $fields, $actions, $validator);

@@ -18,12 +18,12 @@ class RegistrationPage_Controller extends Page_Controller {
 
     public function RegistrationForm(){
         $fields = new FieldList(
-            new TextField('Name', 'Name'),
-            new EmailField('Email', 'Email'),
-            new ConfirmedPasswordField('Password', 'Password')
+            TextField::create('Name', 'Name')->addExtraClass('form-control'),
+            EmailField::create('Email', 'Email')->addExtraClass('form-control'),
+            ConfirmedPasswordField::create('Password', 'Password')->addExtraClass('form-control')
         );
         $actions = new FieldList(
-            new FormAction('doRegister', 'Register')
+            FormAction::create('doRegister', 'Register')->addExtraClass('btn btn-primary btn-block')
         );
         $validator = new RequiredFields('Name', 'Email', 'Password');
         return new Form($this, 'RegistrationForm', $fields, $actions, $validator);

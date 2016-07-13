@@ -37,8 +37,9 @@ class Page_Controller extends ContentController {
         Requirements::combine_files('site_style.css',
                     array(
                         $this->ThemeDir()."/css/bootstrap.min.css",
-                        $this->ThemeDir()."/css/bootstrap-datepicker.min.css",
+                        //$this->ThemeDir()."/css/bootstrap-datepicker.min.css",
                         $this->ThemeDir()."/css/font-awesome.min.css",
+						$this->ThemeDir()."/css/jquery-ui.min.css",
                         $this->ThemeDir()."/css/style.css"
                     )
         );
@@ -46,11 +47,12 @@ class Page_Controller extends ContentController {
                     array(
                         $this->ThemeDir()."/javascript/modernizr.js",
                         $this->ThemeDir()."/javascript/jquery.min.js",
+						$this->ThemeDir()."/javascript/jquery-ui.min.js",
                         $this->ThemeDir()."/javascript/bootstrap.min.js",
-                        $this->ThemeDir()."/javascript/bootstrap3-typeahead.min.js",
+                        //$this->ThemeDir()."/javascript/bootstrap3-typeahead.min.js",
                         //$this->ThemeDir()."/javascript/bootstrap-datepicker.min.js",
-                        $this->ThemeDir()."/javascript/jquery.form.js",
-                        $this->ThemeDir()."/javascript/jquery.validate.min.js",
+                        //$this->ThemeDir()."/javascript/jquery.form.js",
+                        //$this->ThemeDir()."/javascript/jquery.validate.min.js",
                         $this->ThemeDir()."/javascript/script.js",
 						$this->ThemeDir()."/javascript/jquery.geocomplete.min.js",
                     )

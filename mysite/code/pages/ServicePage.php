@@ -69,10 +69,10 @@ class ServicePage_Controller extends Page_Controller{
             TextField::create('Postcode', 'Postcode')
                 ->addExtraClass('form-control'),
             NumericField::create('Distance', 'Distance', 20)
-                ->addExtraClass('form-control')
+                ->setTemplate('Distance_slider')
         );
         $actions = new FieldList(
-            new FormAction('SearchEntries', 'Search')
+            FormAction::create('SearchEntries', 'Search')->addExtraClass('btn btn-primary')
         );
         $validator = new RequiredFields('Service', 'Postcode','Distance');
         $Form = new Form($this, __FUNCTION__, $fields, $actions, $validator);
@@ -134,7 +134,7 @@ class ServicePage_Controller extends Page_Controller{
             ->imagesOnly();
 
         $actions = new FieldList(
-            new FormAction('SaveService', 'Save')
+            FormAction::create('SaveService', 'Save')->addExtraClass('btn btn-primary')
         );
         $validator = new RequiredFields('Title', 'SubDomain','State');
         $Form = new Form($this, __FUNCTION__, $fields, $actions, $validator);

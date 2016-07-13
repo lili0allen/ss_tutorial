@@ -32,7 +32,10 @@ module.exports = function(grunt)
 
                     {expand: true, cwd: 'themes/one-ring/bower_components/modernizr/', src: 'modernizr.js', dest: 'themes/one-ring/javascript'},
 
-                    {expand: true, cwd: 'themes/one-ring/bower_components/geocomplete/', src: 'jquery.geocomplete.min.js', dest: 'themes/one-ring/javascript'}
+                    {expand: true, cwd: 'themes/one-ring/bower_components/geocomplete/', src: 'jquery.geocomplete.min.js', dest: 'themes/one-ring/javascript'},
+
+                    {expand: true, cwd: 'themes/one-ring/bower_components/jquery-ui/', src: 'jquery-ui.min.js', dest: 'themes/one-ring/javascript'},
+                    {expand: true, cwd: 'themes/one-ring/bower_components/jquery-ui/themes/base/', src: 'jquery-ui.min.css', dest: 'themes/one-ring/css'}
 
                 ]
             }

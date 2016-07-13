@@ -50,5 +50,23 @@ $(function () {
         type: ["postal_code", "establishment"]
     });
 
+    $("input.password").addClass("form-control");
+    $("#MemberLoginForm_LoginForm_Email").addClass("form-control");
+    $("#MemberLoginForm_LoginForm_action_dologin").addClass("btn btn-primary btn-block");
+    $("#MemberLoginForm_LostPasswordForm_Email").addClass("form-control");
+    $("#MemberLoginForm_LostPasswordForm_action_forgotPassword").addClass("btn btn-primary btn-block");
+
+
+    $( "#slider" ).slider({
+        value:20,
+        min: 0,
+        max: 100,
+        step: 10,
+        slide: function( event, ui ) {
+            $( "#Form_SearchForm_Distance" ).val( ui.value );
+        }
+    });
+    $( "#Form_SearchForm_Distance" ).val( $( "#slider" ).slider( "value" ) );
+
 })
 })(jQuery);
