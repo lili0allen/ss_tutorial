@@ -56,9 +56,8 @@ $(function () {
     $("#MemberLoginForm_LostPasswordForm_Email").addClass("form-control");
     $("#MemberLoginForm_LostPasswordForm_action_forgotPassword").addClass("btn btn-primary btn-block");
 
-
     $( "#slider" ).slider({
-        value:20,
+        value: $( "#Form_SearchForm_Distance" ).val(),
         min: 0,
         max: 100,
         step: 10,
@@ -67,6 +66,18 @@ $(function () {
         }
     });
     $( "#Form_SearchForm_Distance" ).val( $( "#slider" ).slider( "value" ) );
+    $('.typeahead').typeahead({
+        source: function (query, process) {
+            return $.get('/api/v1/PostcodesGeo', { Postcode: query }, function (xml) {
+                var newData = [];
+                    $(xml).find('PostcodesGeo').each(function() {
+                        newData.push($(this).find('Suburb').text()+' '+$(this).find('Postcode').text()+', '+$(this).find('State').text());
+                    });
 
+                return process(newData);
+            });
+        },
+        minLength: 3
+    });
 })
 })(jQuery);

@@ -50,21 +50,7 @@ class EditProfilePage_Controller extends Page_Controller {
         }
     }
 
-    public function EditServiceLink(){
-        $servicePage = DataObject::get_one('ServicePage');
-        if(Member::currentUser()->ServiceEntryID){
-            $serviceLink = array(
-                'link'  =>  $servicePage->URLSegment.'/edit',
-                'text'  =>  'Edit my Service'
-            );
-        }else{
-            $serviceLink = array(
-                'link'  =>  $servicePage->URLSegment.'/submit',
-                'text'  =>  'Create a Service'
-            );
-        }
-        return '<a href="'.$serviceLink['link'].'">'.$serviceLink['text'].'</a>';
-    }
+    
 
     public function Saved(){
         return $this->request->getVar('saved');

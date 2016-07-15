@@ -49,7 +49,7 @@ class Page_Controller extends ContentController {
                         $this->ThemeDir()."/javascript/jquery.min.js",
 						$this->ThemeDir()."/javascript/jquery-ui.min.js",
                         $this->ThemeDir()."/javascript/bootstrap.min.js",
-                        //$this->ThemeDir()."/javascript/bootstrap3-typeahead.min.js",
+                        $this->ThemeDir()."/javascript/bootstrap3-typeahead.min.js",
                         //$this->ThemeDir()."/javascript/bootstrap-datepicker.min.js",
                         //$this->ThemeDir()."/javascript/jquery.form.js",
                         //$this->ThemeDir()."/javascript/jquery.validate.min.js",
@@ -57,6 +57,22 @@ class Page_Controller extends ContentController {
 						$this->ThemeDir()."/javascript/jquery.geocomplete.min.js",
                     )
         );
+	}
+
+	public function EditServiceLink(){
+		$servicePage = DataObject::get_one('ServicePage');
+		if(Member::currentUser()->ServiceEntryID){
+			$serviceLink = array(
+				'link'  =>  $servicePage->Link().'edit',
+				'text'  =>  'Edit Service'
+			);
+		}else{
+			$serviceLink = array(
+				'link'  =>  $servicePage->Link().'edit',
+				'text'  =>  'Create Service'
+			);
+		}
+		return '<a href="'.$serviceLink['link'].'">'.$serviceLink['text'].'</a>';
 	}
 
 }

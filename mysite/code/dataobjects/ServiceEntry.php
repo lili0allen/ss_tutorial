@@ -37,4 +37,10 @@ class ServiceEntry extends DataObject {
         return $fields;
     }
 
+    public function Link(){
+        $servicePage = DataObject::get_one('ServicePage');
+        return $servicePage->Link().'entry/'.$this->SubDomain;
+
+    }
+
 } 

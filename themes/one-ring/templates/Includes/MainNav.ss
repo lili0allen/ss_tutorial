@@ -34,7 +34,8 @@
 
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="$Page('edit-profile').Link">Edit Profile</a></li>
-                            <li><a href="/home/logout">Logout</a></li>
+                            <li>$EditServiceLink</li>
+                            <li><a href="/Security/logout">Logout</a></li>
                         </ul>
                     </li>
                 <% else %>

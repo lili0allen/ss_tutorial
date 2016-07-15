@@ -8,15 +8,19 @@
                     <p>You have successfully registered!</p>
                 </div>
 
-                <p>Your details are as follows: </p>
-                <% with $CurrentMember %>
-                    <p>
-                        Name: $Name<br />
-                        Email: $Email<br />
-                    </p>
-                <% end_with %>
 
-                <a href="$Link">Edit details</a>
+                <% with $CurrentMember %>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Your details are as follows:</div>
+                        <div class="panel-body">
+                            <p><strong>Name</strong>: $Name</p>
+                            <p><strong>Email</strong>: $Email</p>
+                        </div>
+                    </div>
+                <% end_with %>
+                <p>If you are a business owner, you can create/edit your business entry. $EditServiceLink</p>
+                <p><a href="$Link">Edit details</a></p>
+
 
             <% else %>
 
@@ -28,7 +32,6 @@
                 <% end_if %>
                 <% if $CurrentMember %>
                     $EditProfileForm
-                    <p>If you are a business owner, you can create/edit your business entry. $EditServiceLink</p>
 
                 <% else %>
                     <div class="alert alert-danger" role="alert">

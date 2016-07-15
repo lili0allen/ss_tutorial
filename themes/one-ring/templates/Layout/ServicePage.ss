@@ -8,21 +8,21 @@
                     <% with $dataFieldByName('Service') %>
                         <div class="col-md-3">
                             <fieldset class="form-group">
-                                <label>Service:</label><br />$Me
+                                $Me
                             </fieldset>
                         </div>
                     <% end_with %>
                     <% with $dataFieldByName('Postcode') %>
                         <div class="col-md-3">
                             <fieldset class="form-group">
-                                <label>Postcode:</label><br />$Me
+                                $Me
                             </fieldset>
                         </div>
                     <% end_with %>
                     <% with $dataFieldByName('Distance') %>
                         <div class="col-md-3">
                             <fieldset class="form-group">
-                                <label>Distance:</label><br />$Me
+                                Distance: $Me
                             </fieldset>
                         </div>
                     <% end_with %>
@@ -42,7 +42,28 @@
         <div class="col-sm-12">
             <% if $ServiceEntries %>
                 <% loop $ServiceEntries %>
-                    $Title
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">$Title</h3>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="media">
+                                        <div class="media-left">
+                                            <a href="$Link()">
+                                                $Logo.CroppedImage(100,100)
+                                            </a>
+                                        </div>
+                                        <div class="media-body">
+                                            <p>$Description</p>
+                                        </div>
+                                        <div class="media-footer">Panel footer</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 <% end_loop %>
             <% end_if %>
         </div>

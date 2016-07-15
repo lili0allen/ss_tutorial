@@ -42,16 +42,21 @@ class ServicePage_Controller extends Page_Controller{
         }
 
         if($postcode && $service && $distance) {
+
+            $latlng = DB::query("
+                SELECT Latitude, Longitude FROM PostcodesGeo where CONCAT(Suburb, ' ', Postcode, ', ', State) = '$postcode';
+            ")->record();
+
             $result = DB::query("
-                SELECT *,
-                    POW(69.1 * (Lat - -37.850831), 2) +
-                    POW(69.1 * (145.100481 - Lng) * COS(Lat / 57.3), 2) AS distance
+                SELECT ID,
+                    POW(69.1 * (Lat - ".$latlng['Latitude']."), 2) +
+                    POW(69.1 * (".$latlng['Longitude']." - Lng) * COS(Lat / 57.3), 2) AS distance
                 FROM ServiceEntry WHERE ServiceValue LIKE '%\"$service\"%' HAVING distance < $distance ORDER BY distance;
             ");
             while ($record = $result->record()) {
-                $entries->add(ArrayData::create($record));
+                $entries->add(DataObject::get_by_id('ServiceEntry',$record['ID']));
             }
-            //return $this->customise(array('ServiceEntries' => $entries))->renderWith('ServiceList');
+
             return array(
                 'ServiceEntries' => $entries
             );
@@ -64,15 +69,18 @@ class ServicePage_Controller extends Page_Controller{
     public function SearchForm(){
         $fields = new FieldList(
             DropdownField::create('Service', 'Service', DynamicList::get_dynamic_list('ServiceType')->itemArray())
-                ->setEmptyString('Select one')
+                ->setEmptyString('Select a service')
                 ->addExtraClass('form-control'),
             TextField::create('Postcode', 'Postcode')
-                ->addExtraClass('form-control'),
-            NumericField::create('Distance', 'Distance', 20)
+                ->setAttribute('data-provide', 'typeahead')
+                ->setAttribute('autocomplete', 'off')
+                ->setAttribute('placeholder', 'Postcode')
+                ->addExtraClass('form-control typeahead'),
+            NumericField::create('Distance', 'Distance', 30)
                 ->setTemplate('Distance_slider')
         );
         $actions = new FieldList(
-            FormAction::create('SearchEntries', 'Search')->addExtraClass('btn btn-primary')
+            FormAction::create('SearchEntries', 'Search')->addExtraClass('btn btn-primary btn-block')
         );
         $validator = new RequiredFields('Service', 'Postcode','Distance');
         $Form = new Form($this, __FUNCTION__, $fields, $actions, $validator);
@@ -209,10 +217,15 @@ class ServicePage_Controller extends Page_Controller{
             Requirements::javascript('//cdn.tinymce.com/4/tinymce.min.js');
             Requirements::customScript("tinymce.init({selector: '#Content textarea'});");
             Requirements::javascript('https://maps.googleapis.com/maps/api/js?key=AIzaSyCwlMt5FInggZeqhh1HQrUcyFDwGXDcsBo&libraries=places');
-            $link = $this->Link()."entry/".$this->ServiceForm()->getRecord()->SubDomain;
-            return array(
-                'Link'=>$link
-            );
+            if(Member::currentUser()->ServiceEntryID){
+                $link = $this->Link()."entry/".$this->ServiceForm()->getRecord()->SubDomain;
+                return array(
+                    'Link'=>$link
+                );
+            }else{
+                return array();
+            }
+
         }else{
             return Security::PermissionFailure($this->controller, 'You must <a href="register">registered</a> and logged in to edit your profile');
         }
