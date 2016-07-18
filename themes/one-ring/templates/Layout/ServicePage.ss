@@ -1,6 +1,6 @@
 <% include Banner %>
 <div class="container">
-    <div class="row">
+    <div class="row margin-row">
         <div class="col-sm-12">
             <% with $SearchForm %>
                 <form $AttributesHTML>
@@ -38,34 +38,37 @@
             <% end_with %>
         </div>
     </div>
-    <div class="row">
+    <div class="row margin-row">
         <div class="col-sm-12">
+            <ul class="list-group">
             <% if $ServiceEntries %>
                 <% loop $ServiceEntries %>
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title">$Title</h3>
-                                </div>
-                                <div class="panel-body">
-                                    <div class="media">
-                                        <div class="media-left">
-                                            <a href="$Link()">
-                                                $Logo.CroppedImage(100,100)
-                                            </a>
-                                        </div>
-                                        <div class="media-body">
-                                            <p>$Description</p>
-                                        </div>
-                                        <div class="media-footer">Panel footer</div>
+                    <li class="list-group-item">
+                        <div class="media">
+                            <div class="media-left">
+                                <a href="$Link()">
+                                    <% if $Logo %>
+                                        $Logo.CroppedImage(100,100)
+                                    <% else %>
+                                        <img src="http://placehold.it/100x100">
+                                    <% end_if %>
+                                </a>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">$Title</h4>
+                                <p>$Description.ContextSummary(250)</p>
+                                <div class="row">
+                                    <div class="col-md-12 text-right">
+                                        <a class="btn btn-default add-to-wishlist" data-id="$ID">Add To Wishlist</a>
+                                        <a class="btn btn-default">View Details</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </li>
                 <% end_loop %>
             <% end_if %>
+            </ul>
         </div>
     </div>
 </div>
