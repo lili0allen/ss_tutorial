@@ -41,8 +41,9 @@
                 <% else %>
                     <li><a href="/Security/login">Login</a></li>
                     <li><a href="$Page('registration').Link">Register</a></li>
-                <% end_if %>
 
+                <% end_if %>
+                <li><a><i class="fa fa-heart-o"></i> Wishlist (<span id="wishlist-count">0</span>)</a></li>
             </ul>
         </div>
     </div>
