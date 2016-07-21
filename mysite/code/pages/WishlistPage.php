@@ -26,7 +26,7 @@ class WishlistPage_Controller extends Page_Controller
                 'ServiceEntries' => $entries
             );
         }else{
-
+            return array();
         }
     }
 }

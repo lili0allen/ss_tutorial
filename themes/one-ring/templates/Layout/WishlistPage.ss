@@ -29,6 +29,8 @@
                             </div>
                         </li>
                     <% end_loop %>
+                <% else %>
+                    Your wishlist is empty. <a href="/services">Search</a> for services and add them to ask for quote.
                 <% end_if %>
             </ul>
         </div>
