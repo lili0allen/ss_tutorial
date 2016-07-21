@@ -1,5 +1,5 @@
 <% include Banner %>
-<div class="container">
+<div class="container servicepage">
     <div class="row margin-row">
         <div class="col-sm-12">
             <% with $SearchForm %>
@@ -55,7 +55,7 @@
                                 </a>
                             </div>
                             <div class="media-body">
-                                <h4 class="media-heading">$Title</h4>
+                                <h4 class="media-heading text-capitalize"><strong>$Title</strong></h4>
                                 <p>$Description.ContextSummary(250)</p>
                                 <div class="row">
                                     <div class="col-md-12 text-right">

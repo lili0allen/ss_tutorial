@@ -31,7 +31,6 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                             <i class="fa fa-user" aria-hidden="true"></i>&nbsp; $CurrentMember.Name <span class="caret"></span>
                         </a>
-
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="$Page('edit-profile').Link">Edit Profile</a></li>
                             <li>$EditServiceLink</li>
@@ -41,9 +40,8 @@
                 <% else %>
                     <li><a href="/Security/login">Login</a></li>
                     <li><a href="$Page('registration').Link">Register</a></li>
-
                 <% end_if %>
-                <li><a><i class="fa fa-heart-o"></i> Wishlist (<span id="wishlist-count">0</span>)</a></li>
+                <li><a href="/wishlist"><i class="fa fa-heart-o"></i> Wishlist (<span id="wishlist-count">0</span>)</a></li>
             </ul>
         </div>
     </div>

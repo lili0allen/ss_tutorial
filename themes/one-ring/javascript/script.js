@@ -100,37 +100,78 @@ $(function () {
         }
     });
 
-    //add to wishlist
-    $(".add-to-wishlist").click(function () {
-        var wishlistCookie = getCookie("wishlist");
-        var serviceCode = $(this).data('id');
-        if (wishlistCookie){
-            var serviceArray = new Array();
-            serviceArray = wishlistCookie.split(",");
-            if($.inArray(serviceCode.toString(),serviceArray)=="-1"){
-                serviceArray.push(serviceCode);
-                document.cookie = 'wishlist='+serviceArray.toString()+'; expires=Fri, 1 Jan 2031 00:00:01 UTC; path=/';
-                // $(this).html("REMOVE").addClass("remove-from-wishlist").removeClass("add-to-wishlist");
-
-            }else{
-                return false;
-            }
-        }else{
-            document.cookie = 'wishlist='+serviceCode+'; expires=Fri, 1 Jan 2031 00:00:01 UTC; path=/';
-        }
-        updateWishlistCount();
-    });
-
     updateWishlistCount();
     function updateWishlistCount() {
         var wishlistCookie = getCookie("wishlist");
         if(wishlistCookie){
             var serviceArray = wishlistCookie.split(",");
             $("#wishlist-count").html(serviceArray.length);
+        }else{
+            $("#wishlist-count").html("0");
+        }
+    }
+
+    updateWishlistBtn();
+    function updateWishlistBtn() {
+        var wishlistCookie = getCookie("wishlist");
+        if(wishlistCookie){
+            var serviceArray = wishlistCookie.split(",");
+            $.each(serviceArray, function( index, value ) {
+                $('*[data-id="'+value+'"]').html("Remove").addClass("remove-from-wishlist").removeClass("add-to-wishlist");
+            });
+        }
+    }
+
+    //add to wishlist
+    $(".servicepage").on('click', '.add-to-wishlist', function () {
+        updateCookie('add',$(this));
+        updateWishlistCount();
+    });
+
+    //remove from wishlist
+    $(".servicepage").on('click', '.remove-from-wishlist', function () {
+        updateCookie('remove',$(this));
+        updateWishlistCount();
+    });
+
+    function updateCookie(action,object) {
+        var wishlistCookie = getCookie("wishlist");
+        var serviceCode = object.data('id');
+        var serviceArray = new Array();
+        if(action=='remove'){
+            if (wishlistCookie){
+                serviceArray = wishlistCookie.split(",");
+                serviceArray = $.grep(serviceArray, function(value){
+                    return value != serviceCode;
+                });
+                document.cookie = 'wishlist='+serviceArray.toString()+'; expires=Fri, 1 Jan 2031 00:00:01 UTC; path=/';
+                object.html("Add To Wishlist").addClass("add-to-wishlist").removeClass("remove-from-wishlist");
+            }else{
+                return false;
+            }
+        }else if(action=='add'){
+            if (wishlistCookie){
+                serviceArray = wishlistCookie.split(",");
+                if($.inArray(serviceCode.toString(),serviceArray)=="-1"){
+                    serviceArray.push(serviceCode);
+                    document.cookie = 'wishlist='+serviceArray.toString()+'; expires=Fri, 1 Jan 2031 00:00:01 UTC; path=/';
+                    object.html("Remove").addClass("remove-from-wishlist").removeClass("add-to-wishlist");
+                }else{
+                    return false;
+                }
+            }else{
+                document.cookie = 'wishlist='+serviceCode+'; expires=Fri, 1 Jan 2031 00:00:01 UTC; path=/';
+                object.html("Remove").addClass("remove-from-wishlist").removeClass("add-to-wishlist");
+            }
         }
 
     }
 
+    $(".wishlistpage").on('click', '.remove-from-wishlist', function () {
+        updateCookie('remove',$(this));
+        updateWishlistCount();
+        $(this).closest(".list-group-item").hide();
+    });
 
     function getCookie(cookiename) {
         var name = cookiename + "=";
