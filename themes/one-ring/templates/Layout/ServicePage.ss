@@ -50,7 +50,7 @@
                                     <% if $Logo %>
                                         $Logo.CroppedImage(100,100)
                                     <% else %>
-                                        <img src="http://placehold.it/100x100">
+                                        <img src="$ThemeDir/images/logoholder.jpg" />
                                     <% end_if %>
                                 </a>
                             </div>
@@ -60,7 +60,7 @@
                                 <div class="row">
                                     <div class="col-md-12 text-right">
                                         <a class="btn btn-default add-to-wishlist" data-id="$ID">Add To Wishlist</a>
-                                        <a class="btn btn-default">View Details</a>
+                                        <a class="btn btn-default" href="$Link">View Details</a>
                                     </div>
                                 </div>
                             </div>
