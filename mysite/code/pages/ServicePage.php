@@ -56,10 +56,16 @@ class ServicePage_Controller extends Page_Controller{
             while ($record = $result->record()) {
                 $entries->add(DataObject::get_by_id('ServiceEntry',$record['ID']));
             }
+            $pagenatedEntries = PaginatedList::create($entries, $request)->setPageLength(3);
 
-            return array(
-                'ServiceEntries' => $entries
+            $data = array(
+                'ServiceEntries' => $pagenatedEntries
             );
+
+            if($request->isAjax()){
+                return $this->customise($data)->renderWith('SearchResults');
+            }
+            return $data;
         }else{
             return array();
         }
