@@ -18,12 +18,11 @@ then
 else
     for f in $filesChanged
 	do
-	    echo "file changed"
 		#do not upload these files that aren't necessary to the site
-		if [ "$f" != ".travis.yml" ] && [ "$f" != "deploy.sh" ] && [ "$f" != "test.js" ] && [ "$f" != "package.json" ]
-		then
+		#if [ "$f" != ".travis.yml" ] && [ "$f" != "deploy.sh" ] && [ "$f" != "test.js" ] && [ "$f" != "package.json" ]
+		#then
 	 		echo "Uploading $f"
 	 		curl --ftp-create-dirs -T $f -u $FTP_USER:$FTP_PASS ftp://easymode.com.au/$f
-		fi
+		#fi
 	done
 fi
