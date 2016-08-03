@@ -1,5 +1,4 @@
 #!/bin/bash
-echo "deploy works"
 gitLastCommit=$(git show --summary --grep="Merge pull request")
 if [[ -z "$gitLastCommit" ]]
 then
@@ -20,7 +19,7 @@ else
     for f in $filesChanged
 	do
 		#do not upload these files that aren't necessary to the site
-		if [ "$f" != "deploy.sh" ]
+		if [ "$f" != ".travis.yml" ] && [ "$f" != "deploy.sh" ] && [ "$f" != "test.js" ] && [ "$f" != "package.json" ]
 		then
 	 		echo "Uploading $f"
 	 		curl --ftp-create-dirs -T $f -u $FTP_USER:$FTP_PASS ftp://easymode.com.au/$f
