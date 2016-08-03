@@ -3,7 +3,7 @@ php:
   - 5.3
 env:
   global:
-    - "FTP_USER=ss@easymode.com.au"
+    - "FTP_USER=ss@ss.easymode.com.au"
     - "FTP_PASSWORD=admin!12"
 addons:
   artifacts:
