@@ -20,4 +20,7 @@ class PostcodesGeo extends DataObject{
     private static $searchable_fields = array(
         'Postcode'
     );
+    public function canView($member = null) {
+        return true;
+    }
 }

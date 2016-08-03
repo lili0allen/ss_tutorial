@@ -8,6 +8,6 @@ env:
 before_script:
   - echo "USE mysql;\nUPDATE user SET password=PASSWORD('password') WHERE user='root';\nFLUSH PRIVILEGES;\n" | mysql -u root
   - if [[ "$DB" == "mysql" ]]; then mysql -e "create database IF NOT EXISTS ss_official;" -uroot -ppassword; fi
-  - composer update
+  - composer install
 
 script: phpunit --configuration phpunit.xml
