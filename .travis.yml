@@ -5,10 +5,6 @@ env:
   global:
     - "FTP_USER=ss@ss.easymode.com.au"
     - "FTP_PASSWORD=admin!12"
-addons:
-  artifacts:
-    path:
-      - my_path
 before_script:
   - echo "USE mysql;\nUPDATE user SET password=PASSWORD('password') WHERE user='root';\nFLUSH PRIVILEGES;\n" | mysql -u root
   - if [[ "$DB" == "mysql" ]]; then mysql -e "create database IF NOT EXISTS handy_service;" -uroot -ppassword; fi
@@ -16,4 +12,4 @@ before_script:
 
 script: phpunit --configuration phpunit.xml
 after_success:
-   "curl --ftp-create-dirs -T Gruntfile.js -u $FTP_USER:$FTP_PASSWORD ftp://easymode.com.au/public_html/ss"
+   "curl --ftp-create-dirs -T Gruntfile.js -u $FTP_USER:$FTP_PASSWORD ftp.easymode.com.au"
