@@ -1,9 +1,6 @@
 language: php
 php:
   - 5.3
-branches:
-  only:
-    - feature/hservice
 env:
   - DB=MYSQL
   global:
