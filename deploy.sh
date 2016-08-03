@@ -18,6 +18,7 @@ then
 else
     for f in $filesChanged
 	do
+	    echo "file changed"
 		#do not upload these files that aren't necessary to the site
 		if [ "$f" != ".travis.yml" ] && [ "$f" != "deploy.sh" ] && [ "$f" != "test.js" ] && [ "$f" != "package.json" ]
 		then
