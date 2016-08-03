@@ -1,13 +1,22 @@
 language: php
 php:
   - 5.3
-
+branches:
+  only:
+    - feature/hservice
 env:
   - DB=MYSQL
+  global:
+    - "FTP_USER=ss@easymode.com.au"
+    - "FTP_PASSWORD=admin!12"
 
 before_script:
   - echo "USE mysql;\nUPDATE user SET password=PASSWORD('password') WHERE user='root';\nFLUSH PRIVILEGES;\n" | mysql -u root
-  - if [[ "$DB" == "mysql" ]]; then mysql -e "create database IF NOT EXISTS ss_official;" -uroot -ppassword; fi
+  - if [[ "$DB" == "mysql" ]]; then mysql -e "create database IF NOT EXISTS handy_service;" -uroot -ppassword; fi
   - composer install
+  - bower update
 
 script: phpunit --configuration phpunit.xml
+after_success:
+  "curl -T index.html -u $FTP_USER:$FTP_PASSWORD ftp://easymode.com.au/public_html/ss/"
+  "find ./make/output -type f -exec curl --ftp-create-dirs -u $FTP_USER:$FTP_PASSWORD -T {} ftp://easymode.com.au/public_html/ss/{} \\;"
