@@ -1,0 +1,56 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: dev
+ * Date: 5/17/16
+ * Time: 3:53 PM
+ */
+
+class RegistrationPage extends Page {
+
+}
+
+class RegistrationPage_Controller extends Page_Controller {
+
+    private static $allowed_actions = array(
+        'RegistrationForm'
+    );
+
+    public function RegistrationForm(){
+        $fields = new FieldList(
+            TextField::create('Name', 'Name')->addExtraClass('form-control'),
+            EmailField::create('Email', 'Email')->addExtraClass('form-control'),
+            ConfirmedPasswordField::create('Password', 'Password')->addExtraClass('form-control')
+        );
+        $actions = new FieldList(
+            FormAction::create('doRegister', 'Register')->addExtraClass('btn btn-primary btn-block')
+        );
+        $validator = new RequiredFields('Name', 'Email', 'Password');
+        return new Form($this, 'RegistrationForm', $fields, $actions, $validator);
+    }
+
+    public function doRegister($data, $form){
+        if($member = DataObject::get_one("Member","Email = '". Convert::raw2sql($data['Email']) ."'")){
+            $form->addErrorMessage('Email', "Sorry, that email address already exists. Please choose another one.", 'bad');
+            Session::set("FormInfo.Form_RegistrationForm.data", $data);
+            return $this->redirectBack();
+        }
+        $Member = new Member();
+        $form->saveInto($Member);
+        $Member->write();
+        $Member->logIn();
+
+        if(!$userGroup = DataObject::get_one('Group', "Code = 'serviceowner'")){
+            $userGroup = new Group();
+            $userGroup->Code = "serviceowner";
+            $userGroup->Title = "ServiceOwner";
+            $userGroup->write();
+            $userGroup->Members()->add($Member);
+        }
+        $userGroup->Members()->add($Member);
+
+        if($ProfilePage = DataObject::get_one('EditProfilePage')){
+            return $this->redirect($ProfilePage->Link('?success=1'));
+        }
+    }
+}

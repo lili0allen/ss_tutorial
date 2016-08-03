@@ -15,6 +15,12 @@ SiteConfig:
 Director:
   environment_type: 'dev'
 
+ServiceEntry:
+  extensions:
+    - ImageGalleryExtension
+Member:
+  extensions:
+    - MemberExtension
 ---
 Only:
   environment: dev

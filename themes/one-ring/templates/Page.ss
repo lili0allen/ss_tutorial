@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-    <!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
-    <!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
-    <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-    <!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<!--[if lt IE 7 ]><html class="no-js ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="no-js ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
     <head>
 
         $MetaTags(false)
-        <title>One Ring Rentals: $Title</title>
+        <title>Handy Service | $Title</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
         <% base_tag %>
@@ -18,19 +18,10 @@
 
     </head>
     <body>
-
+        <% include MainNav %>
         <div id="wrapper">
-
-            <header id="header">
-                <% include TopBar %>
-                <% include MainNav %>
-            </header>
-
             $Layout
-
-            <% include Footer %>
-
         </div>
-
+        <% include Footer %>
     </body>
 </html>

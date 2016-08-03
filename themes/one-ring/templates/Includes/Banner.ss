@@ -2,11 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
-                <h1 class="page-title">$Title</h1>
-
-                <div class="breadcrumb">
-                    $Breadcrumbs
-                </div>
+                <h1 class="page-header">$Title</h1>
             </div>
         </div>
     </div>
