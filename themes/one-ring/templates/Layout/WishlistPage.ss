@@ -37,5 +37,8 @@
                 <% end_if %>
             </ul>
         </div>
+        <div class="col-sm-12">
+            $ContactForm
+        </div>
     </div>
 </div>
