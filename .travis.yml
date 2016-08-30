@@ -12,11 +12,8 @@ before_script:
 #  - composer install
 #  - composer self-update || true
   - git clone git://github.com/silverstripe-labs/silverstripe-travis-support.git ~/travis-support
-  - php ~/travis-support/travis_setup.php --source `pwd` --target ~/builds/ss
-  - cd ~/builds/ss
-  - ls mysite/code
-  - cd /home/travis/build/lili0allen/ss_tutorial
-  - ls
+  - php ~/travis-support/travis_setup.php --source `pwd` --target ~/build/lili0allen/ss_tutorial
+  - cd ~/build/lili0allen/ss_tutorial
 #  - composer install
 
 script:
