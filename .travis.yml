@@ -17,7 +17,7 @@ before_script:
   - composer install
 
 script:
-  - vendor/bin/phpunit mysite/tests
+  - vendor/bin/phpunit mysite/tests/
 #after_success:
 #  - chmod a+x ./deploy.sh
 #  - ./deploy.sh
