@@ -2,13 +2,12 @@ language: php
 php:
   - 5.3
 env:
-  - DB=MYSQL
-#  global:
-#    - "FTP_USER=ss@ss.easymode.com.au"
-#    - "FTP_PASS=admin!12"
+  global:
+    - "FTP_USER=ss@ss.easymode.com.au"
+    - "FTP_PASS=admin!12"
 before_script:
-  - echo "USE mysql;\nUPDATE user SET password=PASSWORD('password') WHERE user='root';\nFLUSH PRIVILEGES;\n" | mysql -u root
-  - if [[ "$DB" == "mysql" ]]; then mysql -e "create database IF NOT EXISTS handy_service;" -uroot -ppassword; fi
+#  - echo "USE mysql;\nUPDATE user SET password=PASSWORD('password') WHERE user='root';\nFLUSH PRIVILEGES;\n" | mysql -u root
+#  - if [[ "$DB" == "mysql" ]]; then mysql -e "create database IF NOT EXISTS handy_service;" -uroot -ppassword; fi
   - composer install
 
 script: phpunit --configuration phpunit.xml
