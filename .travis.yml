@@ -10,14 +10,16 @@ before_script:
 #  - echo "USE mysql;\nUPDATE user SET password=PASSWORD('password') WHERE user='root';\nFLUSH PRIVILEGES;\n" | mysql -u root
 #  - if [[ "$DB" == "mysql" ]]; then mysql -e "create database IF NOT EXISTS handy_service;" -uroot -ppassword; fi
 #  - composer install
-  - composer self-update || true
+#  - composer self-update || true
   - git clone git://github.com/silverstripe-labs/silverstripe-travis-support.git ~/travis-support
   - php ~/travis-support/travis_setup.php --source `pwd` --target ~/builds/ss
   - cd ~/builds/ss
+  - ls
+  - cd ~/build/lili0allen/ss_tutorial
 #  - composer install
 
 script:
-  - phpunit --configuration ~/builds/ss/phpunit.xml
+  - phpunit --configuration phpunit.xml
 #after_success:
 #  - chmod a+x ./deploy.sh
 #  - ./deploy.sh
