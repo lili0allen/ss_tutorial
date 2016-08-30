@@ -14,10 +14,10 @@ before_script:
   - git clone git://github.com/silverstripe-labs/silverstripe-travis-support.git ~/travis-support
   - php ~/travis-support/travis_setup.php --source `pwd` --target ~/builds/ss
   - cd ~/builds/ss
-  - composer install
+#  - composer install
 
 script:
-  - vendor/bin/phpunit mysite/tests/
+  - phpunit --configuration phpunit.xml
 #after_success:
 #  - chmod a+x ./deploy.sh
 #  - ./deploy.sh
