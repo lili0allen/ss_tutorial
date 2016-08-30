@@ -16,7 +16,8 @@ before_script:
   - cd ~/builds/ss
   - composer install
 
-script: phpunit --configuration phpunit.xml
+script:
+  - vendor/bin/phpunit mysite/tests
 #after_success:
 #  - chmod a+x ./deploy.sh
 #  - ./deploy.sh
