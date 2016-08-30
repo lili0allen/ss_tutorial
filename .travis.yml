@@ -2,6 +2,7 @@ language: php
 php:
   - 5.3
 env:
+  - DB=mysql
   global:
     - "FTP_USER=ss@ss.easymode.com.au"
     - "FTP_PASS=admin!12"
