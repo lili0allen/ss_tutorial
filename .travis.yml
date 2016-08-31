@@ -14,7 +14,7 @@ before_script:
   - git clone git://github.com/silverstripe-labs/silverstripe-travis-support.git ~/travis-support
   - php ~/travis-support/travis_setup.php --source `pwd` --target ~/build/ss
   - cd ~/build/ss
-  - mv /home/travis/build/lili0allen/ss_tutorial .
+  - mv /home/travis/build/lili0allen/ss_tutorial/ .
   - ls
 #  - composer install
 
