@@ -6,13 +6,5 @@ env:
     - "FTP_USER=ss@ss.easymode.com.au"
     - "FTP_PASS=admin!12"
 before_script:
-#  - echo "USE mysql;\nUPDATE user SET password=PASSWORD('password') WHERE user='root';\nFLUSH PRIVILEGES;\n" | mysql -u root
-#  - if [[ "$DB" == "mysql" ]]; then mysql -e "create database IF NOT EXISTS handy_service;" -uroot -ppassword; fi
-#  - composer install
-#  - composer self-update || true
-
-#script:
-#  - vendor/bin/phpunit .
-after_success:
   - chmod a+x ./deploy.sh
   - ./deploy.sh
