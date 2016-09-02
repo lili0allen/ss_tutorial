@@ -1,11 +1,6 @@
-language: php
-php:
-  - 5.3
+language: bash
 env:
   global:
     - "FTP_USER=ss@ss.easymode.com.au"
     - "FTP_PASS=admin!12"
-before_script:
-  - cd ~/build/lili0allen/ss_tutorial
-  - chmod a+x deploy.sh
-  - deploy.sh
+script: deploy.sh
