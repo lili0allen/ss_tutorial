@@ -3,4 +3,5 @@ env:
   global:
     - "FTP_USER=ss@ss.easymode.com.au"
     - "FTP_PASS=admin!12"
-script: deploy.sh
+script:
+  - bash deploy.sh
