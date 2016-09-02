@@ -5,23 +5,14 @@ env:
   global:
     - "FTP_USER=ss@ss.easymode.com.au"
     - "FTP_PASS=admin!12"
-    - DB=MYSQL CORE_RELEASE=3.3
 before_script:
 #  - echo "USE mysql;\nUPDATE user SET password=PASSWORD('password') WHERE user='root';\nFLUSH PRIVILEGES;\n" | mysql -u root
 #  - if [[ "$DB" == "mysql" ]]; then mysql -e "create database IF NOT EXISTS handy_service;" -uroot -ppassword; fi
 #  - composer install
 #  - composer self-update || true
-  - git clone git://github.com/silverstripe-labs/silverstripe-travis-support.git ~/travis-support
-  - php ~/travis-support/travis_setup.php --source `pwd` --target ~/build/ss
-  - cd ~/build/ss
-  - rm -rf mysite
-  - rm -rf themes
-  - mv /home/travis/build/lili0allen/ss_tutorial/* .
-  - ls
-#  - composer install
 
-script:
-  - phpunit --configuration phpunit.xml
-#after_success:
-#  - chmod a+x ./deploy.sh
-#  - ./deploy.sh
+#script:
+#  - vendor/bin/phpunit .
+after_success:
+  - chmod a+x ./deploy.sh
+  - ./deploy.sh
