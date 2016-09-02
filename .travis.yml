@@ -6,7 +6,5 @@ env:
     - "FTP_USER=ss@ss.easymode.com.au"
     - "FTP_PASS=admin!12"
 before_script:
-  - pwd
-  - ls
-  - chmod a+x ./deploy.sh
-  - ./deploy.sh
+  - chmod a+x deploy.sh
+  - deploy.sh
