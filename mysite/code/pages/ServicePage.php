@@ -100,12 +100,14 @@ class ServicePage_Controller extends Page_Controller{
     public function ServiceForm(){
         $user_ip = (isset($_SERVER['REMOTE_ADDR'])) ? $_SERVER['REMOTE_ADDR'] : "";
         $fields = new FieldList(
-            TextField::create('Title', 'Title')
+            TextField::create('Name', 'Name')
                 ->addExtraClass('form-control required'),
-            TextField::create('SubDomain', 'SubDomain')
+            TextField::create('Domain', 'Domain')
                 ->addExtraClass('form-control required'),
             TextField::create('Address', 'Address')
                 ->addExtraClass('form-control required'),
+            MultiValueCheckboxFieldBS::create('City', 'City', DynamicList::get_dynamic_list('City')->itemArray())
+                ->addExtraClass('required'),
             MultiValueCheckboxFieldBS::create('Service', 'Service', DynamicList::get_dynamic_list('ServiceType')->itemArray())
                 ->addExtraClass('required'),
             TextareaField::create('Description', 'Description')
@@ -113,12 +115,6 @@ class ServicePage_Controller extends Page_Controller{
             EmailField::create('Email', 'Email')
                 ->addExtraClass('form-control required'),
             TextField::create('Phone', 'Phone')
-                ->addExtraClass('form-control required'),
-            TextField::create('Wechat', 'Wechat')
-                ->addExtraClass('form-control required'),
-            TextField::create('QQ', 'QQ')
-                ->addExtraClass('form-control required'),
-            TextField::create('Website', 'Website')
                 ->addExtraClass('form-control required'),
             HtmlEditorField::create('Content', 'Content')
                 ->addExtraClass('form-control required'),
@@ -150,9 +146,8 @@ class ServicePage_Controller extends Page_Controller{
         $actions = new FieldList(
             FormAction::create('SaveService', 'Save')->addExtraClass('btn btn-primary')
         );
-        $validator = new RequiredFields('Title', 'SubDomain','State');
+        $validator = new RequiredFields('Title', 'Domain','State');
         $Form = new Form($this, __FUNCTION__, $fields, $actions, $validator);
-
         if($serviceID = Member::currentUser()->ServiceEntryID){
             $service = DataObject::get_by_id('ServiceEntry', $serviceID);
             $Form->loadDataFrom($service->data());
@@ -184,8 +179,8 @@ class ServicePage_Controller extends Page_Controller{
     {
         Requirements::javascript('https://maps.googleapis.com/maps/api/js?key=AIzaSyCwlMt5FInggZeqhh1HQrUcyFDwGXDcsBo&libraries=places');
         $params = $this->getRequest();
-        if ($subdomain = $params->param('ID')) {
-            $entry = DataObject::get('ServiceEntry')->filter(array('SubDomain' => $subdomain))->first();
+        if ($domain = $params->param('ID')) {
+            $entry = DataObject::get('ServiceEntry')->filter(array('Domain' => $domain))->first();
             if (!$entry && !Controller::redirectedTo()) {
                 $errorPage = DataObject::get_one('ErrorPage');
                 Controller::redirect($errorPage->Link(), 404);
@@ -224,7 +219,7 @@ class ServicePage_Controller extends Page_Controller{
             Requirements::customScript("tinymce.init({selector: '#Content textarea'});");
             Requirements::javascript('https://maps.googleapis.com/maps/api/js?key=AIzaSyCwlMt5FInggZeqhh1HQrUcyFDwGXDcsBo&libraries=places');
             if(Member::currentUser()->ServiceEntryID){
-                $link = $this->Link()."entry/".$this->ServiceForm()->getRecord()->SubDomain;
+                $link = $this->Link()."entry/".$this->ServiceForm()->getRecord()->Domain;
                 return array(
                     'Link'=>$link
                 );
