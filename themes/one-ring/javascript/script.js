@@ -185,6 +185,20 @@ $(function () {
         return "";
     }
 
+    $(window).load(function(){
+        $('body').addClass('loading');
+        $('.flexslider').flexslider({
+            animation: "fade",
+            controlNav: true,
+            directionNav: false,
+            prevText: "",
+            nextText: "",
+            start: function(slider){
+                $('body').removeClass('loading');
+            }
+        });
+    });
+
 
 })
 })(jQuery);

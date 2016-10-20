@@ -42,7 +42,17 @@ class Page_Controller extends ContentController {
 						$this->ThemeDir()."/css/jquery-ui.min.css",
 						$this->ThemeDir()."/css/slick.css",
 						$this->ThemeDir()."/css/slick-theme.css",
-                        $this->ThemeDir()."/css/style.css"
+                        $this->ThemeDir()."/css/style.css",
+						$this->ThemeDir()."/css/theme.css",
+						$this->ThemeDir()."/css/theme-elements.css",
+						$this->ThemeDir()."/css/animate.min.css",
+
+						$this->ThemeDir()."/css/fonts/entypo/css/entypo.css",
+						$this->ThemeDir()."/vendor/owl-carousel/owl.carousel.css",
+						$this->ThemeDir()."/vendor/owl-carousel/owl.theme.css",
+						$this->ThemeDir()."/vendor/magnific-popup/magnific-popup.css",
+						$this->ThemeDir()."/vendor/flexslider/flexslider.css",
+						$this->ThemeDir()."/vendor/job-manager/frontend.css",
                     )
         );
         Requirements::combine_files('site_script.js',
@@ -56,7 +66,17 @@ class Page_Controller extends ContentController {
                         $this->ThemeDir()."/javascript/slick.min.js",
                         $this->ThemeDir()."/javascript/jquery.validate.min.js",
                         $this->ThemeDir()."/javascript/script.js",
-						$this->ThemeDir()."/javascript/jquery.geocomplete.min.js"
+						$this->ThemeDir()."/javascript/jquery.geocomplete.min.js",
+
+						$this->ThemeDir()."/vendor/jquery.flexnav.min.js",
+		$this->ThemeDir()."/vendor/jquery.hoverIntent.minified.js",
+		$this->ThemeDir()."/vendor/jquery.flickrfeed.js",
+		$this->ThemeDir()."/vendor/magnific-popup/jquery.magnific-popup.js",
+		$this->ThemeDir()."/vendor/owl-carousel/owl.carousel.min.js",
+		$this->ThemeDir()."/vendor/jquery.fitvids.js",
+		$this->ThemeDir()."/vendor/jquery.appear.js",
+		$this->ThemeDir()."/vendor/jquery.stellar.min.js",
+		$this->ThemeDir()."/vendor/flexslider/jquery.flexslider-min.js",
 
 					)
         );

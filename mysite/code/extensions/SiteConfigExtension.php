@@ -16,6 +16,10 @@ class SiteConfigExtension extends DataExtension {
         'FooterContent' => 'Text'
     );
 
+    private static $has_one = array(
+        'Logo' => 'Image'
+    );
+
     public function updateCMSFields(FieldList $fields) {
         $fields->addFieldsToTab('Root.Social', array(
             TextField::create('FacebookLink', 'Facebook'),
@@ -24,5 +28,6 @@ class SiteConfigExtension extends DataExtension {
             TextField::create('YouTubeLink', 'YouTube'),
         ));
         $fields->addFieldsToTab('Root.Main', TextareaField::create('FooterContent', 'Content for footer'));
+        $fields->addFieldToTab('Root.Main', new UploadField("Logo", "Logo"));
     }
 } 

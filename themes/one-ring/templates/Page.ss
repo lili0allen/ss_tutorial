@@ -18,10 +18,10 @@
 
     </head>
     <body>
-        <% include MainNav %>
-        <div id="wrapper">
+        <div class="site-wrapper">
+            <% include Header %>
             $Layout
+            <% include Footer %>
         </div>
-        <% include Footer %>
     </body>
 </html>
