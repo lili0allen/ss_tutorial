@@ -22,7 +22,7 @@
                     <% with $dataFieldByName('Distance') %>
                         <div class="col-md-3">
                             <fieldset class="form-group">
-                                Distance: $Me
+                                搜索半径: $Me
                             </fieldset>
                         </div>
                     <% end_with %>

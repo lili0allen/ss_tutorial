@@ -75,14 +75,14 @@ class ServicePage_Controller extends Page_Controller{
     public function SearchForm(){
         $fields = new FieldList(
             DropdownField::create('Service', 'Service', DynamicList::get_dynamic_list('ServiceType')->itemArray())
-                ->setEmptyString('Select a service')
+                ->setEmptyString('选择服务类型')
                 ->addExtraClass('form-control'),
             TextField::create('Postcode', 'Postcode')
                 ->setAttribute('data-provide', 'typeahead')
                 ->setAttribute('autocomplete', 'off')
-                ->setAttribute('placeholder', 'Postcode')
+                ->setAttribute('placeholder', '邮编')
                 ->addExtraClass('form-control typeahead'),
-            NumericField::create('Distance', 'Distance', 30)
+            NumericField::create('Distance', 's', 30)
                 ->setTemplate('Distance_slider')
         );
         $actions = new FieldList(
@@ -106,8 +106,6 @@ class ServicePage_Controller extends Page_Controller{
                 ->addExtraClass('form-control required'),
             TextField::create('Address', 'Address')
                 ->addExtraClass('form-control required'),
-            MultiValueCheckboxFieldBS::create('City', 'City', DynamicList::get_dynamic_list('City')->itemArray())
-                ->addExtraClass('required'),
             MultiValueCheckboxFieldBS::create('Service', 'Service', DynamicList::get_dynamic_list('ServiceType')->itemArray())
                 ->addExtraClass('required'),
             TextareaField::create('Description', 'Description')
