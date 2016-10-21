@@ -8,3 +8,6 @@
 .margin-row{
     margin: 15px auto;
 }
+.search-box-inner .fa{
+    margin-right: 0;
+}
