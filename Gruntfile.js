@@ -18,9 +18,6 @@ module.exports = function(grunt)
 
                     {expand: true, cwd: 'themes/one-ring/bower_components/bootstrap3-typeahead/', src: 'bootstrap3-typeahead.min.js', dest: 'themes/one-ring/javascript'},
 
-                    {expand: true, cwd: 'themes/one-ring/bower_components/bootstrap-datepicker/dist/css/', src: 'bootstrap-datepicker.min.css', dest: 'themes/one-ring/css'},
-                    {expand: true, cwd: 'themes/one-ring/bower_components/bootstrap-datepicker/dist/js/', src: 'bootstrap-datepicker.min.js', dest: 'themes/one-ring/javascript'},
-
                     {expand: true, cwd: 'themes/one-ring/bower_components/fontawesome/css/', src: 'font-awesome.min.css', dest: 'themes/one-ring/css'},
                     {expand: true, cwd: 'themes/one-ring/bower_components/fontawesome/fonts/', src: ['**'], dest: 'themes/one-ring/fonts'},
 
@@ -34,11 +31,11 @@ module.exports = function(grunt)
 
                     {expand: true, cwd: 'themes/one-ring/bower_components/geocomplete/', src: 'jquery.geocomplete.min.js', dest: 'themes/one-ring/javascript'},
 
-                    // {expand: true, cwd: 'themes/one-ring/bower_components/jquery-ui/ui/', src: '*', dest: 'themes/one-ring/javascript/jqueryui'},
-                    // {expand: true, cwd: 'themes/one-ring/bower_components/jquery-ui/themes/base/', src: 'jquery-ui.min.css', dest: 'themes/one-ring/css'},
+                    {expand: true, cwd: 'themes/one-ring/bower_components/flexslider/', src: 'flexslider.css', dest: 'themes/one-ring/css'},
+                    {expand: true, cwd: 'themes/one-ring/bower_components/flexslider/', src: 'jquery.flexslider-min.js', dest: 'themes/one-ring/javascript'},
 
-                    {expand: true, cwd: 'themes/one-ring/bower_components/slick-carousel/slick/', src: 'slick.min.js', dest: 'themes/one-ring/javascript'},
-                    {expand: true, cwd: 'themes/one-ring/bower_components/slick-carousel/slick/', src: '*.css', dest: 'themes/one-ring/css'}
+                    {expand: true, cwd: 'themes/one-ring/bower_components/flexnav/', src: 'jquery.flexnav.min.js', dest: 'themes/one-ring/javascript'},
+
 
                 ]
             }

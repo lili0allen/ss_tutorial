@@ -58,16 +58,16 @@ $(function () {
     $("#MemberLoginForm_LostPasswordForm_action_forgotPassword").addClass("btn btn-primary btn-block");
 
     //service search distance slider
-    $( "#slider" ).slider({
-        value: $( "#Form_SearchForm_Distance" ).val(),
-        min: 0,
-        max: 100,
-        step: 10,
-        slide: function( event, ui ) {
-            $( "#Form_SearchForm_Distance" ).val( ui.value );
-        }
-    });
-    $( "#Form_SearchForm_Distance" ).val( $( "#slider" ).slider( "value" ) );
+    // $( "#slider" ).slider({
+    //     value: $( "#Form_SearchForm_Distance" ).val(),
+    //     min: 0,
+    //     max: 100,
+    //     step: 10,
+    //     slide: function( event, ui ) {
+    //         $( "#Form_SearchForm_Distance" ).val( ui.value );
+    //     }
+    // });
+    // $( "#Form_SearchForm_Distance" ).val( $( "#slider" ).slider( "value" ) );
 
     //service search postcode typeahead
     $('.typeahead').typeahead({
@@ -185,8 +185,7 @@ $(function () {
         return "";
     }
 
-    $(window).load(function(){
-        $('body').addClass('loading');
+
         $('.flexslider').flexslider({
             animation: "fade",
             controlNav: true,
@@ -197,7 +196,7 @@ $(function () {
                 $('body').removeClass('loading');
             }
         });
-    });
+
 
 
 })

@@ -1,9 +1,9 @@
 <!-- Slider -->
 <section class="slider-holder">
-    <div class="flexslider carousel">
+    <div class="flexslider">
         <ul class="slides">
             <% loop $Slides %>
-               <li> $Image</li>
+               <li>$Image</li>
             <% end_loop %>
         </ul>
 
@@ -32,7 +32,7 @@
                             <% with $dataFieldByName('Distance') %>
                             <div class="col-md-3">
                                 <fieldset class="form-group">
-                                    搜索半径: $Me
+                                    $Me
                                 </fieldset>
                             </div>
                             <% end_with %>

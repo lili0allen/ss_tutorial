@@ -83,7 +83,10 @@ class ServicePage_Controller extends Page_Controller{
                 ->setAttribute('placeholder', '邮编')
                 ->addExtraClass('form-control typeahead'),
             NumericField::create('Distance', 's', 30)
-                ->setTemplate('Distance_slider')
+                ->setAttribute('placeholder', '搜索半径')
+                ->setAttribute('type', 'number')
+                ->addExtraClass('form-control')
+                ->setTemplate('Distance_holder')
         );
         $actions = new FieldList(
             FormAction::create('SearchEntries', 'Search')->addExtraClass('btn btn-primary btn-block')

@@ -809,7 +809,7 @@ label.error {
   display: block;
   position: absolute;
   right: 15px;
-  top: 8px;
+  top: 3px;
   font-family: 'FontAwesome';
   font-size: 14px;
   color: #8c8c8c;
@@ -820,7 +820,6 @@ label.error {
 }
 .select-style select {
   padding: 5px 16px;
-  height: 44px;
   width: 100%;
   border: none;
   -webkit-box-shadow: none;
