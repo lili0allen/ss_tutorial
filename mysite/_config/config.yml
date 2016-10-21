@@ -21,6 +21,9 @@ ServiceEntry:
 Member:
   extensions:
     - MemberExtension
+DynamicListItem:
+  extensions:
+    - DynamicListItemExtension
 ---
 Only:
   environment: dev

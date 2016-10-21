@@ -9,10 +9,7 @@
 class SiteConfigExtension extends DataExtension {
 
     private static $db = array(
-        'FacebookLink' => 'Varchar',
-        'TwitterLink' => 'Varchar',
-        'GoogleLink' => 'Varchar',
-        'YouTubeLink' => 'Varchar',
+        'HeaderContent' => 'Text',
         'FooterContent' => 'Text'
     );
 
@@ -21,13 +18,8 @@ class SiteConfigExtension extends DataExtension {
     );
 
     public function updateCMSFields(FieldList $fields) {
-        $fields->addFieldsToTab('Root.Social', array(
-            TextField::create('FacebookLink', 'Facebook'),
-            TextField::create('TwitterLink', 'Twitter'),
-            TextField::create('GoogleLink', 'Google'),
-            TextField::create('YouTubeLink', 'YouTube'),
-        ));
-        $fields->addFieldsToTab('Root.Main', TextareaField::create('FooterContent', 'Content for footer'));
+        $fields->addFieldsToTab('Root.Main', TextareaField::create('HeaderContent', 'Header Content'));
+        $fields->addFieldsToTab('Root.Main', TextareaField::create('FooterContent', 'Footer Content'));
         $fields->addFieldToTab('Root.Main', new UploadField("Logo", "Logo"));
     }
 } 

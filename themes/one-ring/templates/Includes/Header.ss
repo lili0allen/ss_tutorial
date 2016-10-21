@@ -9,14 +9,11 @@
                     <i class="fa fa-bars"></i>
                 </button>
                 <div class="menu-container">
-                    <ul class="header-top-nav header-top-nav__secondary">
-                        <li><a href="#"><i class="fa fa-twitter"></i> <span class="nav-label">Twitter</span></a></li>
-                        <li><a href="#"><i class="fa fa-facebook"></i> <span class="nav-label">Facebook</span></a></li>
-                        <li><a href="#"><i class="fa fa-google-plus"></i> <span class="nav-label">Google+</span></a></li>
-                        <li><a href="#"><i class="fa fa-pinterest"></i> <span class="nav-label">Pinterest</span></a></li>
-                        <li><a href="#"><i class="fa fa-instagram"></i> <span class="nav-label">Instagram</span></a></li>
-                        <li><a href="#"><i class="fa fa-rss"></i> <span class="nav-label">RSS Feed</span></a></li>
-                    </ul>
+                    <% if $SiteConfig.HeaderContent %>
+                        <p>
+                        $SiteConfig.HeaderContent.RAW
+                        </p>
+                    <% end_if %>
                 </div>
             </div>
             <div class="header-top-right">
