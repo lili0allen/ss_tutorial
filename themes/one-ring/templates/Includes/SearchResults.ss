@@ -22,8 +22,8 @@
                                         <i class="fa fa-map-marker "></i> {$Suburb}, {$State} {$Postcode}
                                     </div>
                                     <div class="col-md-6 text-right">
-                                        <a class="btn btn-default add-to-wishlist" data-id="$ID">加入购物车</a>
-                                        <a class="btn btn-default" href="$Link">详细浏览</a>
+                                        <a class="btn btn-default add-to-wishlist" data-id="$ID">加入收藏</a>
+                                        <a class="btn btn-default" href="$Link">查看详细</a>
                                     </div>
                                 </div>
                             </div>

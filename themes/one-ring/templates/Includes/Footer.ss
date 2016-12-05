@@ -107,7 +107,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
-                    Copyright &copy; 2015  <a href="index.html">HandyMan</a> &nbsp;| &nbsp;All Rights Reserved
+                    $SiteConfig.FooterContent.RAW
                 </div>
             </div>
         </div>

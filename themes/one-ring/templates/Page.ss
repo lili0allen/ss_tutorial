@@ -20,7 +20,9 @@
     <body>
         <div class="site-wrapper">
             <% include Header %>
-            $Layout
+            <div class="main" role="main">
+                $Layout
+            </div>
             <% include Footer %>
         </div>
     </body>

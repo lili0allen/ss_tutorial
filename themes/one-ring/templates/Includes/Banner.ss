@@ -1,9 +1,11 @@
-<div class="parallax colored-bg pattern-bg">
+<!-- Page Heading -->
+<section class="page-heading">
     <div class="container">
         <div class="row">
-            <div class="col-sm-12">
-                <h1 class="page-header">$Title</h1>
+            <div class="col-md-12">
+                <h1>$Title</h1>
             </div>
         </div>
     </div>
-</div>
+</section>
+<!-- Page Heading / End -->

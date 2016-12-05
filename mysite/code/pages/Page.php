@@ -66,12 +66,12 @@ class Page_Controller extends ContentController {
 		if(Member::currentUser()->ServiceEntryID){
 			$serviceLink = array(
 				'link'  =>  $servicePage->Link().'edit',
-				'text'  =>  'Edit Service'
+				'text'  =>  '修改服务内容'
 			);
 		}else{
 			$serviceLink = array(
 				'link'  =>  $servicePage->Link().'edit',
-				'text'  =>  'Create Service'
+				'text'  =>  '发布新服务'
 			);
 		}
 		return '<a href="'.$serviceLink['link'].'">'.$serviceLink['text'].'</a>';

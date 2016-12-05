@@ -1,7 +1,10 @@
-<div class="container">
-    <div class="row">
+<% include Banner %>
+<div class="page-content">
+    <div class="container">
+        <div class="row">
+            <div id="main" class="content col-md-12">
+
         <div class="col-xs-12 col-md-offset-4 col-md-4">
-            <h1 class="page-header text-center">$Title</h1>
             <% if $Success %>
                 <div class="alert alert-success" role="alert">
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
@@ -13,8 +16,8 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">Your details are as follows:</div>
                         <div class="panel-body">
-                            <p><strong>Name</strong>: $Name</p>
-                            <p><strong>Email</strong>: $Email</p>
+                            <p><strong>姓名</strong>: $Name</p>
+                            <p><strong>邮箱</strong>: $Email</p>
                         </div>
                     </div>
                 <% end_with %>
@@ -41,6 +44,8 @@
                 <% end_if %>
 
             <% end_if %>
+
+</div>
+            </div>
         </div>
     </div>
-</div>

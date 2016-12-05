@@ -82,11 +82,8 @@ class ServicePage_Controller extends Page_Controller{
                 ->setAttribute('autocomplete', 'off')
                 ->setAttribute('placeholder', '邮编')
                 ->addExtraClass('form-control typeahead'),
-            NumericField::create('Distance', 's', 30)
-                ->setAttribute('placeholder', '搜索半径')
-                ->setAttribute('type', 'number')
+            HiddenField::create('Distance', 's', 50)
                 ->addExtraClass('form-control')
-                ->setTemplate('Distance_holder')
         );
         $actions = new FieldList(
             FormAction::create('SearchEntries', 'Search')->addExtraClass('btn btn-primary btn-block')
@@ -103,21 +100,22 @@ class ServicePage_Controller extends Page_Controller{
     public function ServiceForm(){
         $user_ip = (isset($_SERVER['REMOTE_ADDR'])) ? $_SERVER['REMOTE_ADDR'] : "";
         $fields = new FieldList(
-            TextField::create('Name', 'Name')
+            TextField::create('Name', '名称')
                 ->addExtraClass('form-control required'),
-            TextField::create('Domain', 'Domain')
+            TextField::create('Domain', '子域名')
                 ->addExtraClass('form-control required'),
-            TextField::create('Address', 'Address')
-                ->addExtraClass('form-control required'),
-            MultiValueCheckboxFieldBS::create('Service', 'Service', DynamicList::get_dynamic_list('ServiceType')->itemArray())
+            TextField::create('Address', '地址')
+                ->addExtraClass('form-control required')
+                ->setAttribute('placeholder', '如果无法提供精确地址，可以用suburb名称代替'),
+            MultiValueCheckboxFieldBS::create('Service', '服务类型', DynamicList::get_dynamic_list('ServiceType')->itemArray())
                 ->addExtraClass('required'),
-            TextareaField::create('Description', 'Description')
+            TextareaField::create('Description', '描述')
                 ->addExtraClass('form-control required'),
-            EmailField::create('Email', 'Email')
+            EmailField::create('Email', '邮箱')
                 ->addExtraClass('form-control required'),
-            TextField::create('Phone', 'Phone')
+            TextField::create('Phone', '电话')
                 ->addExtraClass('form-control required'),
-            HtmlEditorField::create('Content', 'Content')
+            HtmlEditorField::create('Content', '详细内容')
                 ->addExtraClass('form-control required'),
             CheckboxField::create("Terms", "Terms & Conditions")
                 ->setAttribute("required", true)

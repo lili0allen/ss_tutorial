@@ -28,16 +28,16 @@
                                 <i class="fa fa-user" aria-hidden="true"></i>&nbsp; $CurrentMember.Name <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="$Page('edit-profile').Link">Edit Profile</a></li>
+                                <li><a href="$Page('edit-profile').Link">修改登录信息</a></li>
                                 <li>$EditServiceLink</li>
-                                <li><a href="/Security/logout">Logout</a></li>
+                                <li><a href="/Security/logout">退出</a></li>
                             </ul>
                         </li>
                         <% else %>
-                        <li><a href="/Security/login"><i class="fa fa-sign-in"></i>Login</a></li>
-                        <li><a href="$Page('registration').Link"><i class="fa fa-user-plus"></i> Register</a></li>
+                        <li><a href="/Security/login"><i class="fa fa-sign-in"></i>登录</a></li>
+                        <li><a href="$Page('registration').Link"><i class="fa fa-user-plus"></i>注册</a></li>
                         <% end_if %>
-                        <li><a href="/wishlist"><i class="fa fa-heart-o"></i> Wishlist (<span id="wishlist-count">0</span>)</a></li>
+                        <li><a href="/wishlist"><i class="fa fa-heart-o"></i> 收藏列表 (<span id="wishlist-count">0</span>)</a></li>
                     </ul>
                 </div>
             </div>

@@ -102,7 +102,6 @@ body.bg1 {
 */
 .header {
   position: relative;
-  z-index: 99;
 }
 .header-top {
   background: #3b363a;
@@ -199,7 +198,7 @@ body.bg1 {
     top: 24px;
     background: #fff;
     width: 120px;
-    z-index: 1;
+    z-index: 4;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
@@ -1021,25 +1020,25 @@ body.bg1 {
 .search-box .search-box-inner button.btn .fa {
   margin-right: 0;
 }
-.search-box h1 {
+.search-box h2 {
   margin-bottom: 1em;
   text-align: center;
   text-transform: uppercase;
   color: #fff;
 }
 @media (max-width: 479px) {
-  .search-box h1 {
+  .search-box h2 {
     font-size: 18px;
     letter-spacing: none;
   }
 }
 @media (max-width: 767px) {
-  .search-box h1 {
+  .search-box h2 {
     font-size: 24px;
   }
 }
 @media (min-width: 992px) {
-  .search-box h1 {
+  .search-box h2 {
     text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
     letter-spacing: .1em;
   }
